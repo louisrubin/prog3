@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "prog3": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Hrunginir\\Desktop\\prog3\\clase1\\CodeFile1.cs"
+    },
+    "Perfil 2": {
+      "commandName": "Project"
+    }
+  }
+}
