@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prog3", "prog3.csproj", "{6ECFBF6E-1924-47CE-AFD2-E3A410F64427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prog3", "prog3.csproj", "{6ECFBF6E-1924-47CE-AFD2-E3A410F64427}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moda", "Moda\Moda.csproj", "{E1943F8E-D11E-4F03-ADD0-690817855481}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanzarDado_v2", "LanzarDado_v2\LanzarDado_v2.csproj", "{2B4FD474-D7BE-438F-9F1F-2376E609D65C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgoritmoCesar", "AlgoritmoCesar\AlgoritmoCesar.csproj", "{DF7FAD55-B518-4788-80FE-A15AD6CA7EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiasLaborables", "DiasLaborables\DiasLaborables.csproj", "{79CD06D8-3975-4A2B-923D-9BA062A1E001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{6ECFBF6E-1924-47CE-AFD2-E3A410F64427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECFBF6E-1924-47CE-AFD2-E3A410F64427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECFBF6E-1924-47CE-AFD2-E3A410F64427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1943F8E-D11E-4F03-ADD0-690817855481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1943F8E-D11E-4F03-ADD0-690817855481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1943F8E-D11E-4F03-ADD0-690817855481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1943F8E-D11E-4F03-ADD0-690817855481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4FD474-D7BE-438F-9F1F-2376E609D65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4FD474-D7BE-438F-9F1F-2376E609D65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4FD474-D7BE-438F-9F1F-2376E609D65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4FD474-D7BE-438F-9F1F-2376E609D65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7FAD55-B518-4788-80FE-A15AD6CA7EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7FAD55-B518-4788-80FE-A15AD6CA7EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7FAD55-B518-4788-80FE-A15AD6CA7EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7FAD55-B518-4788-80FE-A15AD6CA7EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CD06D8-3975-4A2B-923D-9BA062A1E001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD06D8-3975-4A2B-923D-9BA062A1E001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CD06D8-3975-4A2B-923D-9BA062A1E001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CD06D8-3975-4A2B-923D-9BA062A1E001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

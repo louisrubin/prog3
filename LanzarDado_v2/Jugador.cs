@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LanzarDadoV2
+namespace LanzarDado_V2
 {
     public class Jugador
     {

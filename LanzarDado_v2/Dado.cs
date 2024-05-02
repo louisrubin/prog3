@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LanzarDadoV2
+namespace LanzarDado_V2
 {
     internal class Dado
     {

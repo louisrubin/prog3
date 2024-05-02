@@ -4,9 +4,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using LanzarDadoV2;
+using LanzarDado_V2;
 
-namespace LanzarDadoV2
+namespace LanzarDado_V2
 {
     public static class Game
     {
