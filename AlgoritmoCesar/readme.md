@@ -6,11 +6,11 @@
 
 - Se tomará el texto cifrado por consola
 - Se tomará la clave de cifrado por consola
-- Los únicos caracteres que se podrán cifrar son los siguientes aábcdeéfghiíjklmnñoópqrstuúüvwxyz
+- Los únicos caracteres que se podrán cifrar son los siguientes ```aábcdeéfghiíjklmnñoópqrstuúüvwxyz```
 - Todos los demás aparecerán sin cifrar
 - Como prueba el texto que deben descifrar es: 
 
-```kd wiqd géuúi tédbbúnq kdq wiqd iúígédíqsybyuqu```
+### ```kd wiqd géuúi tédbbúnq kdq wiqd iúígédíqsybyuqu```
 
 | Programa | Ejemplo |
 |--------------|--------------|
