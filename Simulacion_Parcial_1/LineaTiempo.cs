@@ -11,43 +11,88 @@ namespace Simulacion_Parcial_1
         // perdiodos de tiempo fijados
         static DateTime[,] periodosTiempo = {
             { new DateTime(2024, 2, 3, 16, 23, 54), new DateTime(2024, 3, 1, 18, 15, 31) },
+            { new DateTime(2024, 5, 3, 15, 25 , 41), new DateTime(2024, 5, 5, 13, 13 , 56) },
             { new DateTime(2024, 2, 17, 13, 00, 00), new DateTime(2024, 3, 18, 01, 05, 48) },
             { new DateTime(2024, 3, 20, 13, 32, 12),  new DateTime(2024, 4, 25, 13, 5, 40)},
-            { new DateTime(2024, 4, 11, 15, 25 , 41), new DateTime(2024, 5, 5, 13, 13 , 56) },
-            { new DateTime(2024, 5, 5, 10, 12 , 40), DateTime.Now }
-        } ;
+            { new DateTime(2024, 4, 11, 15, 25 , 41), new DateTime(2024, 5, 1, 13, 13 , 56) },
+            { new DateTime(2024, 5, 6, 3, 12 , 40), DateTime.Now }
+        };
 
 
         public static void toString(DateTime[,] uniones)
         {
-            Console.WriteLine("Cantidad de uniones de tiempo: " + uniones.GetLength(0)+"\n");
+            Console.WriteLine("Cantidad de uniones de tiempo: " + uniones.GetLength(0) + "\n");
             for (int x = 0; x < uniones.GetLength(0); x++)
             {
-                Console.WriteLine($"({uniones[x,0]} - {uniones[x,1]})");
+                Console.WriteLine($" {x+1}- ({uniones[x, 0]} - {uniones[x, 1]})");
             }
             Console.WriteLine("\n\n");
         }
 
+        public static void reordenarMatriz()
+        {
+            DateTime[,] unionesTiempo = new DateTime[periodosTiempo.Length, 2];
+
+            unionesTiempo[0, 0] = periodosTiempo[0, 0];
+            unionesTiempo[0, 1] = periodosTiempo[0, 1];
+
+            for (int j = 1; j < periodosTiempo.GetLength(0); j++)
+            {
+                if (periodosTiempo[j, 0] < periodosTiempo[j - 1, 0])
+                {
+                    /*
+                     * VIENDO COMO ACTUA y reordena la matriz
+
+                     act = new DateTime(2024, 5, 17), new DateTime(2024, 5, 18)
+
+                { new DateTime(2024, 5, 17), new DateTime(2024, 5, 18) },
+                { new DateTime(2024, 3, 20),  new DateTime(2024, 4, 25)},
+
+                { new DateTime(2024, 2, 3, 16, 23, 54), new DateTime(2024, 3, 1, 18, 15, 31) },
+                { new DateTime(2024, 2, 17, 13, 00, 00), new DateTime(2024, 3, 18, 01, 05, 48) },
+                { new DateTime(2024, 3, 20, 13, 32, 12),  new DateTime(2024, 4, 25, 13, 5, 40)},
+                { new DateTime(2024, 4, 11, 15, 25 , 41), new DateTime(2024, 5, 1, 13, 13 , 56) },
+                { new DateTime(2024, 5, 3, 15, 25 , 41), new DateTime(2024, 5, 5, 13, 13 , 56) },
+                { new DateTime(2024, 5, 6, 3, 12 , 40), DateTime.Now }
+
+                    */
+                    DateTime dt1 = periodosTiempo[j, 0];
+                    DateTime dt2 = periodosTiempo[j, 1];
+
+                    periodosTiempo[j, 0] = periodosTiempo[j - 1, 0];
+                    periodosTiempo[j, 1] = periodosTiempo[j - 1, 1];
+
+                    periodosTiempo[j - 1, 0] = dt1;
+                    periodosTiempo[j - 1, 1] = dt2;
+
+                    //unionesTiempo[0, 1] =
+
+                    j=1;        // vuelve a iterar en esta vuelta
+                }
+                //x--;
+            }
+            //toString(periodosTiempo);
+        }
 
         public static DateTime[,] Union()   // retorna una matriz
         {
+            reordenarMatriz();
             DateTime[,] unionesTiempo = new DateTime[periodosTiempo.Length, 2];
+
             unionesTiempo[0,0] = periodosTiempo[0, 0];
             unionesTiempo[0, 1] = periodosTiempo[0, 1];
 
-            DateTime[,] unionesReturn;
+            DateTime[,] unionesReturn;      // matriz que será retornada
 
             int cantUniones = 0;
             for (int x = 1; x < periodosTiempo.GetLength(0); x++)
             {
                 TimeSpan difColapso = periodosTiempo[x, 0] - unionesTiempo[cantUniones, 1];
                 
-
                 if (difColapso <= TimeSpan.Zero)
                 {
                     // si es negativo los tiempos SI colapsan
                     unionesTiempo[cantUniones, 1] = periodosTiempo[x, 1];
-                    //Console.WriteLine(difColapso);
                 } else
                 {
                     // si es positivo NO se colapsan
@@ -69,8 +114,10 @@ namespace Simulacion_Parcial_1
                 }
             }
 
+            //toString(periodosTiempo);
             return unionesReturn;
 
+            // BORRADOR:
 
             //for (int x = 0; x < unionesTiempo.GetLength(0); x++)
             //{
