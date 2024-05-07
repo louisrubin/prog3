@@ -6,11 +6,8 @@
 // RUBIN AZAS M. Luis - 06/05/2024
 
 
-
 using Simulacion_Parcial_1;
 
 DateTime[,] uniones = LineaTiempo.Union();
-
 LineaTiempo.toString(uniones);
-
 
