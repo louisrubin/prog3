@@ -11,11 +11,12 @@ namespace Simulacion_Parcial_1
         // perdiodos de tiempo hardcodeado
         static DateTime[,] periodosTiempo = {
             { new DateTime(2024, 2, 3, 16, 23, 54), new DateTime(2024, 3, 1, 18, 15, 31) },     // #1
-            { new DateTime(2024, 5, 3, 15, 25 , 41), new DateTime(2024, 5, 5, 13, 13 , 56) },   // #5
             { new DateTime(2024, 2, 17, 13, 00, 00), new DateTime(2024, 3, 18, 01, 05, 48) },   // #2
-            { new DateTime(2024, 5, 6, 3, 12 , 40), DateTime.Now },                             // #6
             { new DateTime(2024, 3, 20, 13, 32, 12),  new DateTime(2024, 4, 25, 13, 5, 40)},    // #3
             { new DateTime(2024, 4, 11, 15, 25 , 41), new DateTime(2024, 5, 1, 13, 13 , 56) },  // #4
+            { new DateTime(2024, 5, 3, 15, 25 , 41), new DateTime(2024, 5, 5, 13, 13 , 56) },   // #5
+            { new DateTime(2024, 5, 7, 16, 23, 54), new DateTime(2024, 5, 7, 18, 15, 31) },     // #6 dentro del sig
+            { new DateTime(2024, 5, 6, 3, 12 , 40), DateTime.Now },                             // #7
         };
 
 
@@ -76,15 +77,20 @@ namespace Simulacion_Parcial_1
 
             DateTime[,] unionesReturn;      // matriz que será retornada
 
-            int cantUniones = 0;
+            byte cantUniones = 0;
             for (int x = 1; x < periodosTiempo.GetLength(0); x++)
             {
-
+                // diferencia de tiempo entre 2 lapsos
                 TimeSpan difColapso = periodosTiempo[x, 0] - unionesTiempo[cantUniones, 1];
                 
                 if (difColapso <= TimeSpan.Zero)
                 {
                     // si es negativo los tiempos SI colapsan
+
+                    if (periodosTiempo[x,1] < unionesTiempo[cantUniones,1])
+                    {
+                        continue;       // si el lapso actual está totalmente dentro del anterior, no hace nada
+                    }
                     unionesTiempo[cantUniones, 1] = periodosTiempo[x, 1];
                 } else
                 {
