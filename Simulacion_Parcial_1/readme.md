@@ -25,6 +25,6 @@
 |--------------|--------------|
 | ![lineaTiempo](https://github.com/louisrubin/prog3/assets/72027738/e1d7a523-2873-400e-bb47-686068320f37) | ![lineaTiempo2](https://github.com/louisrubin/prog3/assets/72027738/5d60a4ad-55f1-4231-9629-6d46901471c4) |
 
-###### Fecha Parcial: *Mayo 9, 2024*
+###### Fecha Parcial: *~~Mayo 9, 2024~~*
 
-###### Calificación: *{actualizar}*
+###### Calificación: **[Ver Parcial](https://github.com/louisrubin/prog3/tree/main/Parcial_1)**
