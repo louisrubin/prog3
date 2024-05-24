@@ -1,5 +1,8 @@
 # Ejercicio Windows Forms
 
+
+![simon dice](https://github.com/louisrubin/prog3/assets/72027738/432b5a59-17da-4ef4-858d-be54f621832a)
+
 ## **Juego Simon**
 
 En la versión original el juego tiene cuatro botones, cada uno con un color distinto (verde, rojo, azul y amarillo), y cada botón tiene una nota musical asignada.
