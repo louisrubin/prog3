@@ -37,6 +37,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             button5 = new Button();
             timer2 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -120,21 +121,36 @@
             timer2.Interval = 550;
             timer2.Tick += timer2_Tick;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.GrayText;
+            label1.Location = new Point(297, 280);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Nivel: ";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
             ClientSize = new Size(630, 489);
+            Controls.Add(label1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Simon Game";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -147,5 +163,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button button5;
         private System.Windows.Forms.Timer timer2;
+        private Label label1;
     }
 }
