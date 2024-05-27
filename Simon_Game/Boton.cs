@@ -8,24 +8,26 @@ using System.Windows.Forms;     // de acá implementando clase Button
 
 namespace Simon_Game
 {
-    public class Boton : Button
+    public class Boton : Button // --> System.Windows.Forms.Button
     {
         private byte codigoColor;
         private static byte sigCodColor = 0;
         private Color colorPrendido;
         private Color colorApagado;
 
+        public byte CodigoColor { get { return codigoColor; } }
         public Color ColorPrendido { get { return colorPrendido; } set { colorPrendido = value; } }
         public Color ColorApagado { get { return colorApagado; } set { colorApagado = value; } }
 
-        public Boton(Color colorParam, string nameParam)
+        public Boton(Color colorPrendido, Color colorApagado, string nameParam)
         {
             this.codigoColor = ++sigCodColor;
 
-            this.colorPrendido = colorParam;
+            this.colorPrendido = (Color)colorPrendido;
+            this.colorApagado = (Color)colorApagado;
 
             this.Name = nameParam;
-            this.BackColor = (Color) colorParam;
+            this.BackColor = colorApagado;
             this.FlatAppearance.BorderColor = Color.White;
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
@@ -33,5 +35,13 @@ namespace Simon_Game
             this.UseVisualStyleBackColor = false;
         }
 
+        public void apagarBoton()
+        {
+            this.BackColor = colorApagado;
+        }
+        public void prenderBoton()
+        {
+            this.BackColor = colorPrendido;
+        }
     }
 }

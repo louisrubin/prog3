@@ -2,13 +2,13 @@ namespace Simon_Game
 {
     public partial class Form1 : Form
     {
-        List<int> secuenJuego = new List<int>();        // secuencia del juego a pulsar
-        List<int> secuenActual = new List<int>();       // secuencia presionado por el jugador
+        List<byte> secuenJuego = new List<byte>();        // secuencia del juego a pulsar
+        List<byte> secuenActual = new List<byte>();       // secuencia presionado por el jugador
         Random ran = new Random();
 
         public static byte nivelActual = 0;
 
-        int indiceActual = 0;
+        byte indiceActual = 0;
 
         public Form1()
         {
@@ -16,22 +16,22 @@ namespace Simon_Game
 
             disableAllColorButtons();
 
-            secuenJuego.Add(ran.Next(1, 5));
-            secuenJuego.Add(ran.Next(1, 5));
+            secuenJuego.Add( (byte)ran.Next(1, 5));
+            secuenJuego.Add( (byte)ran.Next(1, 5));
         }
 
         private void iniciarRonda()
         {
+            indiceActual = 0;
+            label1.Text = $"Nivel: {++nivelActual}";
+            secuenActual.Clear();               // limpia los colores presionados antes
+            secuenJuego.Add((byte)ran.Next(1, 5));
+
             if ( (nivelActual+1)%3 == 0)
             {
                 double aumentoVelocid = timer1.Interval * 0.95;     // aumenta un 5% cada 3 niveles
                 timer1.Interval = (int) aumentoVelocid;
             }
-
-            label1.Text = $"Nivel: {++nivelActual}";
-            indiceActual = 0;
-            secuenActual.Clear();               // limpia los colores presionados antes
-            secuenJuego.Add(ran.Next(1, 5));
 
             // BOTON 5: cambia color y lo desactiva
             button5.Enabled = false;
@@ -49,8 +49,8 @@ namespace Simon_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            secuenActual.Add(1);
-            button1.BackColor = Color.Blue;
+            secuenActual.Add(button1.CodigoColor);      // codigo del boton
+            button1.prenderBoton();
             timer2.Tag = button1;
 
             timer2.Start();
@@ -67,13 +67,14 @@ namespace Simon_Game
                     button5.Enabled = true;
                     disableAllColorButtons();
                     button5.Text = "Continuar";
-                    button5.BackColor = Color.HotPink;
+                    button5.BackColor = Color.HotPink;      // boton 5 no es de clase 'Boton'
                     return;
                 }
             }
                     // SI ERRA EN UN COLOR TERMINA EL JUEGO
             else
             {
+                button5.Text = "FIN";
                 MessageBox.Show("Fin del juego.");
                 disableAllColorButtons();
                 return;
@@ -83,8 +84,8 @@ namespace Simon_Game
 
         private void button2_Click(object sender, EventArgs e)
         {
-            secuenActual.Add(2);
-            button2.BackColor = Color.Red;
+            secuenActual.Add(button2.CodigoColor);
+            button2.prenderBoton();
 
             timer2.Tag = button2; // Almacenar una referencia al botón en el Tag del temporizador
             timer2.Start();
@@ -94,8 +95,8 @@ namespace Simon_Game
 
         private void button3_Click(object sender, EventArgs e)
         {
-            secuenActual.Add(3);
-            button3.BackColor = Color.Green;
+            secuenActual.Add(button3.CodigoColor);
+            button3.prenderBoton();
 
             timer2.Tag = button3;
             timer2.Start();
@@ -105,8 +106,8 @@ namespace Simon_Game
 
         private void button4_Click(object sender, EventArgs e)
         {
-            secuenActual.Add(4);
-            button4.BackColor = Color.DarkOrchid;
+            secuenActual.Add(button4.CodigoColor);
+            button4.prenderBoton();
 
             timer2.Tag = button4;
             timer2.Start();
@@ -127,27 +128,28 @@ namespace Simon_Game
                 return;
             }
 
+            // verifica el codigo insertado en la lista para enviar el boton que corresponde
             if (secuenJuego[indiceActual] == 1)
             {
-                button1.BackColor = Color.Blue;
+                button1.prenderBoton();
                 timer2.Tag = button1;
                 timer2.Start(); 
             }
             if (secuenJuego[indiceActual] == 2)
             {
-                button2.BackColor = Color.Red;
+                button2.prenderBoton();
                 timer2.Tag = button2;
                 timer2.Start();
             }
             if (secuenJuego[indiceActual] == 3)
             {
-                button3.BackColor = Color.Green;
+                button3.prenderBoton();
                 timer2.Tag = button3;
                 timer2.Start();
             }
             if (secuenJuego[indiceActual] == 4)
             {
-                button4.BackColor = Color.DarkOrchid;
+                button4.prenderBoton();
                 timer2.Tag = button4;
                 timer2.Start();
             }
@@ -157,37 +159,19 @@ namespace Simon_Game
         private void timer2_Tick(object sender, EventArgs e)
         {
             // timer para resetear color de un boton al hacer clic
-            //timer1.Stop();
             timer2.Stop();
 
-            Button button = (Button)timer2.Tag;     // unboxing del boton que hizo clic
+            Boton button = (Boton)timer2.Tag;     // unboxing del boton que hizo clic
+            button.apagarBoton();       // apaga cada boton
 
-            if (button == button1)
-            {
-                button.BackColor = SystemColors.ActiveCaption;
-            }
-            if (button == button2)
-            {
-                button.BackColor = Color.RosyBrown;
-            }
-            if (button == button3)
-            {
-                button.BackColor = Color.DarkSeaGreen;
-            }
-            if (button == button4)
-            {
-                button.BackColor = Color.Plum;
-            }
-
-            //timer1.Start();
         }
 
         private void resetAllColorButtons()    // activar todos los botones de colores
         {
-            button1.BackColor = SystemColors.ActiveCaption;
-            button2.BackColor = Color.RosyBrown;
-            button3.BackColor = Color.DarkSeaGreen;
-            button4.BackColor = Color.Plum;
+            button1.apagarBoton();
+            button2.apagarBoton();
+            button3.apagarBoton();
+            button4.apagarBoton();
         }
         private void disableAllColorButtons()   // metodo para desactivar todos los botones de colores
         {

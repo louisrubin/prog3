@@ -2,6 +2,17 @@
 {
     partial class Form1
     {
+
+        private Boton button1;              // cambie el tipo de clase 'Button' --> 'Boton'
+        private Boton button2;
+        private Boton button3;
+        private Boton button4;
+        private Button button5;                         // 'Button' ya que no necesito almacenar sus datos
+        private BindingSource bindingSource1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private Label label1;                       // mostrador de nivel
+
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -31,10 +42,10 @@
             components = new System.ComponentModel.Container();
 
 
-            button1 = new Boton(SystemColors.ActiveCaption, "button1");
-            button2 = new Boton(Color.RosyBrown, "button2");
-            button3 = new Boton(Color.DarkSeaGreen, "button3");
-            button4 = new Boton(Color.Plum, "button4");
+            button1 = new Boton(Color.Blue, SystemColors.ActiveCaption, "button1");
+            button2 = new Boton(Color.Red, Color.RosyBrown, "button2");
+            button3 = new Boton(Color.Green, Color.DarkSeaGreen, "button3");
+            button4 = new Boton(Color.DarkOrchid, Color.Plum, "button4");
 
             bindingSource1 = new BindingSource(components);
             timer1 = new System.Windows.Forms.Timer(components);
@@ -50,7 +61,7 @@
             // 
             button1.Location = new Point(12, 12);
             button1.Size = new Size(215, 185);
-            button1.TabIndex = 0;
+            //button1.TabIndex = 0;
             button1.Click += button1_Click;
 
             // 
@@ -58,7 +69,7 @@
             // 
             button2.Location = new Point(403, 12);
             button2.Size = new Size(215, 180);
-            button2.TabIndex = 2;
+            //button2.TabIndex = 2;
             button2.Click += button2_Click;
 
             // 
@@ -66,7 +77,7 @@
             // 
             button3.Location = new Point(12, 292);
             button3.Size = new Size(215, 185);
-            button3.TabIndex = 2;
+            //button3.TabIndex = 2;
             button3.Click += button3_Click;
 
             // 
@@ -74,7 +85,7 @@
             // 
             button4.Location = new Point(403, 292);
             button4.Size = new Size(215, 185);
-            button4.TabIndex = 3;
+            //button4.TabIndex = 3;
             button4.Click += button4_Click;
 
             // 
@@ -136,16 +147,9 @@
             PerformLayout();
         }
 
-        #endregion
-
-        private Button button1;
-        private Button button2;
-        private BindingSource bindingSource1;
-        private Button button3;
-        private Button button4;
-        private System.Windows.Forms.Timer timer1;
-        private Button button5;
-        private System.Windows.Forms.Timer timer2;
-        private Label label1;
     }
+
+    #endregion
+
+    // :D
 }
