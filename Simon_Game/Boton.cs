@@ -18,13 +18,13 @@ namespace Simon_Game
         public Color ColorPrendido { get { return colorPrendido; } set { colorPrendido = value; } }
         public Color ColorApagado { get { return colorApagado; } set { colorApagado = value; } }
 
-        public Boton(Color colorParam)
+        public Boton(Color colorParam, string nameParam)
         {
             this.codigoColor = ++sigCodColor;
 
             this.colorPrendido = colorParam;
 
-            this.Name = $"button{codigoColor}";
+            this.Name = nameParam;
             this.BackColor = (Color) colorParam;
             this.FlatAppearance.BorderColor = Color.White;
             this.FlatAppearance.BorderSize = 0;
