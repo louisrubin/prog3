@@ -31,15 +31,10 @@
             components = new System.ComponentModel.Container();
 
 
-            button1 = new Boton(SystemColors.ActiveCaption);
-            button2 = new Boton(Color.RosyBrown);
-            button3 = new Boton(Color.DarkSeaGreen);
-            button4 = new Boton(Color.Plum);
-
-            //button1 = new Button();
-            //button2 = new Button();
-            //button3 = new Button();
-            //button4 = new Button();
+            button1 = new Boton(SystemColors.ActiveCaption, "button1");
+            button2 = new Boton(Color.RosyBrown, "button2");
+            button3 = new Boton(Color.DarkSeaGreen, "button3");
+            button4 = new Boton(Color.Plum, "button4");
 
             bindingSource1 = new BindingSource(components);
             timer1 = new System.Windows.Forms.Timer(components);
@@ -53,89 +48,34 @@
             // 
             // button1
             // 
-
-            //button1.Name = "button1";
             button1.Location = new Point(12, 12);
             button1.Size = new Size(215, 185);
             button1.TabIndex = 0;
             button1.Click += button1_Click;
 
-            //button1.BackColor = SystemColors.ActiveCaption;
-            //button1.FlatAppearance.BorderColor = Color.White;
-            //button1.FlatAppearance.BorderSize = 0;
-            //button1.FlatAppearance.MouseDownBackColor = Color.Blue;
-            //button1.FlatStyle = FlatStyle.Flat;
-            //button1.Location = new Point(12, 12);
-            //button1.Name = "button1";
-            //button1.Size = new Size(215, 185);
-            //button1.TabIndex = 0;
-            //button1.Text = "\r\n";
-            //button1.UseVisualStyleBackColor = false;
-            //button1.Click += button1_Click;
-
             // 
             // button2
             // 
-            //button1.Name = "button2";
             button2.Location = new Point(403, 12);
             button2.Size = new Size(215, 180);
             button2.TabIndex = 2;
             button2.Click += button2_Click;
 
-            //button2.BackColor = Color.RosyBrown;
-            //button2.FlatAppearance.BorderSize = 0;
-            //button2.FlatAppearance.MouseDownBackColor = Color.Red;
-            //button2.FlatStyle = FlatStyle.Flat;
-            //button2.Location = new Point(403, 12);
-            //button2.Name = "button2";
-            //button2.Size = new Size(215, 180);
-            //button2.TabIndex = 1;
-            //button2.UseVisualStyleBackColor = false;
-            //button2.Click += button2_Click;
-
             // 
             // button3
             // 
-            //button1.Name = "button3";
             button3.Location = new Point(12, 292);
             button3.Size = new Size(215, 185);
             button3.TabIndex = 2;
             button3.Click += button3_Click;
 
-
-            //button3.BackColor = Color.DarkSeaGreen;
-            //button3.FlatAppearance.BorderSize = 0;
-            //button3.FlatAppearance.MouseDownBackColor = Color.Green;
-            //button3.FlatStyle = FlatStyle.Flat;
-            //button3.Location = new Point(12, 292);
-            //button3.Name = "button3";
-            //button3.Size = new Size(215, 185);
-            //button3.TabIndex = 2;
-            //button3.UseVisualStyleBackColor = false;
-            //button3.Click += button3_Click;
-
-
             // 
             // button4
             // 
-            //button1.Name = "button4";
             button4.Location = new Point(403, 292);
             button4.Size = new Size(215, 185);
             button4.TabIndex = 3;
             button4.Click += button4_Click;
-
-
-            //button4.BackColor = Color.Plum;
-            //button4.FlatAppearance.BorderSize = 0;
-            //button4.FlatAppearance.MouseDownBackColor = Color.DarkOrchid;
-            //button4.FlatStyle = FlatStyle.Flat;
-            //button4.Location = new Point(403, 292);
-            //button4.Name = "button4";
-            //button4.Size = new Size(215, 185);
-            //button4.TabIndex = 3;
-            //button4.UseVisualStyleBackColor = false;
-            //button4.Click += button4_Click;
-
 
             // 
             // timer1
