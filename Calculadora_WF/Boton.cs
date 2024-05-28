@@ -4,24 +4,35 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Calculadora_WF
 {
     public abstract class Boton : Button
     {
-        //private static byte nroButton = 0;
+        private static byte tableIndexStat = 0;
         public Boton(byte number)
         {
-            this.Text = number.ToString();
-            this.Name = $"button{number.ToString()}";
+            if (number == 10)
+            {
+                this.Name = $"button{0}";
+                this.Text = "0";
+            }
+            else
+            {
+                this.Name = $"button{number}";
+                this.Text = number.ToString();
+            }
+            //this.Text = number.ToString();
+            //this.Name = $"button{number.ToString()}";
             this.BackColor = Color.DimGray;
             this.ForeColor = SystemColors.Control;
-            this.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Segoe UI", 20F, FontStyle.Bold);
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
 
-            //this.TabIndex = tableIndexStat;     // indice tab
+            this.TabIndex = ++tableIndexStat;     // indice tab
 
             this.UseVisualStyleBackColor = false;
 
@@ -33,17 +44,18 @@ namespace Calculadora_WF
             //nroButton = number;
 
         }
-        public Boton(byte numer, string text)
+        public Boton(byte number, string text)
         {
+
             this.Text = text;
-            this.Name = $"button{numer}";
+            this.Name = $"button{number}";
             this.BackColor = Color.DimGray;
             this.ForeColor = SystemColors.Control;
-            this.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Segoe UI", 20F, FontStyle.Bold);
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
 
-            //this.TabIndex = tableIndexStat;     // indice tab
+            this.TabIndex = ++tableIndexStat;     // indice tab
 
             this.UseVisualStyleBackColor = false;
 

@@ -14,12 +14,14 @@ namespace Calculadora_WF
 
         public NumberButton(byte numer) : base(numer)
         {
-            this.numero = numer;
-            //this.Name = $"button{numer}";
-            //if (numero > 10)
-            //{
-            //    this.Image = (Icon)resources.GetObject("$this.Icon");
-            //}
+            if (numer == 10)
+            {
+                this.numero = 0;
+            }
+            else
+            {
+                this.numero = numer;
+            }
 
         }
         public NumberButton(byte numer, string caract) : base(numer, caract)
