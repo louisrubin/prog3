@@ -9,3 +9,6 @@
 - Se redimensione automáticamente.
 - Solo debe manejarse con el mouse.
 
+---
+## Avances
+![calculadora](https://github.com/louisrubin/prog3/assets/72027738/99d11a14-4056-42f5-91fd-41ccc35e427c)
