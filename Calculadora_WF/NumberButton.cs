@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calculadora_WF.Properties;
 
 namespace Calculadora_WF
 {
@@ -11,10 +12,24 @@ namespace Calculadora_WF
         private byte numero;
         public byte Numero { get { return numero; } set { } }
 
-        public NumberButton(byte numer) : base(numer.ToString())
+        public NumberButton(byte numer) : base(numer)
         {
             this.numero = numer;
             //this.Name = $"button{numer}";
+            //if (numero > 10)
+            //{
+            //    this.Image = (Icon)resources.GetObject("$this.Icon");
+            //}
+
+        }
+        public NumberButton(byte numer, string caract) : base(numer, caract)
+        {
+            //this.numero = numer;
+            //this.Name = $"button{numer}";
+            //if (numero > 10)
+            //{
+            //    this.Image = (Icon)resources.GetObject("$this.Icon");
+            //}
 
         }
     }
