@@ -83,9 +83,19 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap equal_sign {
+        internal static System.Drawing.Bitmap equal_symbol {
             get {
-                object obj = ResourceManager.GetObject("equal_sign", resourceCulture);
+                object obj = ResourceManager.GetObject("equal_symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap equal_symbol2 {
+            get {
+                object obj = ResourceManager.GetObject("equal_symbol2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,9 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap multiplication_symbol2 {
+        internal static System.Drawing.Bitmap multiplication_icon {
             get {
-                object obj = ResourceManager.GetObject("multiplication_symbol2", resourceCulture);
+                object obj = ResourceManager.GetObject("multiplication_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +123,9 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pi_filled_icon {
+        internal static System.Drawing.Bitmap multiplication_icon2 {
             get {
-                object obj = ResourceManager.GetObject("pi_filled_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("multiplication_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +153,16 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_sign2 {
+            get {
+                object obj = ResourceManager.GetObject("plus_sign2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap substract_icon {
             get {
                 object obj = ResourceManager.GetObject("substract_icon", resourceCulture);
@@ -153,9 +173,9 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap substract_icon1 {
+        internal static System.Drawing.Bitmap substract_icon2 {
             get {
-                object obj = ResourceManager.GetObject("substract_icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("substract_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -118,37 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="superscript_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\superscript_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="divide_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\divide_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="substract_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\substract_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="plus_minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus_minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backspace_outline_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backspace_outline_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="substract_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\substract_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="math_raiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\math_raiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="multiplication_symbol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\multiplication_symbol2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backspace_outline_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backspace_outline_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="plus_sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pi_filled_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pi_filled_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="multiplication_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\multiplication_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="equal_sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\equal_sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus_minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="equal_symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\equal_symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="math_raiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\math_raiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="multiplication_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\multiplication_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_sign2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_sign2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="equal_symbol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\equal_symbol2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="divide_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\divide_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superscript_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superscript_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="substract_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\substract_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
