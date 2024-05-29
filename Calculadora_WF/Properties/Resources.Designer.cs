@@ -89,7 +89,14 @@ namespace Calculadora_WF.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+        internal static System.Drawing.Bitmap timer_icon2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("timer_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
@@ -186,6 +193,16 @@ namespace Calculadora_WF.Properties {
         internal static System.Drawing.Bitmap superscript_icon {
             get {
                 object obj = ResourceManager.GetObject("superscript_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap timer_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("timer_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

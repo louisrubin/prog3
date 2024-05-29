@@ -109,48 +109,6 @@
             tableLayoutBotones.Size = new Size(344, 311);
             tableLayoutBotones.TabIndex = 0;
 
-            tableLayoutBotones.ColumnCount = 4;
-            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutBotones.Controls.Add(button24, 0, 5);
-            tableLayoutBotones.Controls.Add(button19, 3, 2);
-            tableLayoutBotones.Controls.Add(button23, 2, 5);
-            tableLayoutBotones.Controls.Add(button13, 2, 0);
-            tableLayoutBotones.Controls.Add(button22, 3, 5);
-            tableLayoutBotones.Controls.Add(button18, 3, 1);
-            tableLayoutBotones.Controls.Add(button21, 3, 4);
-            tableLayoutBotones.Controls.Add(button6, 2, 3);
-            tableLayoutBotones.Controls.Add(button20, 3, 3);
-            tableLayoutBotones.Controls.Add(button17, 2, 1);
-            tableLayoutBotones.Controls.Add(button12, 1, 0);
-            tableLayoutBotones.Controls.Add(button16, 1, 1);
-            tableLayoutBotones.Controls.Add(button1, 0, 4);
-            tableLayoutBotones.Controls.Add(button15, 0, 1);
-            tableLayoutBotones.Controls.Add(button5, 1, 3);
-            tableLayoutBotones.Controls.Add(button2, 1, 4);
-            tableLayoutBotones.Controls.Add(button9, 2, 2);
-            tableLayoutBotones.Controls.Add(button4, 0, 3);
-            tableLayoutBotones.Controls.Add(button8, 1, 2);
-            tableLayoutBotones.Controls.Add(button3, 2, 4);
-            tableLayoutBotones.Controls.Add(button7, 0, 2);
-            tableLayoutBotones.Controls.Add(button10, 1, 5);
-            tableLayoutBotones.Controls.Add(button11, 0, 0);
-            tableLayoutBotones.Controls.Add(button14, 3, 0);
-            tableLayoutBotones.Dock = DockStyle.Bottom;
-            tableLayoutBotones.Location = new Point(0, 190);
-            tableLayoutBotones.Name = "tableLayoutBotones";
-            tableLayoutBotones.Padding = new Padding(2);
-            tableLayoutBotones.RowCount = 6;
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutBotones.Size = new Size(344, 311);
-            tableLayoutBotones.TabIndex = 0;
             // 
             // button1
             // 
@@ -282,6 +240,7 @@
             // 
             button22.Name = "button22";
             button22.Image = Properties.Resources.equal_symbol2;
+            button22.BackColor = Color.DarkCyan;
             // 
             // button23
             // 
