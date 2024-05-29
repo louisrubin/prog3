@@ -5,13 +5,14 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Calculadora_WF
 {
     public abstract class Boton : Button
     {
         private static byte tableIndexStat = 0;
+
         public Boton(ref byte number)
         {
             if (number == 10)
@@ -27,7 +28,7 @@ namespace Calculadora_WF
             //this.Text = number.ToString();
             //this.Name = $"button{number.ToString()}";
             this.BackColor = Color.DimGray;
-            this.ForeColor = SystemColors.Control;
+            this.ForeColor = Color.Black;
             this.Font = new System.Drawing.Font("Segoe UI", 18F, FontStyle.Bold);
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
@@ -42,17 +43,18 @@ namespace Calculadora_WF
             this.Margin = new Padding(0);
 
             number++;
-            //nroButton = number;
 
         }
         public Boton(ref byte number, string text)
         {
-
+            /*
+             *      BOTONES NO NUMERICOS
+             */
             this.Text = text;
             this.Name = $"button{number}";
             this.BackColor = Color.DimGray;
-            this.ForeColor = SystemColors.Control;
-            this.Font = new System.Drawing.Font("Segoe UI", 20F, FontStyle.Bold);
+            this.ForeColor = Color.Black;
+            this.Font = new System.Drawing.Font("Segoe UI", 18F, FontStyle.Bold);
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
 
@@ -66,7 +68,6 @@ namespace Calculadora_WF
             this.Margin = new Padding(0);
 
             number++;
-            //tableIndexStat++;   // static +1
 
         }
     }

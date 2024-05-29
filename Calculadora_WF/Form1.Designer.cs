@@ -31,6 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            SuspendLayout();
 
             button1 = new NumberButton(ref nroBoton);
             button2 = new NumberButton(ref nroBoton);
@@ -45,17 +46,17 @@
             button11 = new NumberButton(ref nroBoton, "%");
             button12 = new NumberButton(ref nroBoton, "CE");
             button13 = new NumberButton(ref nroBoton, "C");
-            button14 = new NumberButton(ref nroBoton, "<-");
-            button15 = new NumberButton(ref nroBoton, "1.x");
-            button16 = new NumberButton(ref nroBoton, "x^2");
-            button17 = new NumberButton(ref nroBoton, "√a");
+            button14 = new NumberButton(ref nroBoton, "");
+            button15 = new NumberButton(ref nroBoton, "");
+            button16 = new NumberButton(ref nroBoton, "");
+            button17 = new NumberButton(ref nroBoton, "");
             button18 = new NumberButton(ref nroBoton, "÷");
             button19 = new NumberButton(ref nroBoton, "×");
             button20 = new NumberButton(ref nroBoton, "-");
             button21 = new NumberButton(ref nroBoton, "+");
             button22 = new NumberButton(ref nroBoton, "=");
             button23 = new NumberButton(ref nroBoton, ",");
-            button24 = new NumberButton(ref nroBoton, "+/-");
+            button24 = new NumberButton(ref nroBoton, "");
             SuspendLayout();
             // 
             // button1
@@ -115,6 +116,7 @@
             // button14
             // 
             button14.Location = new Point(261, 183);
+            button14.Image = Properties.Resources.backspace_outline_icon;
             // 
             // button15
             // 
@@ -123,14 +125,18 @@
             // button16
             // 
             button16.Location = new Point(89, 236);
+            button16.Image = Properties.Resources.superscript_icon;
             // 
-            // button17
+            // button17     // raiz 2
             // 
-            button17.Location = new Point(175, 236);
+            button17.Location = new Point(175, 236); 
+            button17.Image = Properties.Resources.math_raiz;
             // 
             // button18
             // 
             button18.Location = new Point(261, 236);
+            button18.Font = new System.Drawing.Font("Segoe UI", 23F);
+            button18.TextAlign = ContentAlignment.TopCenter;
             // 
             // button19     / / /
             // 
@@ -159,6 +165,7 @@
             // button24      +/-
             // 
             button24.Location = new Point(3, 448);
+            button24.Image = Properties.Resources.plus_minus_icon;
             // 
             // Form1
             // 
