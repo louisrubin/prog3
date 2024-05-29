@@ -7,7 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private static byte nroBoton = 0;
+        private static byte nroBoton = 1;
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -32,30 +32,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 
-            button1 = new NumberButton(++nroBoton);
-            button2 = new NumberButton(++nroBoton);
-            button3 = new NumberButton(++nroBoton);
-            button4 = new NumberButton(++nroBoton);
-            button5 = new NumberButton(++nroBoton);
-            button6 = new NumberButton(++nroBoton);
-            button7 = new NumberButton(++nroBoton);
-            button8 = new NumberButton(++nroBoton);
-            button9 = new NumberButton(++nroBoton);
-            button10 = new NumberButton(++nroBoton);
-            button11 = new NumberButton(++nroBoton, "%");
-            button12 = new NumberButton(++nroBoton, "CE");
-            button13 = new NumberButton(++nroBoton, "C");
-            button14 = new NumberButton(++nroBoton, "<-");
-            button15 = new NumberButton(++nroBoton, "1.x");
-            button16 = new NumberButton(++nroBoton, "x^2");
-            button17 = new NumberButton(++nroBoton, "2R/x");
-            button18 = new NumberButton(++nroBoton, "/");
-            button19 = new NumberButton(++nroBoton, "x");
-            button20 = new NumberButton(++nroBoton, "-");
-            button21 = new NumberButton(++nroBoton, "+");
-            button22 = new NumberButton(++nroBoton, "=");
-            button23 = new NumberButton(++nroBoton, ",");
-            button24 = new NumberButton(++nroBoton, "+/-");
+            button1 = new NumberButton(ref nroBoton);
+            button2 = new NumberButton(ref nroBoton);
+            button3 = new NumberButton(ref nroBoton);
+            button4 = new NumberButton(ref nroBoton);
+            button5 = new NumberButton(ref nroBoton);
+            button6 = new NumberButton(ref nroBoton);
+            button7 = new NumberButton(ref nroBoton);
+            button8 = new NumberButton(ref nroBoton);
+            button9 = new NumberButton(ref nroBoton);
+            button10 = new NumberButton(ref nroBoton);
+            button11 = new NumberButton(ref nroBoton, "%");
+            button12 = new NumberButton(ref nroBoton, "CE");
+            button13 = new NumberButton(ref nroBoton, "C");
+            button14 = new NumberButton(ref nroBoton, "<-");
+            button15 = new NumberButton(ref nroBoton, "1.x");
+            button16 = new NumberButton(ref nroBoton, "x^2");
+            button17 = new NumberButton(ref nroBoton, "√a");
+            button18 = new NumberButton(ref nroBoton, "÷");
+            button19 = new NumberButton(ref nroBoton, "×");
+            button20 = new NumberButton(ref nroBoton, "-");
+            button21 = new NumberButton(ref nroBoton, "+");
+            button22 = new NumberButton(ref nroBoton, "=");
+            button23 = new NumberButton(ref nroBoton, ",");
+            button24 = new NumberButton(ref nroBoton, "+/-");
             SuspendLayout();
             // 
             // button1
@@ -102,57 +102,61 @@
             // 
             // button11
             // 
-            button11.Location = new Point(3, 162);
+            button11.Location = new Point(3, 183);
             // 
             // button12
             // 
-            button12.Location = new Point(89, 162);
+            button12.Location = new Point(89, 183);
             // 
             // button13
             // 
-            button13.Location = new Point(176, 162);
+            button13.Location = new Point(175, 183);
             // 
             // button14
             // 
-            button14.Location = new Point(257, 162);
+            button14.Location = new Point(261, 183);
             // 
             // button15
             // 
-            button15.Location = new Point(8, 227);
+            button15.Location = new Point(3, 236);
             // 
             // button16
             // 
-            button16.Location = new Point(94, 229);
+            button16.Location = new Point(89, 236);
             // 
             // button17
             // 
-            button17.Location = new Point(180, 229);
+            button17.Location = new Point(175, 236);
             // 
             // button18
             // 
-            button18.Location = new Point(261, 227);
+            button18.Location = new Point(261, 236);
             // 
-            // button19
+            // button19     / / /
             // 
             button19.Location = new Point(261, 289);
             // 
-            // button20
+            // button20     - - -
             // 
             button20.Location = new Point(261, 342);
+            button20.Font = new System.Drawing.Font("Segoe UI", 28F);
+            button20.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button21
+            // button21     + + +
             // 
             button21.Location = new Point(261, 395);
             // 
-            // button22
+            // button22     = = =
             // 
             button22.Location = new Point(261, 448);
+            button22.BackColor = Color.CadetBlue;
+            button22.ForeColor = Color.Black;
             // 
-            // button23
+            // button23     , , ,
             // 
             button23.Location = new Point(175, 448);
             // 
-            // button24
+            // button24      +/-
             // 
             button24.Location = new Point(3, 448);
             // 

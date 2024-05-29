@@ -12,19 +12,19 @@ namespace Calculadora_WF
         private byte numero;
         public byte Numero { get { return numero; } set { } }
 
-        public NumberButton(byte numer) : base(numer)
+        public NumberButton(ref byte number) : base(ref number)
         {
-            if (numer == 10)
+            if (number == 10)
             {
                 this.numero = 0;
             }
             else
             {
-                this.numero = numer;
+                this.numero = number;
             }
 
         }
-        public NumberButton(byte numer, string caract) : base(numer, caract)
+        public NumberButton(ref byte numer, string caract) : base(ref numer, caract)
         {
             //this.numero = numer;
             //this.Name = $"button{numer}";

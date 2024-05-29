@@ -12,7 +12,7 @@ namespace Calculadora_WF
     public abstract class Boton : Button
     {
         private static byte tableIndexStat = 0;
-        public Boton(byte number)
+        public Boton(ref byte number)
         {
             if (number == 10)
             {
@@ -28,7 +28,7 @@ namespace Calculadora_WF
             //this.Name = $"button{number.ToString()}";
             this.BackColor = Color.DimGray;
             this.ForeColor = SystemColors.Control;
-            this.Font = new System.Drawing.Font("Segoe UI", 20F, FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Segoe UI", 18F, FontStyle.Bold);
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
 
@@ -41,10 +41,11 @@ namespace Calculadora_WF
             this.MinimumSize = new Size(80, 50);    // tamaño minimo
             this.Margin = new Padding(0);
 
+            number++;
             //nroButton = number;
 
         }
-        public Boton(byte number, string text)
+        public Boton(ref byte number, string text)
         {
 
             this.Text = text;
@@ -64,6 +65,7 @@ namespace Calculadora_WF
             this.MinimumSize = new Size(80, 50);    // tamaño minimo
             this.Margin = new Padding(0);
 
+            number++;
             //tableIndexStat++;   // static +1
 
         }
