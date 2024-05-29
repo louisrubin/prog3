@@ -31,7 +31,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            SuspendLayout();
 
             button1 = new NumberButton(ref nroBoton);
             button2 = new NumberButton(ref nroBoton);
@@ -50,11 +49,11 @@
             button15 = new NumberButton(ref nroBoton, "");
             button16 = new NumberButton(ref nroBoton, "");
             button17 = new NumberButton(ref nroBoton, "");
-            button18 = new NumberButton(ref nroBoton, "÷");
-            button19 = new NumberButton(ref nroBoton, "×");
-            button20 = new NumberButton(ref nroBoton, "-");
-            button21 = new NumberButton(ref nroBoton, "+");
-            button22 = new NumberButton(ref nroBoton, "=");
+            button18 = new NumberButton(ref nroBoton, "");
+            button19 = new NumberButton(ref nroBoton, "");
+            button20 = new NumberButton(ref nroBoton, "");
+            button21 = new NumberButton(ref nroBoton, "");
+            button22 = new NumberButton(ref nroBoton, "");
             button23 = new NumberButton(ref nroBoton, ",");
             button24 = new NumberButton(ref nroBoton, "");
             SuspendLayout();
@@ -129,34 +128,36 @@
             // 
             // button17     // raiz 2
             // 
-            button17.Location = new Point(175, 236); 
+            button17.Location = new Point(175, 236);
             button17.Image = Properties.Resources.math_raiz;
             // 
             // button18
             // 
             button18.Location = new Point(261, 236);
-            button18.Font = new System.Drawing.Font("Segoe UI", 23F);
-            button18.TextAlign = ContentAlignment.TopCenter;
+            button18.Image = Properties.Resources.divide_icon;
             // 
             // button19     / / /
             // 
             button19.Location = new Point(261, 289);
+            button19.Image = Properties.Resources.multiplication_symbol2;
             // 
             // button20     - - -
             // 
             button20.Location = new Point(261, 342);
-            button20.Font = new System.Drawing.Font("Segoe UI", 28F);
-            button20.TextAlign = ContentAlignment.TopCenter;
+            button20.Image = Properties.Resources.substract_icon;
             // 
             // button21     + + +
             // 
             button21.Location = new Point(261, 395);
+            button21.Image = Properties.Resources.plus_sign;
             // 
             // button22     = = =
             // 
             button22.Location = new Point(261, 448);
             button22.BackColor = Color.CadetBlue;
-            button22.ForeColor = Color.Black;
+            button22.Image = Properties.Resources.equal_sign;
+            //button22.Image.PhysicalDimension = new Size(25,25);
+            //button22.ForeColor = Color.Black;
             // 
             // button23     , , ,
             // 
@@ -166,13 +167,10 @@
             // 
             button24.Location = new Point(3, 448);
             button24.Image = Properties.Resources.plus_minus_icon;
+
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(344, 501);
             Controls.Add(button24);
             Controls.Add(button23);
             Controls.Add(button22);
@@ -197,6 +195,11 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 64, 64);
+            ClientSize = new Size(344, 501);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(460, 640);
             MinimumSize = new Size(360, 540);

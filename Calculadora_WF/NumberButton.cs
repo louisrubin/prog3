@@ -37,6 +37,12 @@ namespace Calculadora_WF
             //button25.Image = Properties.Resources.plus_minus_icon;
             //button25.Image = Properties.Resources.pi_filled_icon;
             //button25.Image = Properties.Resources.superscript_icon;
+            //button25.Image = Properties.Resources.divide_icon;
+            //button25.Image = Properties.Resources.multiplication_symbol2;
+            //button25.Image = Properties.Resources.substract_icon;
+            //button25.Image = Properties.Resources.plus_sign;
+            //button25.Image = Properties.Resources.equal_sign;
+            //
 
         }
     }
