@@ -32,30 +32,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tableLayoutBotones = new TableLayoutPanel();
-            button24 = new Boton();
-            button19 = new Boton();
-            button23 = new Boton();
-            button13 = new Boton();
-            button22 = new Boton();
-            button18 = new Boton();
-            button21 = new Boton();
-            button6 = new Boton();
-            button20 = new Boton();
-            button17 = new Boton();
-            button12 = new Boton();
-            button16 = new Boton();
+
             button1 = new Boton();
-            button15 = new Boton();
-            button5 = new Boton();
             button2 = new Boton();
-            button9 = new Boton();
-            button4 = new Boton();
-            button8 = new Boton();
             button3 = new Boton();
+            button4 = new Boton();
+            button5 = new Boton();
+            button6 = new Boton();
             button7 = new Boton();
+            button8 = new Boton();
+            button9 = new Boton();
             button10 = new Boton();
             button11 = new Boton();
+            button12 = new Boton();
+            button13 = new Boton();
             button14 = new Boton();
+            button15 = new Boton();
+            button16 = new Boton();
+            button17 = new Boton();
+            button18 = new Boton();
+            button19 = new Boton();
+            button20 = new Boton();
+            button21 = new Boton();
+            button22 = new Boton();
+            button23 = new Boton();
+            button24 = new Boton();
+
             tableLayoutPanel1 = new TableLayoutPanel();
             textBox1 = new TextBox();
             tableLayoutBotones.SuspendLayout();
@@ -64,6 +66,49 @@
             // 
             // tableLayoutBotones
             // 
+            tableLayoutBotones.ColumnCount = 4;
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.Controls.Add(button24, 0, 5);
+            tableLayoutBotones.Controls.Add(button19, 3, 2);
+            tableLayoutBotones.Controls.Add(button23, 2, 5);
+            tableLayoutBotones.Controls.Add(button13, 2, 0);
+            tableLayoutBotones.Controls.Add(button22, 3, 5);
+            tableLayoutBotones.Controls.Add(button18, 3, 1);
+            tableLayoutBotones.Controls.Add(button21, 3, 4);
+            tableLayoutBotones.Controls.Add(button6, 2, 3);
+            tableLayoutBotones.Controls.Add(button20, 3, 3);
+            tableLayoutBotones.Controls.Add(button17, 2, 1);
+            tableLayoutBotones.Controls.Add(button12, 1, 0);
+            tableLayoutBotones.Controls.Add(button16, 1, 1);
+            tableLayoutBotones.Controls.Add(button1, 0, 4);
+            tableLayoutBotones.Controls.Add(button15, 0, 1);
+            tableLayoutBotones.Controls.Add(button5, 1, 3);
+            tableLayoutBotones.Controls.Add(button2, 1, 4);
+            tableLayoutBotones.Controls.Add(button9, 2, 2);
+            tableLayoutBotones.Controls.Add(button4, 0, 3);
+            tableLayoutBotones.Controls.Add(button8, 1, 2);
+            tableLayoutBotones.Controls.Add(button3, 2, 4);
+            tableLayoutBotones.Controls.Add(button7, 0, 2);
+            tableLayoutBotones.Controls.Add(button10, 1, 5);
+            tableLayoutBotones.Controls.Add(button11, 0, 0);
+            tableLayoutBotones.Controls.Add(button14, 3, 0);
+            tableLayoutBotones.Dock = DockStyle.Bottom;
+            tableLayoutBotones.Location = new Point(0, 190);
+            tableLayoutBotones.Name = "tableLayoutBotones";
+            tableLayoutBotones.Padding = new Padding(2);
+            tableLayoutBotones.RowCount = 6;
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.Size = new Size(344, 311);
+            tableLayoutBotones.TabIndex = 0;
+
             tableLayoutBotones.ColumnCount = 4;
             tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
@@ -173,21 +218,25 @@
             // 
             button11.Name = "button11";
             button11.Text = "%";
+            button11.Click += button11_Click;
             // 
             // button12
             // 
             button12.Name = "button12";
             button12.Text = "CE";
+            button12.Click += button12_Click;
             // 
             // button13
             // 
             button13.Name = "button13";
             button13.Text = "C";
+            button13.Click += button13_Click;
             // 
             // button14
             // 
             button14.Name = "button14";
             button14.Image = Properties.Resources.backspace_outline_icon;
+            button14.Click += button14_Click;
             // 
             // button15
             // 
@@ -276,6 +325,7 @@
             textBox1.TabIndex = 0;
             textBox1.Text = "0";
             textBox1.TextAlign = HorizontalAlignment.Right;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 

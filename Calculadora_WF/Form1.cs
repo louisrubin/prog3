@@ -78,37 +78,73 @@ namespace Calculadora_WF
                 //                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             }
         }
-
-        private void button21_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
-            listOperac += "+";
+            listOperac += "%";
+            textBox1.Text = listOperac;
+        }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            listOperac = "";
             textBox1.Text = listOperac;
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e)
         {
-            listOperac += "-";
+            listOperac = "";
             textBox1.Text = listOperac;
         }
-
-        private void button19_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)
         {
-            listOperac += "x";
+            //      RETROCEDER
+            string resultado = listOperac.Substring(0, listOperac.Length - 1);
+            listOperac = resultado;
             textBox1.Text = listOperac;
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
+            //      / / /
             listOperac += "/";
+            textBox1.Text = listOperac;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //      X X X
+            listOperac += "x";
+            textBox1.Text = listOperac;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            //      - - -
+            listOperac += "-";
+            textBox1.Text = listOperac;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            //      + + +
+            listOperac += "+";
             textBox1.Text = listOperac;
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
+            //      , , ,
             listOperac += ",";
             textBox1.Text = listOperac;
         }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // TEXTO BOX
+            if (textBox1.Text.Length == 0)
+            {
+                textBox1.Text = "0";
+            }
+        }
+
     }
 }
