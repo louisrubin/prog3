@@ -89,14 +89,6 @@ namespace Calculadora_WF.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        internal static System.Drawing.Bitmap timer_icon2
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("timer_icon2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>

@@ -32,33 +32,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tableLayoutBotones = new TableLayoutPanel();
-
-            button1 = new Boton();
-            button2 = new Boton();
-            button3 = new Boton();
-            button4 = new Boton();
-            button5 = new Boton();
+            button24 = new Boton();
+            button19 = new Boton();
+            button23 = new Boton();
+            button13 = new Boton();
+            button22 = new Boton();
+            button18 = new Boton();
+            button21 = new Boton();
             button6 = new Boton();
-            button7 = new Boton();
-            button8 = new Boton();
+            button20 = new Boton();
+            button17 = new Boton();
+            button12 = new Boton();
+            button16 = new Boton();
+            button1 = new Boton();
+            button15 = new Boton();
+            button5 = new Boton();
+            button2 = new Boton();
             button9 = new Boton();
+            button4 = new Boton();
+            button8 = new Boton();
+            button3 = new Boton();
+            button7 = new Boton();
             button10 = new Boton();
             button11 = new Boton();
-            button12 = new Boton();
-            button13 = new Boton();
             button14 = new Boton();
-            button15 = new Boton();
-            button16 = new Boton();
-            button17 = new Boton();
-            button18 = new Boton();
-            button19 = new Boton();
-            button20 = new Boton();
-            button21 = new Boton();
-            button22 = new Boton();
-            button23 = new Boton();
-            button24 = new Boton();
-
             tableLayoutPanel1 = new TableLayoutPanel();
+            label1 = new Label();
             textBox1 = new TextBox();
             tableLayoutBotones.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -108,7 +107,6 @@
             tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutBotones.Size = new Size(344, 311);
             tableLayoutBotones.TabIndex = 0;
-
             // 
             // button1
             // 
@@ -201,16 +199,19 @@
             button15.Name = "button15";
             button15.Text = "1/x";
             button15.Font = new System.Drawing.Font("Segoe UI", 14F, FontStyle.Bold);
+            //button15.Click += button15_Click;
             // 
             // button16
             // 
             button16.Name = "button16";
             button16.Image = Properties.Resources.superscript_icon;
+            //button16.Click += button16_Click;
             // 
             // button17
             // 
             button17.Name = "button17";
             button17.Image = Properties.Resources.math_raiz;
+            //button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -252,22 +253,36 @@
             // 
             button24.Name = "button24";
             button24.Image = Properties.Resources.plus_minus_icon;
+            //button24.Click += button24_Click;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new Padding(0, 30, 0, 0);
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(344, 114);
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanel1.Size = new Size(344, 172);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(15, 30);
+            label1.Margin = new Padding(15, 0, 3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(326, 28);
+            label1.TabIndex = 2;
+            label1.Text = "Estándar";
             // 
             // textBox1
             // 
@@ -276,7 +291,7 @@
             textBox1.Dock = DockStyle.Bottom;
             textBox1.Font = new Font("Segoe UI", 35F, FontStyle.Bold);
             textBox1.ForeColor = SystemColors.Control;
-            textBox1.Location = new Point(12, 48);
+            textBox1.Location = new Point(12, 106);
             textBox1.Margin = new Padding(12, 3, 12, 3);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
@@ -335,5 +350,6 @@
         private Boton button14;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox textBox1;
+        private Label label1;
     }
 }
