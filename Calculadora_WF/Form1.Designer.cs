@@ -31,207 +31,246 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new NumberButton(ref nroBoton);
-            button2 = new NumberButton(ref nroBoton);
-            button3 = new NumberButton(ref nroBoton);
-            button4 = new NumberButton(ref nroBoton);
-            button5 = new NumberButton(ref nroBoton);
-            button6 = new NumberButton(ref nroBoton);
-            button7 = new NumberButton(ref nroBoton);
-            button8 = new NumberButton(ref nroBoton);
-            button9 = new NumberButton(ref nroBoton);
-            button10 = new NumberButton(ref nroBoton);
-            button11 = new NumberButton(ref nroBoton, "%");
-            button12 = new NumberButton(ref nroBoton, "CE");
-            button13 = new NumberButton(ref nroBoton, "C");
-            button14 = new NumberButton(ref nroBoton, "");
-            button15 = new NumberButton(ref nroBoton, "1/x");
-            button16 = new NumberButton(ref nroBoton, "");
-            button17 = new NumberButton(ref nroBoton, "");
-            button18 = new NumberButton(ref nroBoton, "");
-            button19 = new NumberButton(ref nroBoton, "");
-            button20 = new NumberButton(ref nroBoton, "");
-            button21 = new NumberButton(ref nroBoton, "");
-            button22 = new NumberButton(ref nroBoton, "");
-            button23 = new NumberButton(ref nroBoton, ",");
-            button24 = new NumberButton(ref nroBoton, "");
+            tableLayoutBotones = new TableLayoutPanel();
+            button1 = new Boton();
+            button2 = new Boton();
+            button3 = new Boton();
+            button4 = new Boton();
+            button5 = new Boton();
+            button6 = new Boton();
+            button7 = new Boton();
+            button8 = new Boton();
+            button9 = new Boton();
+            button10 = new Boton();
+            button11 = new Boton();
+            button12 = new Boton();
+            button13 = new Boton();
+            button14 = new Boton();
+            button15 = new Boton();
+            button16 = new Boton();
+            button17 = new Boton();
+            button18 = new Boton();
+            button19 = new Boton();
+            button20 = new Boton();
+            button21 = new Boton();
+            button22 = new Boton();
+            button23 = new Boton();
+            button24 = new Boton();
+            tableLayoutBotones.SuspendLayout();
             SuspendLayout();
+            // 
+            // tableLayoutBotones
+            // 
+            tableLayoutBotones.ColumnCount = 4;
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutBotones.Controls.Add(button24, 0, 5);
+            tableLayoutBotones.Controls.Add(button19, 3, 2);
+            tableLayoutBotones.Controls.Add(button23, 2, 5);
+            tableLayoutBotones.Controls.Add(button13, 2, 0);
+            tableLayoutBotones.Controls.Add(button22, 3, 5);
+            tableLayoutBotones.Controls.Add(button18, 3, 1);
+            tableLayoutBotones.Controls.Add(button21, 3, 4);
+            tableLayoutBotones.Controls.Add(button6, 2, 3);
+            tableLayoutBotones.Controls.Add(button20, 3, 3);
+            tableLayoutBotones.Controls.Add(button17, 2, 1);
+            tableLayoutBotones.Controls.Add(button12, 1, 0);
+            tableLayoutBotones.Controls.Add(button16, 1, 1);
+            tableLayoutBotones.Controls.Add(button1, 0, 4);
+            tableLayoutBotones.Controls.Add(button15, 0, 1);
+            tableLayoutBotones.Controls.Add(button5, 1, 3);
+            tableLayoutBotones.Controls.Add(button2, 1, 4);
+            tableLayoutBotones.Controls.Add(button9, 2, 2);
+            tableLayoutBotones.Controls.Add(button4, 0, 3);
+            tableLayoutBotones.Controls.Add(button8, 1, 2);
+            tableLayoutBotones.Controls.Add(button3, 2, 4);
+            tableLayoutBotones.Controls.Add(button7, 0, 2);
+            tableLayoutBotones.Controls.Add(button10, 1, 5);
+            tableLayoutBotones.Controls.Add(button11, 0, 0);
+            tableLayoutBotones.Controls.Add(button14, 3, 0);
+            tableLayoutBotones.Dock = DockStyle.Bottom;
+            tableLayoutBotones.Location = new Point(0, 190);
+            tableLayoutBotones.Name = "tableLayoutBotones";
+            tableLayoutBotones.Padding = new Padding(2);
+            tableLayoutBotones.RowCount = 6;
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.Size = new Size(344, 311);
+            tableLayoutBotones.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(3, 395);
-            button1.Click += button1_Click;
+            //button1.Location = new Point(5, 209);
+            button1.Name = "button1";
+            button1.Text = "1";
             // 
             // button2
             // 
-            button2.Location = new Point(89, 395);
+            
+            button2.Name = "button2";
+            button2.Text = "2";
+
             // 
             // button3
             // 
-            button3.Location = new Point(175, 395);
+            button3.Name = "button3";
+            button3.Text = "3";
             // 
             // button4
             // 
-            button4.Location = new Point(3, 342);
+            button4.Name = "button4";
+            button4.Text = "4";
             // 
             // button5
             // 
-            button5.Location = new Point(89, 342);
+            button5.Name = "button5";
+            button5.Text = "5";
             // 
             // button6
             // 
-            button6.Location = new Point(175, 342);
+            button6.Name = "button6";
+            button6.Text = "6";
             // 
             // button7
             // 
-            button7.Location = new Point(3, 289);
+            button7.Name = "button7";
+            button7.Text = "7";
             // 
             // button8
             // 
-            button8.Location = new Point(89, 289);
+            button8.Name = "button8";
+            button8.Text = "8";
             // 
             // button9
             // 
-            button9.Location = new Point(175, 289);
+            button9.Name = "button9";
+            button9.Text = "9";
             // 
             // button10
             // 
-            button10.Location = new Point(89, 448);
-            button10.Click += button10_Click_1;
+            button10.Name = "button10";
+            button10.Text = "0";
             // 
             // button11
             // 
-            button11.Location = new Point(3, 183);
+            button11.Name = "button11";
+            button11.Text = "%";
             // 
             // button12
             // 
-            button12.Location = new Point(89, 183);
+            button12.Name = "button12";
+            button12.Text = "CE";
             // 
             // button13
             // 
-            button13.Location = new Point(175, 183);
+            button13.Name = "button13";
+            button13.Text = "C";
             // 
             // button14
             // 
-            button14.Location = new Point(261, 183);
+            button14.Name = "button14";
             button14.Image = Properties.Resources.backspace_outline_icon;
             // 
             // button15
             // 
-            button15.Location = new Point(3, 236);
+            button15.Name = "button15";
+            button15.Text = "1/x";
             button15.Font = new System.Drawing.Font("Segoe UI", 14F, FontStyle.Bold);
             // 
             // button16
             // 
-            button16.Location = new Point(89, 236);
+            button16.Name = "button16";
             button16.Image = Properties.Resources.superscript_icon;
             // 
-            // button17     // raiz 2
+            // button17
             // 
-            button17.Location = new Point(175, 236);
+            button17.Name = "button17";
             button17.Image = Properties.Resources.math_raiz;
             // 
-            // button18     / / /
+            // button18
             // 
-            button18.Location = new Point(261, 236);
+            button18.Name = "button18";
             button18.Image = Properties.Resources.divide_icon;
             // 
-            // button19     X X X 
+            // button19
             // 
-            button19.Location = new Point(261, 289);
+            button19.Name = "button19";
             button19.Image = Properties.Resources.multiplication_icon2;
             // 
-            // button20     - - -
+            // button20
             // 
-            button20.Location = new Point(261, 342);
+            button20.Name = "button20";
             button20.Image = Properties.Resources.substract_icon2;
             // 
-            // button21     + + +
+            // button21
             // 
-            button21.Location = new Point(261, 395);
+            button21.Name = "button21";
             button21.Image = Properties.Resources.plus_sign2;
             // 
-            // button22     = = =
+            // button22
             // 
-            button22.Location = new Point(261, 448);
-            button22.BackColor = Color.CadetBlue;
+            button22.Name = "button22";
             button22.Image = Properties.Resources.equal_symbol2;
-            //button22.ForeColor = Color.Black;
             // 
-            // button23     , , ,
+            // button23
             // 
-            button23.Location = new Point(175, 448);
+            button23.Name = "button23";
+            button23.Text = ",";
             // 
-            // button24      +/-
+            // button24
             // 
-            button24.Location = new Point(3, 448);
+            button24.Name = "button24";
             button24.Image = Properties.Resources.plus_minus_icon;
 
             // 
             // Form1
             // 
-            Controls.Add(button24);
-            Controls.Add(button23);
-            Controls.Add(button22);
-            Controls.Add(button21);
-            Controls.Add(button20);
-            Controls.Add(button19);
-            Controls.Add(button18);
-            Controls.Add(button17);
-            Controls.Add(button16);
-            Controls.Add(button15);
-            Controls.Add(button14);
-            Controls.Add(button13);
-            Controls.Add(button12);
-            Controls.Add(button11);
-            Controls.Add(button10);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(344, 501);
+            Controls.Add(tableLayoutBotones);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(460, 640);
             MinimumSize = new Size(360, 540);
             Name = "Form1";
             Text = "Calculadora";
+            tableLayoutBotones.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private NumberButton button1;
-        private NumberButton button2;
-        private NumberButton button3;
-        private NumberButton button4;
-        private NumberButton button5;
-        private NumberButton button6;
-        private NumberButton button7;
-        private NumberButton button8;
-        private NumberButton button9;
-        private NumberButton button10;
-        private NumberButton button11;
-        private NumberButton button12;
-        private NumberButton button13;
-        private NumberButton button14;
-        private NumberButton button15;
-        private NumberButton button16;
-        private NumberButton button17;
-        private NumberButton button18;
-        private NumberButton button19;
-        private NumberButton button20;
-        private NumberButton button21;
-        private NumberButton button22;
-        private NumberButton button23;
-        private NumberButton button24;
+        private TableLayoutPanel tableLayoutBotones;
+        private Boton button24;
+        private Boton button19;
+        private Boton button23;
+        private Boton button13;
+        private Boton button22;
+        private Boton button18;
+        private Boton button21;
+        private Boton button6;
+        private Boton button20;
+        private Boton button17;
+        private Boton button12;
+        private Boton button16;
+        private Boton button1;
+        private Boton button15;
+        private Boton button5;
+        private Boton button2;
+        private Boton button9;
+        private Boton button4;
+        private Boton button8;
+        private Boton button3;
+        private Boton button7;
+        private Boton button10;
+        private Boton button11;
+        private Boton button14;
     }
 }

@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NumberButton.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\multiplication_symbol2.png" />
   </ItemGroup>
 
