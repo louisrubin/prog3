@@ -11,4 +11,8 @@
 
 ---
 ## Avances
-![calculadora](https://github.com/louisrubin/prog3/assets/72027738/99d11a14-4056-42f5-91fd-41ccc35e427c)
+
+<img src="https://github.com/louisrubin/prog3/assets/72027738/99d11a14-4056-42f5-91fd-41ccc35e427c" width="333"/>
+<img src="https://github.com/louisrubin/prog3/assets/72027738/bf8c142a-80be-4e68-8420-bb1b37be90d6" width="333"/>
+
+
