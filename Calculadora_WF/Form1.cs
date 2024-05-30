@@ -4,7 +4,10 @@ namespace Calculadora_WF
     {
         private string listaMostrando = "";
         private double[] listaNumeros = new double[2];
+        private DateTime[] listaTiempos = new DateTime[2];
+
         private char caracterOpera;
+        private bool calcularTiempos = false;   // para que el Equals calcule tiempos
 
         private byte posActual = 0;     // para el ultimo btn +/-
         
@@ -86,8 +89,26 @@ namespace Calculadora_WF
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            listaMostrando += "%";
+
+            if ( ! calcularTiempos)     // false;
+            {
+                calcularTiempos = true;
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+                button11.BackColor = Color.DarkOrange;
+                soloBotonTiempos();
+                return;
+            }
+            calcularTiempos = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
+            button11.BackColor = Color.DimGray;
+
+            listaMostrando = "";
             textBox1.Text = listaMostrando;
+            allButtonsEnabled();
+
+            //textBox1.Text = listaMostrando;
         }
         private void button12_Click(object sender, EventArgs e)
         {
@@ -183,9 +204,20 @@ namespace Calculadora_WF
         private void button22_Click(object sender, EventArgs e)
         {
             //      = = = 
+
+            if (calcularTiempos)    // si calculando tiempos
+            {
+                //listaTiempos[0] = dateTimePicker1.Value;
+                //listaTiempos[1] = dateTimePicker2.Value;
+                TimeSpan dif = dateTimePicker2.Value - dateTimePicker1.Value;
+                textBox1.Text = $"{dif.Days}d, {dif.Hours}h, {dif.Minutes}m";
+                return;
+            }
+            //
+            // SI NO CALCULAMOS TIEMPOS SIGUE NORMAL
+            //
             double resultado = listaNumeros[0];
             listaNumeros[1] = double.Parse(listaMostrando);
-
 
             switch (caracterOpera)
             {
@@ -283,8 +315,10 @@ namespace Calculadora_WF
             button8.Enabled = true;
             button9.Enabled = true;
             button10.Enabled = true;
-            //button11.Enabled = true;
-            button14.Enabled = true;
+            button11.Enabled = true;
+            //button12.Enabled = false;
+            //button13.Enabled = false;
+            //button14.Enabled = true;
             //button15.Enabled = true;
             //button16.Enabled = true;
             //button17.Enabled = true;
@@ -310,6 +344,8 @@ namespace Calculadora_WF
             button9.Enabled = false;
             button10.Enabled = false;
             button11.Enabled = false;
+            //button12.Enabled = false;
+            //button13.Enabled = false;
             button14.Enabled = false;
             button15.Enabled = false;
             button16.Enabled = false;
@@ -319,6 +355,34 @@ namespace Calculadora_WF
             button20.Enabled = false;
             button21.Enabled = false;
             button22.Enabled = false;
+            button23.Enabled = false;
+            button24.Enabled = false;
+        }
+
+        private void soloBotonTiempos()
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            //button11.Enabled = false;
+            button12.Enabled = false;
+            button13.Enabled = false;
+            button14.Enabled = false;
+            button15.Enabled = false;
+            button16.Enabled = false;
+            button17.Enabled = false;
+            button18.Enabled = false;
+            button19.Enabled = false;
+            button20.Enabled = false;
+            button21.Enabled = false;
+            //button22.Enabled = false;     // = = = activado
             button23.Enabled = false;
             button24.Enabled = false;
         }

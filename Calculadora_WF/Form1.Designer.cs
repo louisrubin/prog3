@@ -57,7 +57,8 @@
             button11 = new Boton();
             button14 = new Boton();
             tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
             textBox1 = new TextBox();
             tableLayoutBotones.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -110,14 +111,13 @@
             // 
             // button1
             // 
-            //button1.Location = new Point(5, 209);
+            // button1.Location = new Point(5, 209);
             button1.Name = "button1";
             button1.Text = "1";
             button1.Click += button1_Click;
             // 
             // button2
             // 
-
             button2.Name = "button2";
             button2.Text = "2";
             button2.Click += button2_Click;
@@ -173,8 +173,9 @@
             // button11
             // 
             button11.Name = "button11";
-            button11.Text = "%";
-            button11.Enabled = false;
+            // button11.Text = "%";
+            // button11.Enabled = false;
+            button11.Image = Properties.Resources.timer_icon2;
             button11.Click += button11_Click;
             // 
             // button12
@@ -199,23 +200,23 @@
             // 
             button15.Name = "button15";
             button15.Text = "1/x";
-            button15.Font = new System.Drawing.Font("Segoe UI", 14F, FontStyle.Bold);
+            button15.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             button15.Enabled = false;
-            //button15.Click += button15_Click;
+            // button15.Click += button15_Click;
             // 
             // button16
             // 
             button16.Name = "button16";
             button16.Image = Properties.Resources.superscript_icon;
             button16.Enabled = false;
-            //button16.Click += button16_Click;
+            // button16.Click += button16_Click;
             // 
             // button17
             // 
             button17.Name = "button17";
             button17.Image = Properties.Resources.math_raiz;
             button17.Enabled = false;
-            //button17.Click += button17_Click;
+            // button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -264,30 +265,38 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
+            tableLayoutPanel1.Controls.Add(dateTimePicker2, 0, 1);
+            tableLayoutPanel1.Controls.Add(dateTimePicker1, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new Padding(0, 30, 0, 0);
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 26.0563374F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.71831F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 53.3333321F));
             tableLayoutPanel1.Size = new Size(344, 172);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // label1
+            // dateTimePicker2
             // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(15, 30);
-            label1.Margin = new Padding(15, 0, 3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(326, 28);
-            label1.TabIndex = 2;
-            label1.Text = "Estándar";
+            dateTimePicker2.Dock = DockStyle.Fill;
+            dateTimePicker2.Enabled = false;
+            dateTimePicker2.Location = new Point(3, 70);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(338, 23);
+            dateTimePicker2.TabIndex = 2;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarFont = new Font("Segoe UI", 12F);
+            dateTimePicker1.Dock = DockStyle.Left;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker1.Location = new Point(3, 33);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(338, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -356,5 +365,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox textBox1;
         private Label label1;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
     }
 }
