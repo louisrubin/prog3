@@ -7,7 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private static byte nroBoton = 1;
+        //private static byte nroBoton = 1;
 
         /// <summary>
         ///  Clean up any resources being used.

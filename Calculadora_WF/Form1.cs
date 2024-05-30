@@ -159,13 +159,11 @@ namespace Calculadora_WF
 
             if (listaMostrando.Length == 0)
             {
-                listaNumeros[0] = 0;
-                listaMostrando += "0";
-            } else
-            {
-                listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+                listaMostrando += "0";      // cuando está vacio agrega el cero
             }
 
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            
             textBox1.Text = listaMostrando + "/";
 
             caracterOpera = '/';
@@ -177,6 +175,11 @@ namespace Calculadora_WF
         private void button19_Click(object sender, EventArgs e)
         {
             //      X X X
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando += "0";      // cuando está vacio agrega el cero
+            }
+
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             listaMostrando += "x";
             textBox1.Text = listaMostrando;
@@ -190,6 +193,11 @@ namespace Calculadora_WF
         private void button20_Click(object sender, EventArgs e)
         {
             //      - - -
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando += "0";      // cuando está vacio agrega el cero
+            }
+
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             listaMostrando += "-";
             textBox1.Text = listaMostrando;
@@ -203,6 +211,11 @@ namespace Calculadora_WF
         private void button21_Click(object sender, EventArgs e)
         {
             //      + + +
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando += "0";      // cuando está vacio agrega el cero
+            }
+
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             listaMostrando += "+";
             textBox1.Text = listaMostrando;
@@ -227,7 +240,12 @@ namespace Calculadora_WF
             }
             //
             // SI NO CALCULAMOS TIEMPOS SIGUE NORMAL
-            //
+            //  
+            if (listaMostrando == "")       // el 2do termino siempre arranca con 0 para evitar errores
+            {
+                listaMostrando += "0";
+            }
+
             double resultado = listaNumeros[0];
             listaNumeros[1] = double.Parse(listaMostrando);
 
