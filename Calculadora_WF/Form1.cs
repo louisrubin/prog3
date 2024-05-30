@@ -251,7 +251,7 @@ namespace Calculadora_WF
                         listaMostrando = "";
                         textBox1.Text = listaMostrando;
                         posActual = 0;
-                        soloBotonesLimpiar();
+                        //soloBotonesLimpiar();
                         return;
                     }
                     break;
@@ -316,9 +316,9 @@ namespace Calculadora_WF
             button9.Enabled = true;
             button10.Enabled = true;
             button11.Enabled = true;
-            //button12.Enabled = false;
-            //button13.Enabled = false;
-            //button14.Enabled = true;
+            button12.Enabled = true;
+            button13.Enabled = true;
+            button14.Enabled = true;
             //button15.Enabled = true;
             //button16.Enabled = true;
             //button17.Enabled = true;
@@ -344,8 +344,10 @@ namespace Calculadora_WF
             button9.Enabled = false;
             button10.Enabled = false;
             button11.Enabled = false;
-            //button12.Enabled = false;
-            //button13.Enabled = false;
+            //
+            button12.Enabled = true;
+            button13.Enabled = true;
+            //
             button14.Enabled = false;
             button15.Enabled = false;
             button16.Enabled = false;
