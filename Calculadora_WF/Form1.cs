@@ -105,7 +105,17 @@ namespace Calculadora_WF
         private void button14_Click(object sender, EventArgs e)
         {
             //      RETROCEDER
+            if (listaMostrando.Length == 0)     // tiraba error por estar vacio
+            {
+                return;
+            }
+
             string resultado = listaMostrando.Substring(0, listaMostrando.Length - 1);
+
+            if (resultado.Equals("-"))      // si era num -5, quedaba el signo '-'
+            {
+                resultado = listaMostrando.Substring(0, resultado.Length - 1);
+            }
             listaMostrando = resultado;
             textBox1.Text = listaMostrando;
         }
@@ -215,6 +225,7 @@ namespace Calculadora_WF
                     break;
             }
 
+            resultado = Math.Round(resultado, 10);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
 
             if (resultado == 0)
@@ -239,6 +250,11 @@ namespace Calculadora_WF
             //      +/-   +/-   +/-
             // cuando se presiona un boton de operacion se cambia 
             // el signo al numero del 2do termino
+
+            if (listaMostrando.Length == 0)     // tiraba error por estar vacio
+            {
+                return;
+            }
             listaNumeros[posActual] = double.Parse(listaMostrando);
             listaNumeros[posActual] *= (-1);
 
@@ -267,11 +283,11 @@ namespace Calculadora_WF
             button8.Enabled = true;
             button9.Enabled = true;
             button10.Enabled = true;
-            button11.Enabled = true;
+            //button11.Enabled = true;
             button14.Enabled = true;
-            button15.Enabled = true;
-            button16.Enabled = true;
-            button17.Enabled = true;
+            //button15.Enabled = true;
+            //button16.Enabled = true;
+            //button17.Enabled = true;
             button18.Enabled = true;
             button19.Enabled = true;
             button20.Enabled = true;

@@ -174,6 +174,7 @@
             // 
             button11.Name = "button11";
             button11.Text = "%";
+            button11.Enabled = false;
             button11.Click += button11_Click;
             // 
             // button12
@@ -199,18 +200,21 @@
             button15.Name = "button15";
             button15.Text = "1/x";
             button15.Font = new System.Drawing.Font("Segoe UI", 14F, FontStyle.Bold);
+            button15.Enabled = false;
             //button15.Click += button15_Click;
             // 
             // button16
             // 
             button16.Name = "button16";
             button16.Image = Properties.Resources.superscript_icon;
+            button16.Enabled = false;
             //button16.Click += button16_Click;
             // 
             // button17
             // 
             button17.Name = "button17";
             button17.Image = Properties.Resources.math_raiz;
+            button17.Enabled = false;
             //button17.Click += button17_Click;
             // 
             // button18
