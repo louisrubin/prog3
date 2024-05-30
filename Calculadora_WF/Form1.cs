@@ -309,7 +309,10 @@ namespace Calculadora_WF
             listaMostrando = listaNumeros[posActual].ToString();
             textBox1.Text = listaNumeros[posActual].ToString();
         }
+        private void button25_Click(object sender, EventArgs e)
+        {
 
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // TEXTO BOX

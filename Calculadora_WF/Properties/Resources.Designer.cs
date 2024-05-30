@@ -73,6 +73,16 @@ namespace Calculadora_WF.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clock_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("clock_icon_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap divide_icon {
             get {
                 object obj = ResourceManager.GetObject("divide_icon", resourceCulture);
@@ -89,6 +99,7 @@ namespace Calculadora_WF.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
