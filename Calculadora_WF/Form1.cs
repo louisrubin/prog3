@@ -123,6 +123,7 @@ namespace Calculadora_WF
             textBox1.Text = listaMostrando;
             allButtonsEnabled();
         }
+
         private void button14_Click(object sender, EventArgs e)
         {
             //      RETROCEDER
@@ -140,7 +141,18 @@ namespace Calculadora_WF
             listaMostrando = resultado;
             textBox1.Text = listaMostrando;
         }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void button17_Click(object sender, EventArgs e)
+        {
 
+        }
         private void button18_Click(object sender, EventArgs e)
         {
             //      / / /
@@ -210,7 +222,7 @@ namespace Calculadora_WF
                 //listaTiempos[0] = dateTimePicker1.Value;
                 //listaTiempos[1] = dateTimePicker2.Value;
                 TimeSpan dif = dateTimePicker2.Value - dateTimePicker1.Value;
-                textBox1.Text = $"{dif.Days}d, {dif.Hours}h, {dif.Minutes}m";
+                textBox1.Text = $"{dif.Days}d"; //, {dif.Hours}h, {dif.Minutes}m";
                 return;
             }
             //
@@ -274,6 +286,10 @@ namespace Calculadora_WF
         private void button23_Click(object sender, EventArgs e)
         {
             //      , , ,
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando += "0";      // cuando está vacio agrega el cero
+            }
             listaMostrando += ",";
             textBox1.Text = listaMostrando;
         }

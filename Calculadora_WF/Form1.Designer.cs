@@ -202,21 +202,21 @@
             button15.Text = "1/x";
             button15.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             button15.Enabled = false;
-            // button15.Click += button15_Click;
+            button15.Click += button15_Click;
             // 
             // button16
             // 
             button16.Name = "button16";
             button16.Image = Properties.Resources.superscript_icon;
             button16.Enabled = false;
-            // button16.Click += button16_Click;
+            button16.Click += button16_Click;
             // 
             // button17
             // 
             button17.Name = "button17";
             button17.Image = Properties.Resources.math_raiz;
             button17.Enabled = false;
-            // button17.Click += button17_Click;
+            button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -281,7 +281,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Dock = DockStyle.Fill;
+            dateTimePicker2.Dock = DockStyle.Left;
             dateTimePicker2.Enabled = false;
             dateTimePicker2.Location = new Point(3, 70);
             dateTimePicker2.Name = "dateTimePicker2";
