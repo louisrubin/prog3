@@ -242,6 +242,7 @@
             button22.Name = "button22";
             button22.Image = Properties.Resources.equal_symbol2;
             button22.BackColor = Color.DarkCyan;
+            button22.Click += button22_Click;
             // 
             // button23
             // 
@@ -253,7 +254,7 @@
             // 
             button24.Name = "button24";
             button24.Image = Properties.Resources.plus_minus_icon;
-            //button24.Click += button24_Click;
+            button24.Click += button24_Click;
             // 
             // tableLayoutPanel1
             // 

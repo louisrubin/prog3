@@ -2,69 +2,75 @@ namespace Calculadora_WF
 {
     public partial class Form1 : Form
     {
-        private string listOperac = "";
+        private string listaMostrando = "";
+        private double[] listaNumeros = new double[2];
+        private char caracterOpera;
+
+        private byte posActual = 0;     // para el ultimo btn +/-
+        
         public Form1()
         {
             InitializeComponent();
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
-            listOperac += "1";
-            textBox1.Text = listOperac;
+            listaMostrando += "1";
+            textBox1.Text = listaMostrando;
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            listOperac += "2";
-            textBox1.Text = listOperac;
+            listaMostrando += "2";
+            textBox1.Text = listaMostrando;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listOperac += "3";
-            textBox1.Text = listOperac;
+            listaMostrando += "3";
+            textBox1.Text = listaMostrando;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            listOperac += "4";
-            textBox1.Text = listOperac;
+            listaMostrando += "4";
+            textBox1.Text = listaMostrando;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            listOperac += "5";
-            textBox1.Text = listOperac;
+            listaMostrando += "5";
+            textBox1.Text = listaMostrando;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            listOperac += "6";
-            textBox1.Text = listOperac;
+            listaMostrando += "6";
+            textBox1.Text = listaMostrando;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            listOperac += "7";
-            textBox1.Text = listOperac;
+            listaMostrando += "7";
+            textBox1.Text = listaMostrando;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            listOperac += "8";
-            textBox1.Text = listOperac;
+            listaMostrando += "8";
+            textBox1.Text = listaMostrando;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            listOperac += "9";
-            textBox1.Text = listOperac;
+            listaMostrando += "9";
+            textBox1.Text = listaMostrando;
         }
         private void button10_Click(object sender, EventArgs e)
         {
-            listOperac += "0";
-            textBox1.Text = listOperac;
+            listaMostrando += "0";
+            textBox1.Text = listaMostrando;
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -80,61 +86,164 @@ namespace Calculadora_WF
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            listOperac += "%";
-            textBox1.Text = listOperac;
+            listaMostrando += "%";
+            textBox1.Text = listaMostrando;
         }
         private void button12_Click(object sender, EventArgs e)
         {
-            listOperac = "";
-            textBox1.Text = listOperac;
+            listaMostrando = "";
+            textBox1.Text = listaMostrando;
+            allButtonsEnabled();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            listOperac = "";
-            textBox1.Text = listOperac;
+            listaMostrando = "";
+            textBox1.Text = listaMostrando;
+            allButtonsEnabled();
         }
         private void button14_Click(object sender, EventArgs e)
         {
             //      RETROCEDER
-            string resultado = listOperac.Substring(0, listOperac.Length - 1);
-            listOperac = resultado;
-            textBox1.Text = listOperac;
+            string resultado = listaMostrando.Substring(0, listaMostrando.Length - 1);
+            listaMostrando = resultado;
+            textBox1.Text = listaMostrando;
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
             //      / / /
-            listOperac += "/";
-            textBox1.Text = listOperac;
+
+            if (listaMostrando.Length == 0)
+            {
+                listaNumeros[0] = 0;
+                listaMostrando += "0";
+            } else
+            {
+                listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            }
+
+            textBox1.Text = listaMostrando + "/";
+
+            caracterOpera = '/';
+            listaMostrando = "";
+
+            posActual = 1;
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
             //      X X X
-            listOperac += "x";
-            textBox1.Text = listOperac;
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            listaMostrando += "x";
+            textBox1.Text = listaMostrando;
+
+            caracterOpera = 'x';
+            listaMostrando = "";
+
+            posActual = 1;
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             //      - - -
-            listOperac += "-";
-            textBox1.Text = listOperac;
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            listaMostrando += "-";
+            textBox1.Text = listaMostrando;
+
+            caracterOpera = '-';
+            listaMostrando = "";
+
+            posActual = 1;
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
             //      + + +
-            listOperac += "+";
-            textBox1.Text = listOperac;
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            listaMostrando += "+";
+            textBox1.Text = listaMostrando;
+
+            caracterOpera = '+';
+            listaMostrando = "";
+
+            posActual = 1;
         }
 
+        private void button22_Click(object sender, EventArgs e)
+        {
+            //      = = = 
+            double resultado = listaNumeros[0];
+            listaNumeros[1] = double.Parse(listaMostrando);
+
+
+            switch (caracterOpera)
+            {
+                case 'x':
+                    resultado *= listaNumeros[1];
+                    break;
+
+
+                case '-':
+                    resultado -= listaNumeros[1];
+                    break;
+
+
+                case '+':
+                    resultado += listaNumeros[1];
+                    break;
+
+
+                case '/':
+                    resultado /= listaNumeros[1];
+
+                    if (double.IsInfinity(resultado))       // si es infinito
+                    {
+                        listaMostrando = "";
+                        textBox1.Text = "No div. por 0.";
+                        posActual = 0;
+                        soloBotonesLimpiar();
+                        return;
+                    } else if (double.IsNaN(resultado))     // si es NaN
+                    {
+                        listaMostrando = "";
+                        textBox1.Text = listaMostrando;
+                        posActual = 0;
+                        soloBotonesLimpiar();
+                        return;
+                    }
+                    break;
+            }
+
+            listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
+
+            if (resultado == 0)
+            {
+                listaMostrando = "";
+            }
+            else
+            {
+                listaMostrando = resultado.ToString();
+            }
+            posActual = 0;
+            textBox1.Text = listaMostrando;
+        }
         private void button23_Click(object sender, EventArgs e)
         {
             //      , , ,
-            listOperac += ",";
-            textBox1.Text = listOperac;
+            listaMostrando += ",";
+            textBox1.Text = listaMostrando;
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            //      +/-   +/-   +/-
+            // cuando se presiona un boton de operacion se cambia 
+            // el signo al numero del 2do termino
+            listaNumeros[posActual] = double.Parse(listaMostrando);
+            listaNumeros[posActual] *= (-1);
+
+            listaMostrando = listaNumeros[posActual].ToString();
+            textBox1.Text = listaNumeros[posActual].ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -146,5 +255,56 @@ namespace Calculadora_WF
             }
         }
 
+        private void allButtonsEnabled()
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+            button10.Enabled = true;
+            button11.Enabled = true;
+            button14.Enabled = true;
+            button15.Enabled = true;
+            button16.Enabled = true;
+            button17.Enabled = true;
+            button18.Enabled = true;
+            button19.Enabled = true;
+            button20.Enabled = true;
+            button21.Enabled = true;
+            button22.Enabled = true;
+            button23.Enabled = true;
+            button24.Enabled = true;
+        }
+
+        private void soloBotonesLimpiar()
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            button11.Enabled = false;
+            button14.Enabled = false;
+            button15.Enabled = false;
+            button16.Enabled = false;
+            button17.Enabled = false;
+            button18.Enabled = false;
+            button19.Enabled = false;
+            button20.Enabled = false;
+            button21.Enabled = false;
+            button22.Enabled = false;
+            button23.Enabled = false;
+            button24.Enabled = false;
+        }
     }
 }
