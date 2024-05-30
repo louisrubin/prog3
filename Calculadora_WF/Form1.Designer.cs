@@ -285,11 +285,11 @@
             // 
             textBox1.BackColor = Color.FromArgb(64, 64, 64);
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Dock = DockStyle.Top;
+            textBox1.Dock = DockStyle.Bottom;
             textBox1.Font = new Font("Segoe UI", 35F, FontStyle.Bold);
             textBox1.ForeColor = SystemColors.Control;
-            textBox1.Location = new Point(12, 84);
-            textBox1.Margin = new Padding(12, 3, 12, 3);
+            textBox1.Location = new Point(12, 111);
+            textBox1.Margin = new Padding(12, 3, 12, 12);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(320, 63);
@@ -305,8 +305,8 @@
             tableLayoutPanel1.Controls.Add(textBox1, 0, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
-            tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 4);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 22.04301F));
@@ -343,6 +343,20 @@
             label1.TabIndex = 0;
             label1.Text = "Estándar";
             // 
+            // button25
+            // 
+            button25.BackColor = Color.DimGray;
+            button25.Dock = DockStyle.Right;
+            button25.FlatAppearance.BorderSize = 0;
+            button25.FlatStyle = FlatStyle.Flat;
+            button25.Image = Properties.Resources.clock_icon_24;
+            button25.Location = new Point(295, 3);
+            button25.Name = "button25";
+            button25.Size = new Size(40, 29);
+            button25.TabIndex = 1;
+            button25.UseVisualStyleBackColor = false;
+            button25.Click += button25_Click;
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 2;
@@ -361,7 +375,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Dock = DockStyle.Left;
+            dateTimePicker1.Dock = DockStyle.Fill;
             dateTimePicker1.Enabled = false;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(3, 3);
@@ -371,7 +385,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Dock = DockStyle.Left;
+            dateTimePicker2.Dock = DockStyle.Fill;
             dateTimePicker2.Enabled = false;
             dateTimePicker2.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Location = new Point(172, 3);
