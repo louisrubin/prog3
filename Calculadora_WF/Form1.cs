@@ -1,5 +1,8 @@
 namespace Calculadora_WF
 {
+    //
+    //  github: https://github.com/louisrubin/prog3/tree/main/Calculadora_WF
+    //
     public partial class Form1 : Form
     {
         private string listaMostrando = "";
@@ -136,22 +139,50 @@ namespace Calculadora_WF
 
             if (resultado.Equals("-"))      // si era num -5, quedaba el signo '-'
             {
-                resultado = listaMostrando.Substring(0, resultado.Length - 1);
+                //resultado = listaMostrando.Substring(0, resultado.Length - 1)
+                listaMostrando = "";
             }
             listaMostrando = resultado;
             textBox1.Text = listaMostrando;
         }
         private void button15_Click(object sender, EventArgs e)
         {
-            
+            //      1/x   1/x   1/x
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando = "0";
+            }
+            listaNumeros[0] = 1;
+            listaNumeros[1] = double.Parse(listaMostrando);
+            caracterOpera = '/';
+            restultadoOperacion();      // metodo que usa el boton igual '='
+            button12.Focus();   // seleccionaba todo el texto del textbox y nqv
         }
         private void button16_Click(object sender, EventArgs e)
         {
-            
+            //      x^2   x^2   x^2
+            if (listaMostrando.Length == 0)
+            {
+                return;
+            }
+            double resultado;
+            listaNumeros[0] = double.Parse(listaMostrando);
+            resultado = Math.Round(Math.Pow(listaNumeros[0], 2),9); // potenciacion, 9 decimales
+            listaMostrando = resultado.ToString();          
+            textBox1.Text = listaMostrando;
         }
         private void button17_Click(object sender, EventArgs e)
         {
-
+            //    Raiz   Raiz   Raiz 
+            if (listaMostrando.Length == 0)
+            {
+                return;
+            }
+            double resultado;
+            listaNumeros[0] = double.Parse(listaMostrando);
+            resultado = Math.Round(Math.Sqrt(listaNumeros[0]), 9); // raiz cuadrada con 9 decimales
+            listaMostrando = resultado.ToString();
+            textBox1.Text = listaMostrando;
         }
         private void button18_Click(object sender, EventArgs e)
         {
@@ -229,11 +260,52 @@ namespace Calculadora_WF
         private void button22_Click(object sender, EventArgs e)
         {
             //      = = = 
+            restultadoOperacion();  // tuve que mover el código a un metodo
+                                    // para usarlo en otros botones tmb
+        }
+        private void button23_Click(object sender, EventArgs e)
+        {
+            //      , , ,
+            if (listaMostrando.Length == 0)
+            {
+                listaMostrando += "0";      // cuando está vacio agrega el cero
+            }
+            listaMostrando += ",";
+            textBox1.Text = listaMostrando;
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            //      +/-   +/-   +/-
+            // cuando se presiona un boton de operacion se cambia 
+            // el signo al numero del 2do termino
 
+            if (listaMostrando.Length == 0)     // tiraba error por estar vacio
+            {
+                return;
+            }
+            listaNumeros[posActual] = double.Parse(listaMostrando);
+            listaNumeros[posActual] *= (-1);
+
+            listaMostrando = listaNumeros[posActual].ToString();
+            textBox1.Text = listaNumeros[posActual].ToString();
+        }
+        private void button25_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // TEXTO BOX
+            if (textBox1.Text.Length == 0)
+            {
+                textBox1.Text = "0";
+            }
+        }
+
+        private void restultadoOperacion()
+        {
             if (calcularTiempos)    // si calculando tiempos
             {
-                //listaTiempos[0] = dateTimePicker1.Value;
-                //listaTiempos[1] = dateTimePicker2.Value;
                 TimeSpan dif = dateTimePicker2.Value - dateTimePicker1.Value;
                 textBox1.Text = $"{dif.Days}d"; //, {dif.Hours}h, {dif.Minutes}m";
                 return;
@@ -276,7 +348,8 @@ namespace Calculadora_WF
                         posActual = 0;
                         soloBotonesLimpiar();
                         return;
-                    } else if (double.IsNaN(resultado))     // si es NaN
+                    }
+                    else if (double.IsNaN(resultado))     // si es NaN
                     {
                         listaMostrando = "";
                         textBox1.Text = listaMostrando;
@@ -287,7 +360,7 @@ namespace Calculadora_WF
                     break;
             }
 
-            resultado = Math.Round(resultado, 10);       // dejando solo x decimales
+            resultado = Math.Round(resultado, 9);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
 
             if (resultado == 0)
@@ -300,44 +373,6 @@ namespace Calculadora_WF
             }
             posActual = 0;
             textBox1.Text = listaMostrando;
-        }
-        private void button23_Click(object sender, EventArgs e)
-        {
-            //      , , ,
-            if (listaMostrando.Length == 0)
-            {
-                listaMostrando += "0";      // cuando está vacio agrega el cero
-            }
-            listaMostrando += ",";
-            textBox1.Text = listaMostrando;
-        }
-        private void button24_Click(object sender, EventArgs e)
-        {
-            //      +/-   +/-   +/-
-            // cuando se presiona un boton de operacion se cambia 
-            // el signo al numero del 2do termino
-
-            if (listaMostrando.Length == 0)     // tiraba error por estar vacio
-            {
-                return;
-            }
-            listaNumeros[posActual] = double.Parse(listaMostrando);
-            listaNumeros[posActual] *= (-1);
-
-            listaMostrando = listaNumeros[posActual].ToString();
-            textBox1.Text = listaNumeros[posActual].ToString();
-        }
-        private void button25_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            // TEXTO BOX
-            if (textBox1.Text.Length == 0)
-            {
-                textBox1.Text = "0";
-            }
         }
 
         private void allButtonsEnabled()
@@ -356,9 +391,9 @@ namespace Calculadora_WF
             button12.Enabled = true;
             button13.Enabled = true;
             button14.Enabled = true;
-            //button15.Enabled = true;
-            //button16.Enabled = true;
-            //button17.Enabled = true;
+            button15.Enabled = true;
+            button16.Enabled = true;
+            button17.Enabled = true;
             button18.Enabled = true;
             button19.Enabled = true;
             button20.Enabled = true;
