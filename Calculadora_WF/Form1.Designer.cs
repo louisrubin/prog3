@@ -305,10 +305,10 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.0051537F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.5663357F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.7043467F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.72416F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.781496F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.3667431F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5713511F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.28041F));
             tableLayoutPanel1.Size = new Size(344, 186);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -364,7 +364,7 @@
             tableLayoutPanel3.Controls.Add(dateTimePicker1, 0, 0);
             tableLayoutPanel3.Controls.Add(dateTimePicker2, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Top;
-            tableLayoutPanel3.Location = new Point(3, 38);
+            tableLayoutPanel3.Location = new Point(3, 41);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -398,10 +398,10 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(2, 73);
+            label2.Location = new Point(2, 75);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(340, 27);
+            label2.Size = new Size(340, 25);
             label2.TabIndex = 3;
             label2.TextAlign = ContentAlignment.BottomRight;
             // 

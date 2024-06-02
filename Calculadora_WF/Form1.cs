@@ -1,4 +1,4 @@
-namespace Calculadora_WF
+Ôªønamespace Calculadora_WF
 {
     //
     //  github: https://github.com/louisrubin/prog3/tree/main/Calculadora_WF
@@ -24,12 +24,14 @@ namespace Calculadora_WF
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "1";
             textBox1.Text = listaMostrando;
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "2";
             textBox1.Text = listaMostrando;
@@ -37,6 +39,7 @@ namespace Calculadora_WF
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "3";
             textBox1.Text = listaMostrando;
@@ -44,6 +47,7 @@ namespace Calculadora_WF
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "4";
             textBox1.Text = listaMostrando;
@@ -51,6 +55,7 @@ namespace Calculadora_WF
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "5";
             textBox1.Text = listaMostrando;
@@ -58,6 +63,7 @@ namespace Calculadora_WF
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "6";
             textBox1.Text = listaMostrando;
@@ -65,6 +71,7 @@ namespace Calculadora_WF
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "7";
             textBox1.Text = listaMostrando;
@@ -72,6 +79,7 @@ namespace Calculadora_WF
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "8";
             textBox1.Text = listaMostrando;
@@ -79,12 +87,14 @@ namespace Calculadora_WF
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "9";
             textBox1.Text = listaMostrando;
         }
         private void button10_Click(object sender, EventArgs e)
         {
+            if (!volverPosCero) listaMostrando = "";
             volverPosCero = true;
             listaMostrando += "0";
             textBox1.Text = listaMostrando;
@@ -94,7 +104,7 @@ namespace Calculadora_WF
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                // Establecer el tamaÒo deseado (por ejemplo, 800x600)
+                // Establecer el tama√±o deseado (por ejemplo, 800x600)
                 //this.WindowState = FormWindowState.Normal;
                 this.Size = new Size(360, 540);
                 //this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
@@ -111,8 +121,8 @@ namespace Calculadora_WF
                 dateTimePicker2.Enabled = true;
                 button11.BackColor = Color.DarkOrange;
                 soloBotonTiempos();
-                textBox1.Text = "";
-                label2.Text = "";
+                //textBox1.Text = "";
+                //label2.Text = "";
                 return;
             }
             calcularTiempos = false;
@@ -121,7 +131,7 @@ namespace Calculadora_WF
             button11.BackColor = Color.DimGray;
 
             listaMostrando = "";
-            textBox1.Text = listaMostrando;
+            textBox1.Text = "";
             allButtonsEnabled();
 
             label2.Text = "";
@@ -129,7 +139,7 @@ namespace Calculadora_WF
         private void button12_Click(object sender, EventArgs e)
         {
             //      CE   CE   CE
-            //volverPosCero = true;
+            if (!volverPosCero) label2.Text = "";
             listaMostrando = "";
             textBox1.Text = listaMostrando;
             allButtonsEnabled();
@@ -140,9 +150,9 @@ namespace Calculadora_WF
             //      C   C   C
             volverPosCero = true;
             listaMostrando = "";
-            listaNumeros[0] = 0;    // limpias los 2 tÈrminos = 0
+            listaNumeros[0] = 0;    // limpias los 2 t√©rminos = 0
             listaNumeros[1] = 0;
-            posActual = 0;          // vuelve al 1er tÈrmino de la operac
+            posActual = 0;          // vuelve al 1er t√©rmino de la operac
 
             label2.Text = "";
 
@@ -175,11 +185,30 @@ namespace Calculadora_WF
             {
                 listaMostrando = "0";
             }
+            string text_operac;
             listaNumeros[0] = 1;
-            listaNumeros[1] = double.Parse(listaMostrando);
-            caracterOpera = '/';
-            restultadoOperacion();      // metodo que usa el boton igual '='
-            button12.Focus();   // seleccionaba todo el texto del textbox y nqv
+            //listaNumeros[1] = double.Parse(listaMostrando);   // NO
+
+            double resultado = listaNumeros[0] / double.Parse(listaMostrando);
+            generarStringOperac('/', out text_operac);      // metodo genera string
+            label2.Text = text_operac;
+            if (divisionHasError(resultado)) return;        // hubo error en la division
+
+            resultado = Math.Round(resultado, 9);       // dejando solo x decimales
+            listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
+
+            if (resultado == 0)
+            {
+                listaMostrando = "";
+            }
+            else
+            {
+                listaMostrando = resultado.ToString();
+            }
+            posActual = 0;
+            textBox1.Text = listaMostrando;
+            volverPosCero = false;
+
         }
         private void button16_Click(object sender, EventArgs e)
         {
@@ -188,11 +217,15 @@ namespace Calculadora_WF
             {
                 return;
             }
-            double resultado;
+
             listaNumeros[0] = double.Parse(listaMostrando);
-            resultado = Math.Round(Math.Pow(listaNumeros[0], 2),9); // potenciacion, 9 decimales
-            listaMostrando = resultado.ToString();          
+            double resultado = Math.Round(Math.Pow(listaNumeros[0], 2),9); // potenciacion, 9 decimales
+
+            listaMostrando = resultado.ToString();
+            label2.Text = $"({listaNumeros[0]}) ^ 2 =";
             textBox1.Text = listaMostrando;
+            posActual = 0;
+            volverPosCero = false;
         }
         private void button17_Click(object sender, EventArgs e)
         {
@@ -201,11 +234,23 @@ namespace Calculadora_WF
             {
                 return;
             }
-            double resultado;
+
             listaNumeros[0] = double.Parse(listaMostrando);
-            resultado = Math.Round(Math.Sqrt(listaNumeros[0]), 9); // raiz cuadrada con 9 decimales
+            double resultado = Math.Round(Math.Sqrt(listaNumeros[0]), 9); // raiz cuadrada con 9 decimales
+
             listaMostrando = resultado.ToString();
+            label2.Text = $"‚àö({listaNumeros[0]}) =";
+
+            if (double.IsNaN(resultado))     // si es NaN
+            {
+                textBox1.Text = "NaN";
+                soloBotonesLimpiar();
+                return;            // SI hubo error
+            }
+
             textBox1.Text = listaMostrando;
+            posActual = 0;
+            volverPosCero = false;
         }
         private void button18_Click(object sender, EventArgs e)
         {
@@ -213,10 +258,10 @@ namespace Calculadora_WF
 
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando est· vacio agrega el cero
+                listaMostrando += "0";      // cuando est√° vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer tÈrmino de la operacion
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer t√©rmino de la operacion
             
             label2.Text = listaMostrando + " / ";
 
@@ -232,10 +277,10 @@ namespace Calculadora_WF
             //      X X X
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando est· vacio agrega el cero
+                listaMostrando += "0";      // cuando est√° vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer tÈrmino de la operacion
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer t√©rmino de la operacion
             textBox1.Text = listaMostrando;
 
             label2.Text = listaMostrando + " x ";
@@ -252,10 +297,10 @@ namespace Calculadora_WF
             //      - - -
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando est· vacio agrega el cero
+                listaMostrando += "0";      // cuando est√° vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer tÈrmino de la operacion
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer t√©rmino de la operacion
             label2.Text = listaMostrando + " - ";
 
             caracterOpera = '-';
@@ -270,10 +315,10 @@ namespace Calculadora_WF
             //      + + +
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando est· vacio agrega el cero
+                listaMostrando += "0";      // cuando est√° vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer tÈrmino de la operacion
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer t√©rmino de la operacion
             //listaMostrando += "+";
             //textBox1.Text = listaMostrando;
             label2.Text = listaMostrando + " + ";
@@ -288,7 +333,7 @@ namespace Calculadora_WF
         private void button22_Click(object sender, EventArgs e)
         {
             //      = = = 
-            restultadoOperacion();  // tuve que mover el cÛdigo a un metodo
+            restultadoOperacion();  // tuve que mover el c√≥digo a un metodo
                                     // para usarlo en otros botones tmb
         }
         private void button23_Click(object sender, EventArgs e)
@@ -296,7 +341,7 @@ namespace Calculadora_WF
             //      , , ,
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando est· vacio agrega el cero
+                listaMostrando += "0";      // cuando est√° vacio agrega el cero
             }
 
             if (listaMostrando.Contains(','))
@@ -345,24 +390,28 @@ namespace Calculadora_WF
             if (calcularTiempos)    // si calculando tiempos
             {
                 TimeSpan dif = dateTimePicker2.Value - dateTimePicker1.Value;
-                textBox1.Text = $"{dif.Days}d"; //, {dif.Hours}h, {dif.Minutes}m";
+                label2.Text = "";
+                textBox1.Text = $"{dif.Days}d";
                 return;
             }
             //
             // SI NO CALCULAMOS TIEMPOS SIGUE NORMAL
             //  
+            if (caracterOpera == '?')
+            {
+                volverPosCero = false;
+                return;
+            }
+
             if (listaMostrando == "")       // el 2do termino siempre arranca con 0 para evitar errores
             {
                 listaMostrando += "0";
             }
 
+            listaNumeros[posActual] = double.Parse(listaMostrando);  // hasta no presionar otra tecla de oper, sigue en posic=0;
             double resultado = listaNumeros[0];
-            if (volverPosCero)
-            {   // si calculÛ y sigue el mismo num en pantalla operar· con el valor anterior
-                listaNumeros[1] = double.Parse(listaMostrando);     
-            } 
-             
-            string text_operac = "";        // string que se mostrar· en label 2
+
+            string text_operac = "";        // string que se mostrar√° en label 2
 
             switch (caracterOpera)
             {
@@ -394,27 +443,11 @@ namespace Calculadora_WF
                     generarStringOperac('/', out text_operac);      // metodo genera string
 
                     label2.Text = text_operac;
-                    //label2.Text = $"{listaNumeros[0]} / {listaNumeros[1]} =";
 
                     resultado /= listaNumeros[1];
 
-                    if (double.IsInfinity(resultado))       // si es infinito
-                    {
-                        listaMostrando = "";
-                        textBox1.Text = "No div. por 0.";
-                        posActual = 0;
-                        label2.Text = "";
-                        soloBotonesLimpiar();
-                        return;
-                    }
-                    else if (double.IsNaN(resultado))     // si es NaN
-                    {
-                        listaMostrando = "";
-                        textBox1.Text = listaMostrando;
-                        posActual = 0;
-                        label2.Text = "";
-                        return;
-                    }
+                    if (divisionHasError(resultado)) return;        // hubo error en la division
+                    
                     break;
             }
 
@@ -432,6 +465,30 @@ namespace Calculadora_WF
             posActual = 0;
             textBox1.Text = listaMostrando;
             volverPosCero = false;
+        }
+        private bool divisionHasError(double resultado)
+        {
+            if (double.IsInfinity(resultado))       // si es infinito
+            {
+                listaMostrando = "";
+                textBox1.Text = "No div. por 0.";
+                posActual = 0;
+                label2.Text = "";
+                soloBotonesLimpiar();
+                button12.Focus();   // seleccionaba todo el texto del textbox y nqv
+                return true;            // SI hubo error
+            }
+            else if (double.IsNaN(resultado))     // si es NaN
+            {
+                listaMostrando = "";
+                textBox1.Text = "Entrada inv√°lida.";
+                textBox1.Text = listaMostrando;
+                posActual = 0;
+                label2.Text = "";
+                soloBotonesLimpiar();
+                return true;            // SI hubo error
+            }
+            return false;       // NO hubo errores
         }
 
         private void generarStringOperac(char caract, out string variable)
