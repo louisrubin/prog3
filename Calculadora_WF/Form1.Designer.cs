@@ -64,6 +64,7 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
+            label2 = new Label();
             tableLayoutBotones.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -296,16 +297,18 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 2);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
+            tableLayoutPanel1.Controls.Add(label2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 22.04301F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5053768F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 55.91398F));
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.0051537F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.5663357F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.7043467F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.72416F));
             tableLayoutPanel1.Size = new Size(344, 186);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -322,7 +325,9 @@
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(338, 35);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(338, 28);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -331,7 +336,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(3, 3);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(94, 28);
             label1.TabIndex = 0;
@@ -346,7 +351,7 @@
             button25.Image = Properties.Resources.clock_icon_24;
             button25.Location = new Point(295, 3);
             button25.Name = "button25";
-            button25.Size = new Size(40, 29);
+            button25.Size = new Size(40, 22);
             button25.TabIndex = 1;
             button25.UseVisualStyleBackColor = false;
             button25.Click += button25_Click;
@@ -359,12 +364,12 @@
             tableLayoutPanel3.Controls.Add(dateTimePicker1, 0, 0);
             tableLayoutPanel3.Controls.Add(dateTimePicker2, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Top;
-            tableLayoutPanel3.Location = new Point(3, 44);
+            tableLayoutPanel3.Location = new Point(3, 38);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(338, 34);
+            tableLayoutPanel3.Size = new Size(338, 27);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // dateTimePicker1
@@ -386,6 +391,19 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(163, 23);
             dateTimePicker2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlDark;
+            label2.Location = new Point(2, 73);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(340, 27);
+            label2.TabIndex = 3;
+            label2.TextAlign = ContentAlignment.BottomRight;
             // 
             // Form1
             // 
@@ -445,5 +463,6 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Label label1;
+        private Label label2;
     }
 }
