@@ -355,13 +355,14 @@
             tableLayoutPanelHeader.Controls.Add(button25, 1, 0);
             tableLayoutPanelHeader.Dock = DockStyle.Top;
             tableLayoutPanelHeader.Location = new Point(3, 3);
+            tableLayoutPanelHeader.Margin = new Padding(3, 3, 5, 3);
             tableLayoutPanelHeader.Name = "tableLayoutPanelHeader";
             tableLayoutPanelHeader.RowCount = 1;
             tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelHeader.Size = new Size(338, 28);
+            tableLayoutPanelHeader.Size = new Size(336, 28);
             tableLayoutPanelHeader.TabIndex = 1;
             // 
             // labelEstandar
@@ -435,6 +436,7 @@
             panelHistorial.Name = "panelHistorial";
             panelHistorial.Size = new Size(344, 311);
             panelHistorial.TabIndex = 2;
+            panelHistorial.Visible = false;
             // 
             // Form1
             // 

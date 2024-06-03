@@ -190,7 +190,7 @@
             //listaNumeros[1] = double.Parse(listaMostrando);   // NO
 
             double resultado = listaNumeros[0] / double.Parse(listaMostrando);
-            generarStringOperac('/', out text_operac);      // metodo genera string
+            generarStringOperac('/', out text_operac, listaMostrando);      // metodo genera string
             label_calculos.Text = text_operac;
             if (divisionHasError(resultado)) return;        // hubo error en la division
 
@@ -376,11 +376,12 @@
             //      HISTORIAL 
             if ( ! panelHistorial.Visible)
             {
+                button25.BackColor = Color.Thistle;
                 panelHistorial.Visible = true;
                 panelHistorial.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
-                //panel1.Focus();
                 return;
             }
+            button25.BackColor = Color.DimGray;
             panelHistorial.Visible = false;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -498,17 +499,22 @@
             return false;       // NO hubo errores
         }
 
-        private void generarStringOperac(char caract, out string variable)
+        private void generarStringOperac(char caract, out string variable, string numExtra = null)
         {
             // genera el string de cada opera. ej: '(-85) + 10 ='
             string stringReturn = "";
+            double segundoNum = listaNumeros[1];
+
+            // este if es para el boton 1/x el cual esperaba siempre la posicion 2 del array, en este caso queda vacío
+            if (numExtra != null) segundoNum = double.Parse(numExtra);
+
             if (listaNumeros[0] < 0) stringReturn += $"({listaNumeros[0]})";
             else stringReturn += $"{listaNumeros[0]}";
 
             stringReturn += $" {caract} ";
 
-            if (listaNumeros[1] < 0) stringReturn += $"({listaNumeros[1]}) =";
-            else stringReturn += $"{listaNumeros[1]} =";
+            if (segundoNum < 0) stringReturn += $"({segundoNum}) =";
+            else stringReturn += $"{segundoNum} =";
 
             variable = stringReturn;
         }
@@ -538,6 +544,7 @@
             button22.Enabled = true;
             button23.Enabled = true;
             button24.Enabled = true;
+            button25.Enabled = true;
         }
 
         private void soloBotonesLimpiar()
@@ -568,6 +575,7 @@
             button22.Enabled = false;
             button23.Enabled = false;
             button24.Enabled = false;
+            button25.Enabled = false;
         }
 
         private void soloBotonTiempos()
@@ -596,6 +604,7 @@
             //button22.Enabled = false;     // = = = activado
             button23.Enabled = false;
             button24.Enabled = false;
+            button25.Enabled = false;
         }
 
         private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
