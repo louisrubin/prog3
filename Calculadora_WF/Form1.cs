@@ -418,9 +418,8 @@
         {
             listCalculos.Clear();
             panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO
-                                                        // MENSAJE 'no hay historial todavía.'
-            panelHistorialCalculos.Controls.Add(
-            new tableLayoutPanelResul("No hay historial todavía."));
+            // MENSAJE 'no hay historial todavía.'
+            panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("No hay historial todavía."));
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

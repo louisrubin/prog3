@@ -123,151 +123,389 @@
             tableLayoutBotones.Size = new Size(344, 311);
             tableLayoutBotones.TabIndex = 0;
             // 
-            // button1
+            // button24
             // 
-            button1.Name = "button1";
-            button1.Text = "1";
-            button1.Click += button1_Click;
+            button24.BackColor = Color.DimGray;
+            button24.Dock = DockStyle.Fill;
+            button24.FlatStyle = FlatStyle.Flat;
+            button24.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button24.ForeColor = Color.Black;
+            button24.Image = Properties.Resources.plus_minus_icon;
+            button24.Location = new Point(4, 259);
+            button24.Margin = new Padding(2);
+            button24.Name = "button24";
+            button24.Size = new Size(81, 48);
+            button24.TabIndex = 1;
+            button24.UseVisualStyleBackColor = false;
+            button24.Click += button24_Click;
             // 
-            // button2
+            // button19
             // 
-            button2.Name = "button2";
-            button2.Text = "2";
-            button2.Click += button2_Click;
+            button19.BackColor = Color.DimGray;
+            button19.Dock = DockStyle.Fill;
+            button19.FlatStyle = FlatStyle.Flat;
+            button19.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button19.ForeColor = Color.Black;
+            button19.Image = Properties.Resources.multiplication_icon2;
+            button19.Location = new Point(259, 106);
+            button19.Margin = new Padding(2);
+            button19.Name = "button19";
+            button19.Size = new Size(81, 47);
+            button19.TabIndex = 2;
+            button19.UseVisualStyleBackColor = false;
+            button19.Click += button19_Click;
             // 
-            // button3
+            // button23
             // 
-            button3.Name = "button3";
-            button3.Text = "3";
-            button3.Click += button3_Click;
+            button23.BackColor = Color.DimGray;
+            button23.Dock = DockStyle.Fill;
+            button23.FlatStyle = FlatStyle.Flat;
+            button23.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button23.ForeColor = Color.Black;
+            button23.Location = new Point(174, 259);
+            button23.Margin = new Padding(2);
+            button23.Name = "button23";
+            button23.Size = new Size(81, 48);
+            button23.TabIndex = 3;
+            button23.Text = ",";
+            button23.UseVisualStyleBackColor = false;
+            button23.Click += button23_Click;
             // 
-            // button4
+            // button13
             // 
-            button4.Name = "button4";
-            button4.Text = "4";
-            button4.Click += button4_Click;
+            button13.BackColor = Color.DimGray;
+            button13.Dock = DockStyle.Fill;
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button13.ForeColor = Color.Black;
+            button13.Location = new Point(174, 4);
+            button13.Margin = new Padding(2);
+            button13.Name = "button13";
+            button13.Size = new Size(81, 47);
+            button13.TabIndex = 4;
+            button13.Text = "C";
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             // 
-            // button5
+            // button22
             // 
-            button5.Name = "button5";
-            button5.Text = "5";
-            button5.Click += button5_Click;
+            button22.BackColor = Color.DarkCyan;
+            button22.Dock = DockStyle.Fill;
+            button22.FlatStyle = FlatStyle.Flat;
+            button22.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button22.ForeColor = Color.Black;
+            button22.Image = Properties.Resources.equal_symbol2;
+            button22.Location = new Point(259, 259);
+            button22.Margin = new Padding(2);
+            button22.Name = "button22";
+            button22.Size = new Size(81, 48);
+            button22.TabIndex = 5;
+            button22.UseVisualStyleBackColor = false;
+            button22.Click += button22_Click;
+            // 
+            // button18
+            // 
+            button18.BackColor = Color.DimGray;
+            button18.Dock = DockStyle.Fill;
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button18.ForeColor = Color.Black;
+            button18.Image = Properties.Resources.divide_icon;
+            button18.Location = new Point(259, 55);
+            button18.Margin = new Padding(2);
+            button18.Name = "button18";
+            button18.Size = new Size(81, 47);
+            button18.TabIndex = 6;
+            button18.UseVisualStyleBackColor = false;
+            button18.Click += button18_Click;
+            // 
+            // button21
+            // 
+            button21.BackColor = Color.DimGray;
+            button21.Dock = DockStyle.Fill;
+            button21.FlatStyle = FlatStyle.Flat;
+            button21.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button21.ForeColor = Color.Black;
+            button21.Image = Properties.Resources.plus_sign2;
+            button21.Location = new Point(259, 208);
+            button21.Margin = new Padding(2);
+            button21.Name = "button21";
+            button21.Size = new Size(81, 47);
+            button21.TabIndex = 7;
+            button21.UseVisualStyleBackColor = false;
+            button21.Click += button21_Click;
             // 
             // button6
             // 
+            button6.BackColor = Color.DimGray;
+            button6.Dock = DockStyle.Fill;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button6.ForeColor = Color.Black;
+            button6.Location = new Point(174, 157);
+            button6.Margin = new Padding(2);
             button6.Name = "button6";
+            button6.Size = new Size(81, 47);
+            button6.TabIndex = 8;
             button6.Text = "6";
+            button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
-            // button7
+            // button20
             // 
-            button7.Name = "button7";
-            button7.Text = "7";
-            button7.Click += button7_Click;
+            button20.BackColor = Color.DimGray;
+            button20.Dock = DockStyle.Fill;
+            button20.FlatStyle = FlatStyle.Flat;
+            button20.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button20.ForeColor = Color.Black;
+            button20.Image = Properties.Resources.substract_icon2;
+            button20.Location = new Point(259, 157);
+            button20.Margin = new Padding(2);
+            button20.Name = "button20";
+            button20.Size = new Size(81, 47);
+            button20.TabIndex = 9;
+            button20.UseVisualStyleBackColor = false;
+            button20.Click += button20_Click;
             // 
-            // button8
+            // button17
             // 
-            button8.Name = "button8";
-            button8.Text = "8";
-            button8.Click += button8_Click;
+            button17.BackColor = Color.DimGray;
+            button17.Dock = DockStyle.Fill;
+            button17.FlatStyle = FlatStyle.Flat;
+            button17.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button17.ForeColor = Color.Black;
+            button17.Image = Properties.Resources.math_raiz;
+            button17.Location = new Point(174, 55);
+            button17.Margin = new Padding(2);
+            button17.Name = "button17";
+            button17.Size = new Size(81, 47);
+            button17.TabIndex = 10;
+            button17.UseVisualStyleBackColor = false;
+            button17.Click += button17_Click;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.DimGray;
+            button12.Dock = DockStyle.Fill;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button12.ForeColor = Color.Black;
+            button12.Location = new Point(89, 4);
+            button12.Margin = new Padding(2);
+            button12.Name = "button12";
+            button12.Size = new Size(81, 47);
+            button12.TabIndex = 11;
+            button12.Text = "CE";
+            button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
+            // 
+            // button16
+            // 
+            button16.BackColor = Color.DimGray;
+            button16.Dock = DockStyle.Fill;
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button16.ForeColor = Color.Black;
+            button16.Image = Properties.Resources.superscript_icon;
+            button16.Location = new Point(89, 55);
+            button16.Margin = new Padding(2);
+            button16.Name = "button16";
+            button16.Size = new Size(81, 47);
+            button16.TabIndex = 12;
+            button16.UseVisualStyleBackColor = false;
+            button16.Click += button16_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DimGray;
+            button1.Dock = DockStyle.Fill;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(4, 208);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 47);
+            button1.TabIndex = 13;
+            button1.Text = "1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button15
+            // 
+            button15.BackColor = Color.DimGray;
+            button15.Dock = DockStyle.Fill;
+            button15.FlatStyle = FlatStyle.Flat;
+            button15.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            button15.ForeColor = Color.Black;
+            button15.Location = new Point(4, 55);
+            button15.Margin = new Padding(2);
+            button15.Name = "button15";
+            button15.Size = new Size(81, 47);
+            button15.TabIndex = 14;
+            button15.Text = "1/x";
+            button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.DimGray;
+            button5.Dock = DockStyle.Fill;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button5.ForeColor = Color.Black;
+            button5.Location = new Point(89, 157);
+            button5.Margin = new Padding(2);
+            button5.Name = "button5";
+            button5.Size = new Size(81, 47);
+            button5.TabIndex = 15;
+            button5.Text = "5";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.DimGray;
+            button2.Dock = DockStyle.Fill;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(89, 208);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(81, 47);
+            button2.TabIndex = 16;
+            button2.Text = "2";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button9
             // 
+            button9.BackColor = Color.DimGray;
+            button9.Dock = DockStyle.Fill;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button9.ForeColor = Color.Black;
+            button9.Location = new Point(174, 106);
+            button9.Margin = new Padding(2);
             button9.Name = "button9";
+            button9.Size = new Size(81, 47);
+            button9.TabIndex = 17;
             button9.Text = "9";
+            button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.DimGray;
+            button4.Dock = DockStyle.Fill;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button4.ForeColor = Color.Black;
+            button4.Location = new Point(4, 157);
+            button4.Margin = new Padding(2);
+            button4.Name = "button4";
+            button4.Size = new Size(81, 47);
+            button4.TabIndex = 18;
+            button4.Text = "4";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.DimGray;
+            button8.Dock = DockStyle.Fill;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button8.ForeColor = Color.Black;
+            button8.Location = new Point(89, 106);
+            button8.Margin = new Padding(2);
+            button8.Name = "button8";
+            button8.Size = new Size(81, 47);
+            button8.TabIndex = 19;
+            button8.Text = "8";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.DimGray;
+            button3.Dock = DockStyle.Fill;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button3.ForeColor = Color.Black;
+            button3.Location = new Point(174, 208);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(81, 47);
+            button3.TabIndex = 20;
+            button3.Text = "3";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.DimGray;
+            button7.Dock = DockStyle.Fill;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button7.ForeColor = Color.Black;
+            button7.Location = new Point(4, 106);
+            button7.Margin = new Padding(2);
+            button7.Name = "button7";
+            button7.Size = new Size(81, 47);
+            button7.TabIndex = 21;
+            button7.Text = "7";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button10
             // 
+            button10.BackColor = Color.DimGray;
+            button10.Dock = DockStyle.Fill;
+            button10.FlatStyle = FlatStyle.Flat;
+            button10.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button10.ForeColor = Color.Black;
+            button10.Location = new Point(89, 259);
+            button10.Margin = new Padding(2);
             button10.Name = "button10";
+            button10.Size = new Size(81, 48);
+            button10.TabIndex = 22;
             button10.Text = "0";
+            button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
             // 
             // button11
             // 
-            button11.Name = "button11";
+            button11.BackColor = Color.DimGray;
+            button11.Dock = DockStyle.Fill;
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button11.ForeColor = Color.Black;
             button11.Image = Properties.Resources.timer_icon2;
+            button11.Location = new Point(4, 4);
+            button11.Margin = new Padding(2);
+            button11.Name = "button11";
+            button11.Size = new Size(81, 47);
+            button11.TabIndex = 23;
+            button11.UseVisualStyleBackColor = false;
             button11.Click += button11_Click;
-            // 
-            // button12
-            // 
-            button12.Name = "button12";
-            button12.Text = "CE";
-            button12.Click += button12_Click;
-            // 
-            // button13
-            // 
-            button13.Name = "button13";
-            button13.Text = "C";
-            button13.Click += button13_Click;
             // 
             // button14
             // 
-            button14.Name = "button14";
+            button14.BackColor = Color.DimGray;
+            button14.Dock = DockStyle.Fill;
+            button14.FlatStyle = FlatStyle.Flat;
+            button14.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button14.ForeColor = Color.Black;
             button14.Image = Properties.Resources.backspace_outline_icon;
+            button14.Location = new Point(259, 4);
+            button14.Margin = new Padding(2);
+            button14.Name = "button14";
+            button14.Size = new Size(81, 47);
+            button14.TabIndex = 24;
+            button14.UseVisualStyleBackColor = false;
             button14.Click += button14_Click;
-            // 
-            // button15
-            // 
-            button15.Name = "button15";
-            button15.Text = "1/x";
-            button15.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            button15.Click += button15_Click;
-            // 
-            // button16
-            // 
-            button16.Name = "button16";
-            button16.Image = Properties.Resources.superscript_icon;
-            button16.Click += button16_Click;
-            // 
-            // button17
-            // 
-            button17.Name = "button17";
-            button17.Image = Properties.Resources.math_raiz;
-            button17.Click += button17_Click;
-            // 
-            // button18
-            // 
-            button18.Name = "button18";
-            button18.Image = Properties.Resources.divide_icon;
-            button18.Click += button18_Click;
-            // 
-            // button19
-            // 
-            button19.Name = "button19";
-            button19.Image = Properties.Resources.multiplication_icon2;
-            button19.Click += button19_Click;
-            // 
-            // button20
-            // 
-            button20.Name = "button20";
-            button20.Image = Properties.Resources.substract_icon2;
-            button20.Click += button20_Click;
-            // 
-            // button21
-            // 
-            button21.Name = "button21";
-            button21.Image = Properties.Resources.plus_sign2;
-            button21.Click += button21_Click;
-            // 
-            // button22
-            // 
-            button22.Name = "button22";
-            button22.Image = Properties.Resources.equal_symbol2;
-            button22.BackColor = Color.DarkCyan;
-            button22.Click += button22_Click;
-            // 
-            // button23
-            // 
-            button23.Name = "button23";
-            button23.Text = ",";
-            button23.Click += button23_Click;
-            // 
-            // button24
-            // 
-            button24.Name = "button24";
-            button24.Image = Properties.Resources.plus_minus_icon;
-            button24.Click += button24_Click;
             // 
             // button25
             // 
@@ -275,11 +513,14 @@
             button25.Dock = DockStyle.Right;
             button25.FlatAppearance.BorderSize = 0;
             button25.FlatStyle = FlatStyle.Flat;
+            button25.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button25.ForeColor = Color.Black;
             button25.Image = Properties.Resources.clock_icon_24;
-            button25.Location = new Point(295, 3);
+            button25.Location = new Point(294, 2);
+            button25.Margin = new Padding(2);
             button25.Name = "button25";
-            button25.Size = new Size(40, 29);
-            // button25.TabIndex = 1;
+            button25.Size = new Size(40, 24);
+            button25.TabIndex = 25;
             button25.UseVisualStyleBackColor = false;
             button25.Click += button25_Click;
             // 
@@ -295,8 +536,9 @@
             button26.Margin = new Padding(2, 5, 10, 2);
             button26.Name = "button26";
             button26.Size = new Size(40, 33);
-            button26.TabIndex = 0;
+            button26.TabIndex = 52;
             button26.UseVisualStyleBackColor = false;
+            button26.Click += button26_Click;
             // 
             // textBox1
             // 

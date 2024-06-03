@@ -31,10 +31,6 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
-
-            //this.Location = new Point(0, 0);
-            //this.Name = "tableLayoutPanelResults";
-            //this.RowCount = 1;
         }
         
         public tableLayoutPanelResul(string stringOperac)
@@ -50,16 +46,12 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
-
-            //this.Location = new Point(0, 0);
-            //this.Name = "tableLayoutPanelResults";
-            //this.RowCount = 1;
         }
     }
 
     class LabelOperacion : Label
     {
-        // LABEL DEFINIDO PARA EL OPERACION --> '32 + 10 ='
+        // LABEL DEFINIDO PARA LA EXPRESION --> '32 + 10 ='
         public LabelOperacion(string operacion)
         {
             this.AutoSize = true;
@@ -69,14 +61,11 @@ namespace Calculadora_WF
             this.Size = new Size(331, 23);
             this.Text = operacion;
             this.TextAlign = ContentAlignment.MiddleRight;
-            //this.TabIndex = 0;
-            //this.Location = new Point(3, 0);
-            //this.Name = "label3";
         }
     }
     class LabelResultado : Label
     {
-        // LABEL DEFINIDO QUE IMPRIME SOLO EL RESULTADO --> '42'
+        // LABEL DEFINIDO QUE IMPRIME EL RESULTADO --> '42'
         public LabelResultado(double resultado)
         {
             this.AutoSize = true;
@@ -85,10 +74,6 @@ namespace Calculadora_WF
             this.ForeColor = SystemColors.Control;
             this.Size = new Size(34, 46);
             this.Text = resultado.ToString();
-            this.TextAlign = ContentAlignment.MiddleRight;
-            //this.Location = new Point(300, 23);
-            //this.Name = "label4";
-            //this.TabIndex = 1;
         }
     }
 }
