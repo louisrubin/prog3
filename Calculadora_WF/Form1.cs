@@ -8,6 +8,7 @@
         private string listaMostrando = "";
         private double[] listaNumeros = new double[2];
         private DateTime[] listaTiempos = new DateTime[2];
+        private List<Calculo> listCalculos = new List<Calculo>();
 
         private char caracterOpera;
         private bool calcularTiempos = false;   // para que el Equals calcule tiempos
@@ -197,6 +198,8 @@
             resultado = Math.Round(resultado, 9);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
 
+            listCalculos.Add(new Calculo(text_operac, resultado));      // se agrega a la lista
+
             if (resultado == 0)
             {
                 listaMostrando = "";
@@ -217,12 +220,18 @@
             {
                 return;
             }
+            string text_operac = "";
 
             listaNumeros[0] = double.Parse(listaMostrando);
             double resultado = Math.Round(Math.Pow(listaNumeros[0], 2), 9); // potenciacion, 9 decimales
 
+
             listaMostrando = resultado.ToString();
-            label_calculos.Text = $"({listaNumeros[0]}) ^ 2 =";
+            text_operac = $"({listaNumeros[0]}) ^ 2 =";
+
+            listCalculos.Add(new Calculo(text_operac, resultado));
+
+            label_calculos.Text = text_operac;
             textBox1.Text = listaMostrando;
             posActual = 0;
             volverPosCero = false;
@@ -234,12 +243,16 @@
             {
                 return;
             }
+            string text_operac = "";
 
             listaNumeros[0] = double.Parse(listaMostrando);
             double resultado = Math.Round(Math.Sqrt(listaNumeros[0]), 9); // raiz cuadrada con 9 decimales
 
             listaMostrando = resultado.ToString();
-            label_calculos.Text = $"√({listaNumeros[0]}) =";
+            text_operac = $"√({listaNumeros[0]}) =";
+            label_calculos.Text = text_operac;
+
+            listCalculos.Add(new Calculo(text_operac, resultado));
 
             if (double.IsNaN(resultado))     // si es NaN
             {
@@ -374,15 +387,40 @@
         private void button25_Click(object sender, EventArgs e)
         {
             //      HISTORIAL 
-            if ( ! panelTodoHistorial.Visible)
+            if (!panelTodoHistorial.Visible)
             {
                 button25.BackColor = Color.Thistle;
                 panelTodoHistorial.Visible = true;
-                panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
+
+                if (listCalculos.Count == 0)
+                {
+                    // MENSAJE 'no hay historial todavía.'
+                    panelHistorialCalculos.Controls.Add(
+                    new tableLayoutPanelResul("No hay historial todavía."));
+
+                }
+                else
+                {
+                    foreach (var item in listCalculos)
+                    {
+                        panelHistorialCalculos.Controls.Add(
+                        new tableLayoutPanelResul(item.expresion, item.resultado));
+                    }
+                }
                 return;
             }
+            panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO AL CERRAR
+
             button25.BackColor = Color.DimGray;
             panelTodoHistorial.Visible = false;
+        }
+        private void button26_Click(object sender, EventArgs e)
+        {
+            listCalculos.Clear();
+            panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO
+                                                        // MENSAJE 'no hay historial todavía.'
+            panelHistorialCalculos.Controls.Add(
+            new tableLayoutPanelResul("No hay historial todavía."));
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -456,6 +494,8 @@
 
             resultado = Math.Round(resultado, 9);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
+
+            listCalculos.Add(new Calculo(text_operac, resultado));
 
             if (resultado == 0)
             {
@@ -602,9 +642,5 @@
             button25.Enabled = false;
         }
 
-        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
