@@ -374,15 +374,15 @@
         private void button25_Click(object sender, EventArgs e)
         {
             //      HISTORIAL 
-            if ( ! panelHistorial.Visible)
+            if ( ! panelTodoHistorial.Visible)
             {
                 button25.BackColor = Color.Thistle;
-                panelHistorial.Visible = true;
-                panelHistorial.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
+                panelTodoHistorial.Visible = true;
+                panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
                 return;
             }
             button25.BackColor = Color.DimGray;
-            panelHistorial.Visible = false;
+            panelTodoHistorial.Visible = false;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -404,12 +404,7 @@
             }
             //
             // SI NO CALCULAMOS TIEMPOS SIGUE NORMAL
-            //  
-            if (caracterOpera == '?')
-            {
-                volverPosCero = false;
-                return;
-            }
+            // 
 
             if (listaMostrando == "")       // el 2do termino siempre arranca con 0 para evitar errores
             {

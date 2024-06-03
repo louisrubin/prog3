@@ -67,13 +67,14 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             tableLayoutPanelBasura = new TableLayoutPanel();
-            panelHistorial = new Panel();
+            panelTodoHistorial = new Panel();
+            panelHistorialCalculos = new Panel();
             tableLayoutBotones.SuspendLayout();
             tableLayoutPanelMitadArriba.SuspendLayout();
             tableLayoutPanelHeader.SuspendLayout();
             tableLayoutPanelTimers.SuspendLayout();
             tableLayoutPanelBasura.SuspendLayout();
-            panelHistorial.SuspendLayout();
+            panelTodoHistorial.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutBotones
@@ -428,15 +429,26 @@
             tableLayoutPanelBasura.Size = new Size(344, 40);
             tableLayoutPanelBasura.TabIndex = 1;
             // 
-            // panelHistorial
+            // panelTodoHistorial
             // 
-            panelHistorial.Controls.Add(tableLayoutPanelBasura);
-            panelHistorial.Dock = DockStyle.Top;
-            panelHistorial.Location = new Point(0, 186);
-            panelHistorial.Name = "panelHistorial";
-            panelHistorial.Size = new Size(344, 311);
-            panelHistorial.TabIndex = 2;
-            panelHistorial.Visible = false;
+            panelTodoHistorial.Controls.Add(panelHistorialCalculos);
+            panelTodoHistorial.Controls.Add(tableLayoutPanelBasura);
+            panelTodoHistorial.Dock = DockStyle.Top;
+            panelTodoHistorial.Location = new Point(0, 186);
+            panelTodoHistorial.Name = "panelTodoHistorial";
+            panelTodoHistorial.Size = new Size(344, 311);
+            panelTodoHistorial.TabIndex = 2;
+            panelTodoHistorial.Visible = false;
+            // 
+            // panelHistorialCalculos
+            // 
+            panelHistorialCalculos.AutoScroll = true;
+            panelHistorialCalculos.BackColor = Color.FromArgb(64, 64, 64);
+            panelHistorialCalculos.Dock = DockStyle.Top;
+            panelHistorialCalculos.Location = new Point(0, 0);
+            panelHistorialCalculos.Name = "panelHistorialCalculos";
+            panelHistorialCalculos.Size = new Size(344, 268);
+            panelHistorialCalculos.TabIndex = 2;
             // 
             // Form1
             // 
@@ -444,7 +456,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(344, 501);
-            Controls.Add(panelHistorial);
+            Controls.Add(panelTodoHistorial);
             Controls.Add(tableLayoutPanelMitadArriba);
             Controls.Add(tableLayoutBotones);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -460,7 +472,7 @@
             tableLayoutPanelHeader.PerformLayout();
             tableLayoutPanelTimers.ResumeLayout(false);
             tableLayoutPanelBasura.ResumeLayout(false);
-            panelHistorial.ResumeLayout(false);
+            panelTodoHistorial.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -502,6 +514,7 @@
         private TableLayoutPanel tableLayoutPanelBasura;
         private Boton button25;
         private Boton button26;
-        private Panel panelHistorial;
+        private Panel panelTodoHistorial;
+        private Panel panelHistorialCalculos;
     }
 }
