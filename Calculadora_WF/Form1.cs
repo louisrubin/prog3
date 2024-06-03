@@ -134,12 +134,12 @@
             textBox1.Text = "";
             allButtonsEnabled();
 
-            label2.Text = "";
+            label_calculos.Text = "";
         }
         private void button12_Click(object sender, EventArgs e)
         {
             //      CE   CE   CE
-            if (!volverPosCero) label2.Text = "";
+            if (!volverPosCero) label_calculos.Text = "";
             listaMostrando = "";
             textBox1.Text = listaMostrando;
             allButtonsEnabled();
@@ -154,7 +154,7 @@
             listaNumeros[1] = 0;
             posActual = 0;          // vuelve al 1er término de la operac
 
-            label2.Text = "";
+            label_calculos.Text = "";
 
             textBox1.Text = listaMostrando;
             allButtonsEnabled();
@@ -191,7 +191,7 @@
 
             double resultado = listaNumeros[0] / double.Parse(listaMostrando);
             generarStringOperac('/', out text_operac);      // metodo genera string
-            label2.Text = text_operac;
+            label_calculos.Text = text_operac;
             if (divisionHasError(resultado)) return;        // hubo error en la division
 
             resultado = Math.Round(resultado, 9);       // dejando solo x decimales
@@ -222,7 +222,7 @@
             double resultado = Math.Round(Math.Pow(listaNumeros[0], 2), 9); // potenciacion, 9 decimales
 
             listaMostrando = resultado.ToString();
-            label2.Text = $"({listaNumeros[0]}) ^ 2 =";
+            label_calculos.Text = $"({listaNumeros[0]}) ^ 2 =";
             textBox1.Text = listaMostrando;
             posActual = 0;
             volverPosCero = false;
@@ -239,7 +239,7 @@
             double resultado = Math.Round(Math.Sqrt(listaNumeros[0]), 9); // raiz cuadrada con 9 decimales
 
             listaMostrando = resultado.ToString();
-            label2.Text = $"√({listaNumeros[0]}) =";
+            label_calculos.Text = $"√({listaNumeros[0]}) =";
 
             if (double.IsNaN(resultado))     // si es NaN
             {
@@ -263,7 +263,7 @@
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
 
-            label2.Text = listaMostrando + " / ";
+            label_calculos.Text = listaMostrando + " / ";
 
             caracterOpera = '/';
             listaMostrando = "";
@@ -283,7 +283,7 @@
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             textBox1.Text = listaMostrando;
 
-            label2.Text = listaMostrando + " x ";
+            label_calculos.Text = listaMostrando + " x ";
 
             caracterOpera = 'x';
             listaMostrando = "";
@@ -301,7 +301,7 @@
             }
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
-            label2.Text = listaMostrando + " - ";
+            label_calculos.Text = listaMostrando + " - ";
 
             caracterOpera = '-';
             listaMostrando = "";
@@ -321,7 +321,7 @@
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             //listaMostrando += "+";
             //textBox1.Text = listaMostrando;
-            label2.Text = listaMostrando + " + ";
+            label_calculos.Text = listaMostrando + " + ";
 
             caracterOpera = '+';
             listaMostrando = "";
@@ -374,14 +374,14 @@
         private void button25_Click(object sender, EventArgs e)
         {
             //      HISTORIAL 
-            if ( ! panel1.Visible)
+            if ( ! panelHistorial.Visible)
             {
-                panel1.Visible = true;
-                panel1.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
+                panelHistorial.Visible = true;
+                panelHistorial.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
                 //panel1.Focus();
                 return;
             }
-            panel1.Visible = false;
+            panelHistorial.Visible = false;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -397,7 +397,7 @@
             if (calcularTiempos)    // si calculando tiempos
             {
                 TimeSpan dif = dateTimePicker2.Value - dateTimePicker1.Value;
-                label2.Text = "";
+                label_calculos.Text = "";
                 textBox1.Text = $"{dif.Days}d";
                 return;
             }
@@ -425,7 +425,7 @@
                 case 'x':
                     generarStringOperac('x', out text_operac);      // metodo genera string
 
-                    label2.Text = text_operac; ;
+                    label_calculos.Text = text_operac; ;
                     resultado *= listaNumeros[1];
                     break;
 
@@ -433,7 +433,7 @@
                 case '-':
                     generarStringOperac('-', out text_operac);      // metodo genera string
 
-                    label2.Text = text_operac; ;
+                    label_calculos.Text = text_operac; ;
                     resultado -= listaNumeros[1];
                     break;
 
@@ -441,7 +441,7 @@
                 case '+':
                     generarStringOperac('+', out text_operac);      // metodo genera string
 
-                    label2.Text = text_operac; ;
+                    label_calculos.Text = text_operac; ;
                     resultado += listaNumeros[1];
                     break;
 
@@ -449,7 +449,7 @@
                 case '/':
                     generarStringOperac('/', out text_operac);      // metodo genera string
 
-                    label2.Text = text_operac;
+                    label_calculos.Text = text_operac;
 
                     resultado /= listaNumeros[1];
 
@@ -480,7 +480,7 @@
                 listaMostrando = "";
                 textBox1.Text = "No div. por 0.";
                 posActual = 0;
-                label2.Text = "";
+                label_calculos.Text = "";
                 soloBotonesLimpiar();
                 button12.Focus();   // seleccionaba todo el texto del textbox y nqv
                 return true;            // SI hubo error
@@ -491,7 +491,7 @@
                 textBox1.Text = "Entrada inválida.";
                 textBox1.Text = listaMostrando;
                 posActual = 0;
-                label2.Text = "";
+                label_calculos.Text = "";
                 soloBotonesLimpiar();
                 return true;            // SI hubo error
             }

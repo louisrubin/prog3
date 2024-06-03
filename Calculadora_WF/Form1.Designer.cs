@@ -56,23 +56,24 @@
             button10 = new Boton();
             button11 = new Boton();
             button14 = new Boton();
-            panel1 = new Panel();
             button25 = new Boton();
             button26 = new Boton();
             textBox1 = new TextBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            label2 = new Label();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            label1 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
+            tableLayoutPanelMitadArriba = new TableLayoutPanel();
+            label_calculos = new Label();
+            tableLayoutPanelHeader = new TableLayoutPanel();
+            labelEstandar = new Label();
+            tableLayoutPanelTimers = new TableLayoutPanel();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             tableLayoutPanelBasura = new TableLayoutPanel();
+            panelHistorial = new Panel();
             tableLayoutBotones.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanelMitadArriba.SuspendLayout();
+            tableLayoutPanelHeader.SuspendLayout();
+            tableLayoutPanelTimers.SuspendLayout();
             tableLayoutPanelBasura.SuspendLayout();
+            panelHistorial.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutBotones
@@ -313,83 +314,83 @@
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelMitadArriba
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 3);
-            tableLayoutPanel1.Controls.Add(label2, 0, 2);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
-            tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.781496F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.3667431F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5713511F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.28041F));
-            tableLayoutPanel1.Size = new Size(344, 186);
-            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanelMitadArriba.ColumnCount = 1;
+            tableLayoutPanelMitadArriba.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelMitadArriba.Controls.Add(textBox1, 0, 3);
+            tableLayoutPanelMitadArriba.Controls.Add(label_calculos, 0, 2);
+            tableLayoutPanelMitadArriba.Controls.Add(tableLayoutPanelHeader, 0, 0);
+            tableLayoutPanelMitadArriba.Controls.Add(tableLayoutPanelTimers, 0, 1);
+            tableLayoutPanelMitadArriba.Dock = DockStyle.Top;
+            tableLayoutPanelMitadArriba.Location = new Point(0, 0);
+            tableLayoutPanelMitadArriba.Name = "tableLayoutPanelMitadArriba";
+            tableLayoutPanelMitadArriba.RowCount = 4;
+            tableLayoutPanelMitadArriba.RowStyles.Add(new RowStyle(SizeType.Percent, 20.781496F));
+            tableLayoutPanelMitadArriba.RowStyles.Add(new RowStyle(SizeType.Percent, 20.3667431F));
+            tableLayoutPanelMitadArriba.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5713511F));
+            tableLayoutPanelMitadArriba.RowStyles.Add(new RowStyle(SizeType.Percent, 45.28041F));
+            tableLayoutPanelMitadArriba.Size = new Size(344, 186);
+            tableLayoutPanelMitadArriba.TabIndex = 1;
             // 
-            // label2
+            // label_calculos
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(2, 75);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(340, 25);
-            label2.TabIndex = 3;
-            label2.TextAlign = ContentAlignment.BottomRight;
+            label_calculos.AutoSize = true;
+            label_calculos.Dock = DockStyle.Fill;
+            label_calculos.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_calculos.ForeColor = SystemColors.ControlDark;
+            label_calculos.Location = new Point(2, 75);
+            label_calculos.Margin = new Padding(2, 0, 2, 0);
+            label_calculos.Name = "label_calculos";
+            label_calculos.Size = new Size(340, 25);
+            label_calculos.TabIndex = 3;
+            label_calculos.TextAlign = ContentAlignment.BottomRight;
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanelHeader
             // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Controls.Add(button25, 1, 0);
-            tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Location = new Point(3, 3);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(338, 28);
-            tableLayoutPanel2.TabIndex = 1;
+            tableLayoutPanelHeader.ColumnCount = 2;
+            tableLayoutPanelHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelHeader.Controls.Add(labelEstandar, 0, 0);
+            tableLayoutPanelHeader.Controls.Add(button25, 1, 0);
+            tableLayoutPanelHeader.Dock = DockStyle.Top;
+            tableLayoutPanelHeader.Location = new Point(3, 3);
+            tableLayoutPanelHeader.Name = "tableLayoutPanelHeader";
+            tableLayoutPanelHeader.RowCount = 1;
+            tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelHeader.Size = new Size(338, 28);
+            tableLayoutPanelHeader.TabIndex = 1;
             // 
-            // label1
+            // labelEstandar
             // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 28);
-            label1.TabIndex = 0;
-            label1.Text = "Estándar";
+            labelEstandar.Anchor = AnchorStyles.Left;
+            labelEstandar.AutoSize = true;
+            labelEstandar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            labelEstandar.ForeColor = SystemColors.Control;
+            labelEstandar.Location = new Point(3, 0);
+            labelEstandar.Name = "labelEstandar";
+            labelEstandar.Size = new Size(94, 28);
+            labelEstandar.TabIndex = 0;
+            labelEstandar.Text = "Estándar";
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanelTimers
             // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(dateTimePicker1, 0, 0);
-            tableLayoutPanel3.Controls.Add(dateTimePicker2, 1, 0);
-            tableLayoutPanel3.Dock = DockStyle.Top;
-            tableLayoutPanel3.Location = new Point(3, 41);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(338, 27);
-            tableLayoutPanel3.TabIndex = 2;
+            tableLayoutPanelTimers.ColumnCount = 2;
+            tableLayoutPanelTimers.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelTimers.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelTimers.Controls.Add(dateTimePicker1, 0, 0);
+            tableLayoutPanelTimers.Controls.Add(dateTimePicker2, 1, 0);
+            tableLayoutPanelTimers.Dock = DockStyle.Top;
+            tableLayoutPanelTimers.Location = new Point(3, 41);
+            tableLayoutPanelTimers.Name = "tableLayoutPanelTimers";
+            tableLayoutPanelTimers.RowCount = 1;
+            tableLayoutPanelTimers.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelTimers.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelTimers.Size = new Size(338, 27);
+            tableLayoutPanelTimers.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -426,13 +427,23 @@
             tableLayoutPanelBasura.Size = new Size(344, 40);
             tableLayoutPanelBasura.TabIndex = 1;
             // 
+            // panelHistorial
+            // 
+            panelHistorial.Controls.Add(tableLayoutPanelBasura);
+            panelHistorial.Dock = DockStyle.Top;
+            panelHistorial.Location = new Point(0, 186);
+            panelHistorial.Name = "panelHistorial";
+            panelHistorial.Size = new Size(344, 311);
+            panelHistorial.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(344, 501);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(panelHistorial);
+            Controls.Add(tableLayoutPanelMitadArriba);
             Controls.Add(tableLayoutBotones);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(460, 640);
@@ -441,12 +452,13 @@
             Text = "Calculadora";
             Resize += Form1_Resize;
             tableLayoutBotones.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanelMitadArriba.ResumeLayout(false);
+            tableLayoutPanelMitadArriba.PerformLayout();
+            tableLayoutPanelHeader.ResumeLayout(false);
+            tableLayoutPanelHeader.PerformLayout();
+            tableLayoutPanelTimers.ResumeLayout(false);
             tableLayoutPanelBasura.ResumeLayout(false);
+            panelHistorial.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -478,16 +490,16 @@
         private Boton button11;
         private Boton button14;
         private TextBox textBox1;
-        private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel tableLayoutPanelMitadArriba;
+        private TableLayoutPanel tableLayoutPanelHeader;
+        private TableLayoutPanel tableLayoutPanelTimers;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
-        private Label label1;
-        private Label label2;
-        private Panel panel1;
+        private Label labelEstandar;
+        private Label label_calculos;
         private TableLayoutPanel tableLayoutPanelBasura;
         private Boton button25;
         private Boton button26;
+        private Panel panelHistorial;
     }
 }

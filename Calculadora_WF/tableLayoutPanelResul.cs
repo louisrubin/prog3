@@ -29,7 +29,7 @@ namespace Calculadora_WF
             tableLayoutPanelResults.Size = new Size(344, 69);
             tableLayoutPanelResults.TabIndex = 0;
          // 
-            // label3
+            // label_operacion
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
@@ -42,7 +42,7 @@ namespace Calculadora_WF
             label3.Text = "32 + 10 =";
             label3.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label4
+            // label_resultado
             // 
             label4.AutoSize = true;
             label4.Dock = DockStyle.Right;
