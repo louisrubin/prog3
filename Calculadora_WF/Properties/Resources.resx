@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="multiplication_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\multiplication_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backspace_outline_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backspace_outline_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,28 +142,28 @@
   <data name="math_raiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\math_raiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="multiplication_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\multiplication_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="plus_sign2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_sign2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="equal_symbol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\equal_symbol2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="divide_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\divide_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="superscript_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\superscript_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="substract_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\substract_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="timer_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timer_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clock_icon_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clock_icon_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="divide_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\divide_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="substract_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\substract_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superscript_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superscript_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

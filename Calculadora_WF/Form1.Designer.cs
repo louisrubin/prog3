@@ -56,19 +56,23 @@
             button10 = new Boton();
             button11 = new Boton();
             button14 = new Boton();
+            panel1 = new Panel();
+            button25 = new Boton();
+            button26 = new Boton();
             textBox1 = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
+            label2 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
-            button25 = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
-            label2 = new Label();
+            tableLayoutPanelBasura = new TableLayoutPanel();
             tableLayoutBotones.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanelBasura.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutBotones
@@ -113,6 +117,7 @@
             tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutBotones.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutBotones.Size = new Size(344, 311);
             tableLayoutBotones.TabIndex = 0;
             // 
@@ -276,6 +281,21 @@
             button25.UseVisualStyleBackColor = false;
             button25.Click += button25_Click;
             // 
+            // button26
+            // 
+            button26.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button26.BackColor = Color.FromArgb(75, 75, 75);
+            button26.FlatStyle = FlatStyle.Flat;
+            button26.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            button26.ForeColor = Color.Black;
+            button26.Image = Properties.Resources.trash_24px;
+            button26.Location = new Point(294, 5);
+            button26.Margin = new Padding(2, 5, 10, 2);
+            button26.Name = "button26";
+            button26.Size = new Size(40, 33);
+            button26.TabIndex = 0;
+            button26.UseVisualStyleBackColor = false;
+            // 
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(64, 64, 64);
@@ -298,9 +318,9 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(textBox1, 0, 3);
+            tableLayoutPanel1.Controls.Add(label2, 0, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
-            tableLayoutPanel1.Controls.Add(label2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -311,6 +331,19 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.28041F));
             tableLayoutPanel1.Size = new Size(344, 186);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlDark;
+            label2.Location = new Point(2, 75);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(340, 25);
+            label2.TabIndex = 3;
+            label2.TextAlign = ContentAlignment.BottomRight;
             // 
             // tableLayoutPanel2
             // 
@@ -341,20 +374,6 @@
             label1.Size = new Size(94, 28);
             label1.TabIndex = 0;
             label1.Text = "Estándar";
-            // 
-            // button25
-            // 
-            button25.BackColor = Color.DimGray;
-            button25.Dock = DockStyle.Right;
-            button25.FlatAppearance.BorderSize = 0;
-            button25.FlatStyle = FlatStyle.Flat;
-            button25.Image = Properties.Resources.clock_icon_24;
-            button25.Location = new Point(295, 3);
-            button25.Name = "button25";
-            button25.Size = new Size(40, 22);
-            button25.TabIndex = 1;
-            button25.UseVisualStyleBackColor = false;
-            button25.Click += button25_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -392,18 +411,20 @@
             dateTimePicker2.Size = new Size(163, 23);
             dateTimePicker2.TabIndex = 1;
             // 
-            // label2
+            // tableLayoutPanelBasura
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(2, 75);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(340, 25);
-            label2.TabIndex = 3;
-            label2.TextAlign = ContentAlignment.BottomRight;
+            tableLayoutPanelBasura.ColumnCount = 1;
+            tableLayoutPanelBasura.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelBasura.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelBasura.Controls.Add(button26, 0, 0);
+            tableLayoutPanelBasura.Dock = DockStyle.Bottom;
+            tableLayoutPanelBasura.Location = new Point(0, 271);
+            tableLayoutPanelBasura.Name = "tableLayoutPanelBasura";
+            tableLayoutPanelBasura.RowCount = 1;
+            tableLayoutPanelBasura.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelBasura.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelBasura.Size = new Size(344, 40);
+            tableLayoutPanelBasura.TabIndex = 1;
             // 
             // Form1
             // 
@@ -425,6 +446,7 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanelBasura.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -455,7 +477,6 @@
         private Boton button10;
         private Boton button11;
         private Boton button14;
-        private Button button25;
         private TextBox textBox1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -464,5 +485,9 @@
         private DateTimePicker dateTimePicker2;
         private Label label1;
         private Label label2;
+        private Panel panel1;
+        private TableLayoutPanel tableLayoutPanelBasura;
+        private Boton button25;
+        private Boton button26;
     }
 }

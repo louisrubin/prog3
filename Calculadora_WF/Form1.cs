@@ -14,7 +14,7 @@
 
         private byte posActual = 0;     // para el ultimo btn +/-
         private bool volverPosCero = true;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -114,7 +114,7 @@
         private void button11_Click(object sender, EventArgs e)
         {
             //      TIEMPOS   TIEMPOS   TIEMPOS
-            if ( ! calcularTiempos)     // false;
+            if (!calcularTiempos)     // false;
             {
                 calcularTiempos = true;
                 dateTimePicker1.Enabled = true;
@@ -219,7 +219,7 @@
             }
 
             listaNumeros[0] = double.Parse(listaMostrando);
-            double resultado = Math.Round(Math.Pow(listaNumeros[0], 2),9); // potenciacion, 9 decimales
+            double resultado = Math.Round(Math.Pow(listaNumeros[0], 2), 9); // potenciacion, 9 decimales
 
             listaMostrando = resultado.ToString();
             label2.Text = $"({listaNumeros[0]}) ^ 2 =";
@@ -262,7 +262,7 @@
             }
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
-            
+
             label2.Text = listaMostrando + " / ";
 
             caracterOpera = '/';
@@ -374,7 +374,14 @@
         private void button25_Click(object sender, EventArgs e)
         {
             //      HISTORIAL 
-
+            if ( ! panel1.Visible)
+            {
+                panel1.Visible = true;
+                panel1.Controls.Add(new tableLayoutPanelResul("10 - 5 = ", "5"));
+                //panel1.Focus();
+                return;
+            }
+            panel1.Visible = false;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -447,7 +454,7 @@
                     resultado /= listaNumeros[1];
 
                     if (divisionHasError(resultado)) return;        // hubo error en la division
-                    
+
                     break;
             }
 
@@ -589,6 +596,11 @@
             //button22.Enabled = false;     // = = = activado
             button23.Enabled = false;
             button24.Enabled = false;
+        }
+
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
