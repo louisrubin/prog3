@@ -38,6 +38,9 @@
             label_TamTotal2 = new Label();
             label_cantArchivos1 = new Label();
             label_cantArchivos2 = new Label();
+            button_generarTxt = new Button();
+            button_leer = new Button();
+            label_creado = new Label();
             panelTextBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,6 +60,7 @@
             textBox_InfoCarpeta.Location = new Point(0, 0);
             textBox_InfoCarpeta.Multiline = true;
             textBox_InfoCarpeta.Name = "textBox_InfoCarpeta";
+            textBox_InfoCarpeta.ReadOnly = true;
             textBox_InfoCarpeta.ScrollBars = ScrollBars.Vertical;
             textBox_InfoCarpeta.Size = new Size(560, 371);
             textBox_InfoCarpeta.TabIndex = 0;
@@ -143,11 +147,50 @@
             label_cantArchivos2.TextAlign = ContentAlignment.TopRight;
             label_cantArchivos2.Visible = false;
             // 
+            // button_generarTxt
+            // 
+            button_generarTxt.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button_generarTxt.BackColor = SystemColors.ControlDark;
+            button_generarTxt.Enabled = false;
+            button_generarTxt.Location = new Point(145, 486);
+            button_generarTxt.Name = "button_generarTxt";
+            button_generarTxt.Size = new Size(90, 31);
+            button_generarTxt.TabIndex = 7;
+            button_generarTxt.Text = "Generar txt";
+            button_generarTxt.UseVisualStyleBackColor = false;
+            button_generarTxt.Click += button_generarTxt_Click;
+            // 
+            // button_leer
+            // 
+            button_leer.BackColor = SystemColors.ControlDark;
+            button_leer.Location = new Point(252, 486);
+            button_leer.Name = "button_leer";
+            button_leer.Size = new Size(90, 31);
+            button_leer.TabIndex = 8;
+            button_leer.Text = "Leer Archivo";
+            button_leer.UseVisualStyleBackColor = false;
+            button_leer.Click += button_leer_Click;
+            // 
+            // label_creado
+            // 
+            label_creado.AutoSize = true;
+            label_creado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label_creado.ForeColor = Color.Green;
+            label_creado.Location = new Point(12, 450);
+            label_creado.Name = "label_creado";
+            label_creado.Size = new Size(180, 15);
+            label_creado.TabIndex = 9;
+            label_creado.Text = "Archivo Creado Correctamente";
+            label_creado.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 536);
+            Controls.Add(label_creado);
+            Controls.Add(button_leer);
+            Controls.Add(button_generarTxt);
             Controls.Add(label_cantArchivos2);
             Controls.Add(label_cantArchivos1);
             Controls.Add(label_TamTotal2);
@@ -179,5 +222,8 @@
         private TextBox textBox_InfoCarpeta;
         private Label label_cantArchivos1;
         private Label label_cantArchivos2;
+        private Button button_generarTxt;
+        private Button button_leer;
+        private Label label_creado;
     }
 }
