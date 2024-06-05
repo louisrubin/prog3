@@ -1,7 +1,13 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 namespace Ejercicio_Archivos
 {
     public partial class Form1 : Form
     {
+        List<Musica> listaMusica = new List<Musica>();
+        string aSerializar;
+
         private string path_txt = @$"C:\Users\{Environment.UserName}\Desktop\reporte_Txt.txt";
         int cantArchivos = 0;
         double totalSizeMBs = 0;
@@ -10,6 +16,14 @@ namespace Ejercicio_Archivos
         public Form1()
         {
             InitializeComponent();
+            listaMusica.Add(new Musica()
+            {
+                Nombre = "Look On",
+                Artista = "John Frusciante",
+                Album = "Inside Of Emptiness"
+            });
+            listaMusica.Add(new Musica("I Miss You", "blink-182", "Blink-182"));
+            listaMusica.Add(new Musica("Stairway to Heaven", "Led Zeppelin", "Led Zeppelin IV"));
         }
 
         private void buttonBuscarCarpeta_Click(object sender, EventArgs e)
@@ -83,14 +97,14 @@ namespace Ejercicio_Archivos
         private void button_generarTxt_Click(object sender, EventArgs e)
         {
             // abro o creo el archivo 
-            if ( ! File.Exists(path_txt))   // si el archivo no existia dice que se creó
+            if (!File.Exists(path_txt))   // si el archivo no existia dice que se creó
             {                               // si ya existia no hace nada
                 label_creado.Visible = true;
             }
 
             FileInfo fileActual = new FileInfo(path_txt);
             FileStream fileStream = fileActual.Open(FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            
+
 
             using (StreamWriter escritor = new StreamWriter(fileStream))
             {
@@ -130,6 +144,62 @@ namespace Ejercicio_Archivos
             }
 
             fileStream.Close();
+        }
+
+        private void button_serializar_Click(object sender, EventArgs e)
+        {
+            if (listaMusica.Count == 0)
+            {
+                textBox_InfoCarpeta.Text = "Lista de música limpia.";
+                return;
+            }
+
+            var opciones = new JsonSerializerOptions { WriteIndented = true };
+
+            aSerializar = JsonSerializer.Serialize(listaMusica, opciones);
+            textBox_InfoCarpeta.Text = aSerializar;
+            button_generarTxt.Enabled = true;
+            listaMusica.Clear();
+
+            label_cantArchivos1.Visible = false;
+            label_cantArchivos2.Visible = false;
+
+            label_TamTotal1.Visible = false;
+            label_TamTotal2.Visible = false;
+        }
+
+        private void button_deserializar_Click(object sender, EventArgs e)
+        {
+            textBox_InfoCarpeta.Text = "";
+            if (aSerializar == null)
+            {
+                textBox_InfoCarpeta.Text = "Primero hay que Serializar.";
+                return;
+            }
+
+            listaMusica = JsonSerializer.Deserialize<List<Musica>>(aSerializar);
+
+            foreach (var item in listaMusica)
+            {
+                textBox_InfoCarpeta.Text += item.ToString() + Environment.NewLine;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxRuta.Text = "";
+            textBox_InfoCarpeta.Text = "";
+
+            label_cantArchivos1.Visible = false;
+            label_cantArchivos2.Visible = false;
+
+            label_TamTotal1.Visible = false;
+            label_TamTotal2.Visible = false;
+
+            label_creado.Visible = false;
+
+            button_generarTxt.Enabled = false;
+            button_generarTxt.BackColor = SystemColors.ControlDark;
         }
     }
 }

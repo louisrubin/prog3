@@ -41,6 +41,9 @@
             button_generarTxt = new Button();
             button_leer = new Button();
             label_creado = new Label();
+            button_serializar = new Button();
+            button_deserializar = new Button();
+            button_limpiar = new Button();
             panelTextBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -102,10 +105,10 @@
             // 
             label_TamTotal1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_TamTotal1.AutoSize = true;
-            label_TamTotal1.Font = new Font("Segoe UI", 10F);
-            label_TamTotal1.Location = new Point(398, 502);
+            label_TamTotal1.Font = new Font("Segoe UI", 9F);
+            label_TamTotal1.Location = new Point(411, 452);
             label_TamTotal1.Name = "label_TamTotal1";
-            label_TamTotal1.Size = new Size(92, 19);
+            label_TamTotal1.Size = new Size(80, 15);
             label_TamTotal1.TabIndex = 4;
             label_TamTotal1.Text = "Tamaño Total:";
             label_TamTotal1.Visible = false;
@@ -114,10 +117,10 @@
             // 
             label_TamTotal2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_TamTotal2.AutoSize = true;
-            label_TamTotal2.Font = new Font("Segoe UI", 12F);
-            label_TamTotal2.Location = new Point(496, 500);
+            label_TamTotal2.Font = new Font("Segoe UI", 10F);
+            label_TamTotal2.Location = new Point(497, 449);
             label_TamTotal2.Name = "label_TamTotal2";
-            label_TamTotal2.Size = new Size(76, 21);
+            label_TamTotal2.Size = new Size(69, 19);
             label_TamTotal2.TabIndex = 5;
             label_TamTotal2.Text = "32,09 MB";
             label_TamTotal2.TextAlign = ContentAlignment.MiddleRight;
@@ -127,10 +130,10 @@
             // 
             label_cantArchivos1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_cantArchivos1.AutoSize = true;
-            label_cantArchivos1.Font = new Font("Segoe UI", 10F);
-            label_cantArchivos1.Location = new Point(398, 472);
+            label_cantArchivos1.Font = new Font("Segoe UI", 9F);
+            label_cantArchivos1.Location = new Point(283, 452);
             label_cantArchivos1.Name = "label_cantArchivos1";
-            label_cantArchivos1.Size = new Size(100, 19);
+            label_cantArchivos1.Size = new Size(87, 15);
             label_cantArchivos1.TabIndex = 6;
             label_cantArchivos1.Text = "Cant. Archivos:";
             label_cantArchivos1.Visible = false;
@@ -138,10 +141,10 @@
             // label_cantArchivos2
             // 
             label_cantArchivos2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label_cantArchivos2.Font = new Font("Segoe UI", 12F);
-            label_cantArchivos2.Location = new Point(515, 468);
+            label_cantArchivos2.Font = new Font("Segoe UI", 10F);
+            label_cantArchivos2.Location = new Point(376, 448);
             label_cantArchivos2.Name = "label_cantArchivos2";
-            label_cantArchivos2.Size = new Size(48, 23);
+            label_cantArchivos2.Size = new Size(29, 19);
             label_cantArchivos2.TabIndex = 0;
             label_cantArchivos2.Text = "18";
             label_cantArchivos2.TextAlign = ContentAlignment.TopRight;
@@ -162,6 +165,7 @@
             // 
             // button_leer
             // 
+            button_leer.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button_leer.BackColor = SystemColors.ControlDark;
             button_leer.Location = new Point(252, 486);
             button_leer.Name = "button_leer";
@@ -173,6 +177,7 @@
             // 
             // label_creado
             // 
+            label_creado.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label_creado.AutoSize = true;
             label_creado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label_creado.ForeColor = Color.Green;
@@ -183,11 +188,47 @@
             label_creado.Text = "Archivo Creado Correctamente";
             label_creado.Visible = false;
             // 
+            // button_serializar
+            // 
+            button_serializar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_serializar.Location = new Point(416, 490);
+            button_serializar.Name = "button_serializar";
+            button_serializar.Size = new Size(75, 23);
+            button_serializar.TabIndex = 10;
+            button_serializar.Text = "Serializar";
+            button_serializar.UseVisualStyleBackColor = true;
+            button_serializar.Click += button_serializar_Click;
+            // 
+            // button_deserializar
+            // 
+            button_deserializar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_deserializar.Location = new Point(497, 490);
+            button_deserializar.Name = "button_deserializar";
+            button_deserializar.Size = new Size(75, 23);
+            button_deserializar.TabIndex = 11;
+            button_deserializar.Text = "Deserializar";
+            button_deserializar.UseVisualStyleBackColor = true;
+            button_deserializar.Click += button_deserializar_Click;
+            // 
+            // button_limpiar
+            // 
+            button_limpiar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button_limpiar.Location = new Point(517, 52);
+            button_limpiar.Name = "button_limpiar";
+            button_limpiar.Size = new Size(55, 23);
+            button_limpiar.TabIndex = 12;
+            button_limpiar.Text = "Limpiar";
+            button_limpiar.UseVisualStyleBackColor = true;
+            button_limpiar.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 536);
+            Controls.Add(button_limpiar);
+            Controls.Add(button_deserializar);
+            Controls.Add(button_serializar);
             Controls.Add(label_creado);
             Controls.Add(button_leer);
             Controls.Add(button_generarTxt);
@@ -200,8 +241,8 @@
             Controls.Add(labelRuta);
             Controls.Add(panelTextBox);
             MaximizeBox = false;
-            MaximumSize = new Size(600, 700);
-            MinimumSize = new Size(459, 542);
+            MaximumSize = new Size(700, 800);
+            MinimumSize = new Size(600, 575);
             Name = "Form1";
             Text = "Ejercicio Archivos - RUBIN";
             panelTextBox.ResumeLayout(false);
@@ -225,5 +266,8 @@
         private Button button_generarTxt;
         private Button button_leer;
         private Label label_creado;
+        private Button button_serializar;
+        private Button button_deserializar;
+        private Button button_limpiar;
     }
 }
