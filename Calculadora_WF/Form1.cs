@@ -4,7 +4,9 @@
     //  github: https://github.com/louisrubin/prog3/tree/main/Calculadora_WF
     //
     public partial class Form1 : Form
-    {
+    {        
+        //public TextBox TexBoxPrincipal { get { return textBox1; } }
+
         private string listaMostrando = "";
         private double[] listaNumeros = new double[2];
         private DateTime[] listaTiempos = new DateTime[2];
@@ -19,9 +21,7 @@
         public Form1()
         {
             InitializeComponent();
-
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -395,16 +395,19 @@
                 if (listCalculos.Count == 0)
                 {
                     // MENSAJE 'no hay historial todavía.'
+                    //panelHistorialCalculos.Controls.Add(result1 = new tableLayoutPanelResul("32 + 5 =", 37));
+                    //result1.Click += result1_Click;
                     panelHistorialCalculos.Controls.Add(
                     new tableLayoutPanelResul("No hay historial todavía."));
 
                 }
                 else
                 {
-                    foreach (var item in listCalculos)
+                    foreach (var calculo in listCalculos)
                     {
                         panelHistorialCalculos.Controls.Add(
-                        new tableLayoutPanelResul(item.expresion, item.resultado));
+                            new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado)
+                        );
                     }
                 }
                 return;
@@ -414,9 +417,14 @@
             button25.BackColor = Color.DimGray;
             panelTodoHistorial.Visible = false;
         }
+
         private void button26_Click(object sender, EventArgs e)
         {
+            // CLEAR HISTORIAL
             listCalculos.Clear();
+
+            panelHistorialCalculos.AutoScrollPosition = new Point(0, 0);    // Resetear la posición de scroll
+
             panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO
             // MENSAJE 'no hay historial todavía.'
             panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("No hay historial todavía."));

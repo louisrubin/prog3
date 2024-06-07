@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Calculadora_WF
 {
+    //public delegate void onClick(object? sender, EventArgs e);
+
     public class tableLayoutPanelResul : TableLayoutPanel
     {
         // 
         // table Layout Panel Results
         // 
-
         Label labelOperacion;
         Label labelResultado;
+
+        public string Operacion { get { return labelOperacion.Text; } }
+        public string Resultado { get { return labelResultado.Text; } }
 
         public tableLayoutPanelResul(string stringOperac, double resultado)
         {
@@ -31,6 +36,8 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
+
+            this.Click += results_Click;
         }
         
         public tableLayoutPanelResul(string stringOperac)
@@ -46,6 +53,10 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
+        }
+        public void results_Click(object? sender, EventArgs e)
+        {
+            //Form1.TexTBoxPrincipal.Text = this.Resultado;
         }
     }
 
