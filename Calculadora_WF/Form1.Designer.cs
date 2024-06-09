@@ -745,7 +745,6 @@
         private Boton button10;
         private Boton button11;
         private Boton button14;
-        private TextBox textBox1;
         private TableLayoutPanel tableLayoutPanelMitadArriba;
         private TableLayoutPanel tableLayoutPanelHeader;
         private TableLayoutPanel tableLayoutPanelTimers;
@@ -758,5 +757,6 @@
         private Boton button26;
         private Panel panelTodoHistorial;
         private Panel panelHistorialCalculos;
+        private TextBox textBox1;
     }
 }

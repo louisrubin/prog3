@@ -1,11 +1,13 @@
-﻿namespace Calculadora_WF
+﻿using System.Diagnostics;
+
+namespace Calculadora_WF
 {
     //
     //  github: https://github.com/louisrubin/prog3/tree/main/Calculadora_WF
     //
+
     public partial class Form1 : Form
-    {        
-        //public TextBox TexBoxPrincipal { get { return textBox1; } }
+    {
 
         private string listaMostrando = "";
         private double[] listaNumeros = new double[2];
@@ -395,7 +397,7 @@
                 if (listCalculos.Count == 0)
                 {
                     // MENSAJE 'no hay historial todavía.'
-                    //panelHistorialCalculos.Controls.Add(result1 = new tableLayoutPanelResul("32 + 5 =", 37));
+                    //panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("32 + 5 =", 37, textBox1));
                     //result1.Click += result1_Click;
                     panelHistorialCalculos.Controls.Add(
                     new tableLayoutPanelResul("No hay historial todavía."));
@@ -406,7 +408,7 @@
                     foreach (var calculo in listCalculos)
                     {
                         panelHistorialCalculos.Controls.Add(
-                            new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado)
+                            new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado, textBox1, label_calculos)
                         );
                     }
                 }

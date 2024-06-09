@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Calculadora_WF
 {
-    //public delegate void onClick(object? sender, EventArgs e);
+    //public delegate void onClickResult(object? sender, EventArgs e);
 
     public class tableLayoutPanelResul : TableLayoutPanel
     {
@@ -17,13 +18,18 @@ namespace Calculadora_WF
         // 
         Label labelOperacion;
         Label labelResultado;
+        TextBox textBoxMain;
+        Label labelCalculo;
 
         public string Operacion { get { return labelOperacion.Text; } }
         public string Resultado { get { return labelResultado.Text; } }
 
-        public tableLayoutPanelResul(string stringOperac, double resultado)
+        public tableLayoutPanelResul(string stringOperac, double resultado, TextBox textBoxMain, Label labelCalculoParam)
         {
             // CTOR 1
+            this.textBoxMain = textBoxMain;             // se asigna el TextBox para luego poder modificar
+            this.labelCalculo = labelCalculoParam;
+
             labelOperacion = new LabelOperacion(stringOperac);
             labelResultado = new LabelResultado(resultado);
 
@@ -37,9 +43,18 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
 
-            this.Click += results_Click;
+            // suscribiendo los labels al evento 'Click'
+            labelOperacion.Click += TableLayoutPanelResul_Click;
+            labelResultado.Click += TableLayoutPanelResul_Click;
+            this.Click += TableLayoutPanelResul_Click;
         }
-        
+
+        private void TableLayoutPanelResul_Click(object? sender, EventArgs e)
+        {
+            this.labelCalculo.Text = labelOperacion.ToString();
+            this.textBoxMain.Text = labelResultado.ToString();
+        }
+
         public tableLayoutPanelResul(string stringOperac)
         {
             // CTOR 2
@@ -53,10 +68,6 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
-        }
-        public void results_Click(object? sender, EventArgs e)
-        {
-            //Form1.TexTBoxPrincipal.Text = this.Resultado;
         }
     }
 
@@ -73,6 +84,11 @@ namespace Calculadora_WF
             this.Text = operacion;
             this.TextAlign = ContentAlignment.MiddleRight;
         }
+
+        public override string ToString()
+        {
+            return this.Text;
+        }
     }
     class LabelResultado : Label
     {
@@ -85,6 +101,11 @@ namespace Calculadora_WF
             this.ForeColor = SystemColors.Control;
             this.Size = new Size(34, 46);
             this.Text = resultado.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Text;
         }
     }
 }
