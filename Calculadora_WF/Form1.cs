@@ -9,10 +9,10 @@ namespace Calculadora_WF
     public partial class Form1 : Form
     {
 
-        private string listaMostrando = "";
-        private double[] listaNumeros = new double[2];
+        private string listaMostrando = "";                 // el numero que se está ingresando
+        private double[] listaNumeros = new double[2];          // 2 numeros para la operacion
         private DateTime[] listaTiempos = new DateTime[2];
-        private List<Calculo> listCalculos = new List<Calculo>();
+        private List<Calculo> listCalculos = new List<Calculo>();   // lista de todos los calculos
 
         private char caracterOpera;
         private bool calcularTiempos = false;   // para que el Equals calcule tiempos
@@ -28,6 +28,9 @@ namespace Calculadora_WF
         private void button1_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "1";
             textBox1.Text = listaMostrando;
@@ -35,6 +38,9 @@ namespace Calculadora_WF
         private void button2_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "2";
             textBox1.Text = listaMostrando;
@@ -43,6 +49,9 @@ namespace Calculadora_WF
         private void button3_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "3";
             textBox1.Text = listaMostrando;
@@ -51,6 +60,9 @@ namespace Calculadora_WF
         private void button4_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "4";
             textBox1.Text = listaMostrando;
@@ -59,6 +71,9 @@ namespace Calculadora_WF
         private void button5_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "5";
             textBox1.Text = listaMostrando;
@@ -67,6 +82,9 @@ namespace Calculadora_WF
         private void button6_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "6";
             textBox1.Text = listaMostrando;
@@ -75,6 +93,9 @@ namespace Calculadora_WF
         private void button7_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "7";
             textBox1.Text = listaMostrando;
@@ -83,6 +104,9 @@ namespace Calculadora_WF
         private void button8_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "8";
             textBox1.Text = listaMostrando;
@@ -91,6 +115,9 @@ namespace Calculadora_WF
         private void button9_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "9";
             textBox1.Text = listaMostrando;
@@ -98,6 +125,9 @@ namespace Calculadora_WF
         private void button10_Click(object sender, EventArgs e)
         {
             if (!volverPosCero) listaMostrando = "";
+
+            resetTextBox();     // reinicia el string de numeros ingresados
+
             volverPosCero = true;
             listaMostrando += "0";
             textBox1.Text = listaMostrando;
@@ -281,8 +311,8 @@ namespace Calculadora_WF
             label_calculos.Text = listaMostrando + " / ";
 
             caracterOpera = '/';
-            listaMostrando = "";
-            textBox1.Text = "";
+            //listaMostrando = "";
+            //textBox1.Text = "";
 
             posActual = 1;
         }
@@ -301,8 +331,8 @@ namespace Calculadora_WF
             label_calculos.Text = listaMostrando + " x ";
 
             caracterOpera = 'x';
-            listaMostrando = "";
-            textBox1.Text = "";
+            //listaMostrando = "";
+            //textBox1.Text = "";
 
             posActual = 1;
         }
@@ -319,8 +349,8 @@ namespace Calculadora_WF
             label_calculos.Text = listaMostrando + " - ";
 
             caracterOpera = '-';
-            listaMostrando = "";
-            textBox1.Text = "";
+            //listaMostrando = "";
+            //textBox1.Text = "";
 
             posActual = 1;
         }
@@ -334,13 +364,11 @@ namespace Calculadora_WF
             }
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
-            //listaMostrando += "+";
-            //textBox1.Text = listaMostrando;
             label_calculos.Text = listaMostrando + " + ";
 
             caracterOpera = '+';
-            listaMostrando = "";
-            textBox1.Text = "";
+            //listaMostrando = "";
+            //textBox1.Text = "";
 
             posActual = 1;
         }
@@ -431,10 +459,12 @@ namespace Calculadora_WF
             // MENSAJE 'no hay historial todavía.'
             panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("No hay historial todavía."));
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // TEXTO BOX
-            if (textBox1.Text.Length == 0)
+            // 
+            if (listaMostrando.Length == 0)
             {
                 textBox1.Text = "0";
             }
@@ -517,7 +547,24 @@ namespace Calculadora_WF
             posActual = 0;
             textBox1.Text = listaMostrando;
             volverPosCero = false;
+            
         }
+        
+        private void resetTextBox()
+        {
+            // si luego de ingresar un 'x', '+', '-', '/'
+            // se resetee y muestre el num ingresado
+
+            if (listaMostrando != "")       // al limpiar todo con 'CE' o 'C' queda un string vacio
+            {
+                if (listaNumeros[0] == double.Parse(listaMostrando))
+                {
+                    listaMostrando = "";        // limpia el string de numeros ingresados
+                    //textBox1.Text = "";
+                }
+            }
+        }
+
         private bool divisionHasError(double resultado)
         {
             if (double.IsInfinity(resultado))       // si es infinito
