@@ -14,11 +14,11 @@ namespace Calculadora_WF
         private DateTime[] listaTiempos = new DateTime[2];
         private List<Calculo> listCalculos = new List<Calculo>();   // lista de todos los calculos
 
-        private char caracterOpera;
+        private char caracterOpera = ' ';
         private bool calcularTiempos = false;   // para que el Equals calcule tiempos
 
         private byte posActual = 0;     // para el ultimo btn +/-
-        private bool volverPosCero = true;
+        private bool volverPosCero = true;      // permitir asignar el primer carac luego de operac, algo asi
 
         public Form1()
         {
@@ -187,6 +187,7 @@ namespace Calculadora_WF
             listaNumeros[1] = 0;
             posActual = 0;          // vuelve al 1er término de la operac
 
+            caracterOpera = ' ';        // limpia el caracter de operacion
             label_calculos.Text = "";
 
             textBox1.Text = listaMostrando;
@@ -301,13 +302,18 @@ namespace Calculadora_WF
         {
             //      / / /
 
-            if (listaMostrando.Length == 0)
+            if (listaMostrando.Length == 0) // arrancar el program tirar error pq está vacío
             {
                 listaMostrando += "0";      // cuando está vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
+            //if (caracterOpera == '/')       // si ya se asignó una operacion antes
+            //{
+            //    posActual = 1;              // cambia a la posic 1 del array para qe el metodo pueda funcionar
+            //    restultadoOperacion();      // hace esa operacion
+            //}
 
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             label_calculos.Text = listaMostrando + " / ";
 
             caracterOpera = '/';
@@ -325,9 +331,14 @@ namespace Calculadora_WF
                 listaMostrando += "0";      // cuando está vacio agrega el cero
             }
 
-            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
-            textBox1.Text = listaMostrando;
+            //if (caracterOpera == 'x')
+            //{
+            //    posActual = 1;
+            //    restultadoOperacion();      // hace esa operacion
+            //}
 
+            textBox1.Text = listaMostrando;
+            listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             label_calculos.Text = listaMostrando + " x ";
 
             caracterOpera = 'x';
@@ -342,8 +353,14 @@ namespace Calculadora_WF
             //      - - -
             if (listaMostrando.Length == 0)
             {
-                listaMostrando += "0";      // cuando está vacio agrega el cero
+                listaMostrando += "0";
             }
+
+            //if (caracterOpera == '-')
+            //{
+            //    posActual = 1;
+            //    restultadoOperacion();
+            //}
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             label_calculos.Text = listaMostrando + " - ";
@@ -358,17 +375,21 @@ namespace Calculadora_WF
         private void button21_Click(object sender, EventArgs e)
         {
             //      + + +
-            if (listaMostrando.Length == 0)
+            if (listaMostrando.Length == 0) // arrancar el program tirar error pq está vacío
             {
                 listaMostrando += "0";      // cuando está vacio agrega el cero
             }
+
+            //if (caracterOpera == '+')   // si ya se asignó una operacion antes
+            //{
+            //    posActual = 1;      // cambia a la posic 1 del array para qe el metodo pueda funcionar
+            //    restultadoOperacion();      // hace esa operacion 
+            //}
 
             listaNumeros[0] = double.Parse(listaMostrando);     // guardo el primer término de la operacion
             label_calculos.Text = listaMostrando + " + ";
 
             caracterOpera = '+';
-            //listaMostrando = "";
-            //textBox1.Text = "";
 
             posActual = 1;
         }
@@ -542,10 +563,10 @@ namespace Calculadora_WF
             }
             else
             {
-                listaMostrando = resultado.ToString();
+                listaMostrando = resultado.ToString();      
             }
             posActual = 0;
-            textBox1.Text = listaMostrando;
+            textBox1.Text = listaMostrando;         // se muestra resultado en pantalla
             volverPosCero = false;
             
         }
@@ -560,7 +581,6 @@ namespace Calculadora_WF
                 if (listaNumeros[0] == double.Parse(listaMostrando))
                 {
                     listaMostrando = "";        // limpia el string de numeros ingresados
-                    //textBox1.Text = "";
                 }
             }
         }
