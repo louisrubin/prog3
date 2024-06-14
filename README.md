@@ -17,9 +17,9 @@
 
 ###### ⭐⭐
 
-### Parcial 2: <u>[Ir al Repositorio](https://images7.memedroid.com/images/UPLOADED807/60a8e579eb390.jpeg)</u>↗
+### Parcial 2: <u>[Ir al Repositorio](https://github.com/louisrubin/prog3/tree/main/Parcial_2)</u>↗
 ###### Calificación Final (Prác y T.): `-`
-###### Fecha: -
+###### Fecha: 13/06/24
 
 ---
 
