@@ -438,6 +438,8 @@ namespace Calculadora_WF
         private void button25_Click(object sender, EventArgs e)
         {
             //      HISTORIAL 
+            tableLayoutPanelResul T_L_P_Resul_actual;
+
             if (!panelTodoHistorial.Visible)
             {
                 button25.BackColor = Color.Thistle;
@@ -446,19 +448,17 @@ namespace Calculadora_WF
                 if (listCalculos.Count == 0)
                 {
                     // MENSAJE 'no hay historial todavía.'
-                    //panelHistorialCalculos.Controls.Add(new tableLayoutPanelResul("32 + 5 =", 37, textBox1));
-                    //result1.Click += result1_Click;
-                    panelHistorialCalculos.Controls.Add(
-                    new tableLayoutPanelResul("No hay historial todavía."));
+                    T_L_P_Resul_actual = new tableLayoutPanelResul("No hay historial todavía.");
 
+                    panelHistorialCalculos.Controls.Add(T_L_P_Resul_actual);
                 }
                 else
                 {
                     foreach (var calculo in listCalculos)
                     {
-                        panelHistorialCalculos.Controls.Add(
-                            new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado, textBox1, label_calculos)
-                        );
+                        T_L_P_Resul_actual = new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado);
+                        T_L_P_Resul_actual.click_personalizado += TableLayoutPanelResul_CustomClick;
+                        panelHistorialCalculos.Controls.Add(T_L_P_Resul_actual);
                     }
                 }
                 return;
@@ -467,6 +467,13 @@ namespace Calculadora_WF
 
             button25.BackColor = Color.DimGray;
             panelTodoHistorial.Visible = false;
+        }
+        private void TableLayoutPanelResul_CustomClick(object sender, CustomEventArgs customArgs)
+        {
+            //   EVENT CLIC SOBRE CALCULO EN HISTORIAL <CustomEventArgs>
+            listaMostrando = customArgs.Resultado;
+            textBox1.Text = customArgs.Resultado;
+            label_calculos.Text = customArgs.Operacion;
         }
 
         private void button26_Click(object sender, EventArgs e)

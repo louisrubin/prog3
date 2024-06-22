@@ -9,7 +9,19 @@ using System.Threading.Tasks;
 
 namespace Calculadora_WF
 {
-    //public delegate void onClickResult(object? sender, EventArgs e);
+    // CLASE DE Args personalizados que se pasarán en el EventHandler hacia Form1.cs
+    public class CustomEventArgs : EventArgs
+    {
+        public string Operacion { get; }
+        public string Resultado { get; }
+
+        public CustomEventArgs(string operacion, string resultado)
+        {
+            Operacion = operacion;
+            Resultado = resultado;
+        }
+    }
+
 
     public class tableLayoutPanelResul : TableLayoutPanel
     {
@@ -18,17 +30,16 @@ namespace Calculadora_WF
         // 
         Label labelOperacion;
         Label labelResultado;
-        TextBox textBoxMain;
-        Label labelCalculo;
+
+        // event handler para el clic
+        public event EventHandler<CustomEventArgs> click_personalizado;
 
         public string Operacion { get { return labelOperacion.Text; } }
         public string Resultado { get { return labelResultado.Text; } }
 
-        public tableLayoutPanelResul(string stringOperac, double resultado, TextBox textBoxMain, Label labelCalculoParam)
+        public tableLayoutPanelResul(string stringOperac, double resultado)
         {
             // CTOR 1
-            this.textBoxMain = textBoxMain;             // se asigna el TextBox para luego poder modificar
-            this.labelCalculo = labelCalculoParam;
 
             labelOperacion = new LabelOperacion(stringOperac);
             labelResultado = new LabelResultado(resultado);
@@ -43,16 +54,17 @@ namespace Calculadora_WF
             this.RowStyles.Add(new RowStyle(SizeType.Percent, 66.6666641F));
             this.Size = new Size(344, 69);
 
-            // suscribiendo los labels al evento 'Click'
-            labelOperacion.Click += TableLayoutPanelResul_Click;
-            labelResultado.Click += TableLayoutPanelResul_Click;
-            this.Click += TableLayoutPanelResul_Click;
+            //suscribiendo los labels al evento 'Click'
+            
+            labelOperacion.Click += Custom_tableLayourPanel_Click;
+            labelResultado.Click += Custom_tableLayourPanel_Click;
+            this.Click += Custom_tableLayourPanel_Click;
         }
 
-        private void TableLayoutPanelResul_Click(object? sender, EventArgs e)
+        private void Custom_tableLayourPanel_Click(object? sender, EventArgs e)
         {
-            this.labelCalculo.Text = labelOperacion.ToString();
-            this.textBoxMain.Text = labelResultado.ToString();
+            // Disparar el evento CustomClick si hay suscriptores
+            click_personalizado?.Invoke(this, new CustomEventArgs(Operacion, Resultado));
         }
 
         public tableLayoutPanelResul(string stringOperac)
