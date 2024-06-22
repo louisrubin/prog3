@@ -474,6 +474,8 @@ namespace Calculadora_WF
             listaMostrando = customArgs.Resultado;
             textBox1.Text = customArgs.Resultado;
             label_calculos.Text = customArgs.Operacion;
+
+            panelTodoHistorial.Visible = false;     // cierra el panel
         }
 
         private void button26_Click(object sender, EventArgs e)

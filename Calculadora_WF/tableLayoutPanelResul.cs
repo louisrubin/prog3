@@ -59,12 +59,36 @@ namespace Calculadora_WF
             labelOperacion.Click += Custom_tableLayourPanel_Click;
             labelResultado.Click += Custom_tableLayourPanel_Click;
             this.Click += Custom_tableLayourPanel_Click;
+
+            // suscribiendo los labels al evento 'MouseEnter'
+
+            labelOperacion.MouseEnter += Mouse_In;
+            labelResultado.MouseEnter += Mouse_In;
+            this.MouseEnter += Mouse_In;
+
+            // suscribiendo los labels al evento 'MouseLeave'
+
+            labelOperacion.MouseLeave += Mouse_Out;
+            labelResultado.MouseLeave += Mouse_Out;
+            this.MouseLeave += Mouse_Out;
+
         }
 
         private void Custom_tableLayourPanel_Click(object? sender, EventArgs e)
         {
             // Disparar el evento CustomClick si hay suscriptores
             click_personalizado?.Invoke(this, new CustomEventArgs(Operacion, Resultado));
+        }
+
+        private void Mouse_In(object? sender, EventArgs e)
+        {
+            // MOUSE IN
+            this.BackColor = Color.DimGray;
+        }
+        private void Mouse_Out(object? sender, EventArgs e)
+        {
+            // MOUSE OUT
+            this.BackColor = Color.FromArgb(64);
         }
 
         public tableLayoutPanelResul(string stringOperac)
