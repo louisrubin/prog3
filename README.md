@@ -19,5 +19,5 @@
 ###### ⭐⭐⭐ 
 
 ### Parcial 3 (TP Investigación): <u>[Ir al Repositorio](https://github.com/louisrubin/prog3/tree/main/TP_Investigacion)</u>↗
-###### Calificación Final `90,00 / 100,00` 🔥
+###### Calificación Final: `90,00 / 100,00` 🔥
 ###### Fecha exposición (individual): 18/04/24
