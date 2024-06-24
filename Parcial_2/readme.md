@@ -5,10 +5,12 @@
 
 |Parte Teórica 📚|Parte Práctica 💻|Calificación Final 📊|
 | :---: | :---: | :---: |
-| Calificación: `82,00/100,00` | Calificación: `-` |`-`|
+| Calificación: `82,00/100,00` | Calificación: `60,25/100,00` |`-`|
 
-##### Teoría:
-<img src="https://github.com/louisrubin/prog3/assets/72027738/320aa44d-99cf-4f6d-b64c-afa3b8821754"/>
+| Teoría: | Práctica: |
+| :---: | :---: |
+|<img src="https://github.com/louisrubin/prog3/assets/72027738/320aa44d-99cf-4f6d-b64c-afa3b8821754"/>| ![Captura](https://github.com/louisrubin/prog3/assets/72027738/7ac0d5e9-494f-4551-b801-bde1b32b6715) |
+
 
 ##### Programa en ejecución (consigna en el texto)
 
@@ -21,3 +23,4 @@
 ##### Comentarios: 
 
 - 
+
