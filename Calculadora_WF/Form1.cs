@@ -147,7 +147,7 @@ namespace Calculadora_WF
         private void button11_Click(object sender, EventArgs e)
         {
             //      TIEMPOS   TIEMPOS   TIEMPOS
-            if (!calcularTiempos)     // false;
+            if (!calcularTiempos)     // if false;
             {
                 calcularTiempos = true;
                 dateTimePicker1.Enabled = true;
@@ -226,6 +226,7 @@ namespace Calculadora_WF
             double resultado = listaNumeros[0] / double.Parse(listaMostrando);
             generarStringOperac('/', out text_operac, listaMostrando);      // metodo genera string
             label_calculos.Text = text_operac;
+
             if (divisionHasError(resultado)) return;        // hubo error en la division
 
             resultado = Math.Round(resultado, 9);       // dejando solo x decimales
@@ -494,7 +495,7 @@ namespace Calculadora_WF
         {
             // TEXTO BOX
             // 
-            if (listaMostrando.Length == 0)
+            if (listaMostrando.Length == 0 && ! calcularTiempos)
             {
                 textBox1.Text = "0";
             }
@@ -710,7 +711,7 @@ namespace Calculadora_WF
             button8.Enabled = false;
             button9.Enabled = false;
             button10.Enabled = false;
-            //button11.Enabled = false;
+            //button11.Enabled = false;     // tiempos
             button12.Enabled = false;
             button13.Enabled = false;
             button14.Enabled = false;
