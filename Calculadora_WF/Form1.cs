@@ -27,7 +27,7 @@ namespace Calculadora_WF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
+            //if (!volverPosCero) listaMostrando = "";
 
             resetTextBox();     // reinicia el string de numeros ingresados
 
@@ -37,8 +37,6 @@ namespace Calculadora_WF
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -48,8 +46,6 @@ namespace Calculadora_WF
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -59,8 +55,6 @@ namespace Calculadora_WF
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -70,8 +64,6 @@ namespace Calculadora_WF
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -81,8 +73,6 @@ namespace Calculadora_WF
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -92,8 +82,6 @@ namespace Calculadora_WF
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -103,8 +91,6 @@ namespace Calculadora_WF
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -114,8 +100,6 @@ namespace Calculadora_WF
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -124,8 +108,6 @@ namespace Calculadora_WF
         }
         private void button10_Click(object sender, EventArgs e)
         {
-            if (!volverPosCero) listaMostrando = "";
-
             resetTextBox();     // reinicia el string de numeros ingresados
 
             volverPosCero = true;
@@ -404,6 +386,8 @@ namespace Calculadora_WF
         private void button23_Click(object sender, EventArgs e)
         {
             //      , , ,
+            resetTextBox();
+
             if (listaMostrando.Length == 0)
             {
                 listaMostrando += "0";      // cuando está vacio agrega el cero
@@ -411,7 +395,6 @@ namespace Calculadora_WF
 
             if (listaMostrando.Contains(','))
             {
-                //listaMostrando = ""; 
                 return;     // si ya contiene una coma no hace nada
             }
 
@@ -573,11 +556,11 @@ namespace Calculadora_WF
             }
             else
             {
-                listaMostrando = resultado.ToString();      
+                listaMostrando = resultado.ToString();
             }
             posActual = 0;
             textBox1.Text = listaMostrando;         // se muestra resultado en pantalla
-            volverPosCero = false;
+            //volverPosCero = false;
             
         }
         
@@ -588,7 +571,7 @@ namespace Calculadora_WF
 
             if (listaMostrando != "")       // al limpiar todo con 'CE' o 'C' queda un string vacio
             {
-                if (listaNumeros[0] == double.Parse(listaMostrando))
+                if (listaNumeros[0] == double.Parse(listaMostrando) && ! listaMostrando.EndsWith(",") )
                 {
                     listaMostrando = "";        // limpia el string de numeros ingresados
                 }
