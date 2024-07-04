@@ -9,6 +9,7 @@ namespace Calculadora_WF
 
     public partial class Form1 : Form
     {
+        private int maxHistorial = 10;      // max de calculos mostrados en historial (en listCalculos sigue estando todos)
         private int cantMaxDigits = 11;     // cant max digitos para que entre en el textBox (en la resolucion minima)
         private string listaMostrando = "";                 // el numero que se está ingresando
         private double[] listaNumeros = new double[2];          // 2 numeros para la operacion
@@ -439,16 +440,20 @@ namespace Calculadora_WF
                 }
                 else
                 {
-                    foreach (var calculo in listCalculos)
+                    // foreach en donde toma los ultimos <maxHistorial> almacenados en la lista
+                    foreach (var calculo in listCalculos.TakeLast(maxHistorial))
                     {
                         T_L_P_Resul_actual = new tableLayoutPanelResul(calculo.Expresion, calculo.Resultado);
                         T_L_P_Resul_actual.click_personalizado += TableLayoutPanelResul_CustomClick;
                         panelHistorialCalculos.Controls.Add(T_L_P_Resul_actual);
+
+                        //maxBucle++;
+                        //if (maxBucle == maxHistorial) return;
                     }
                 }
                 return;
             }
-            panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO AL CERRAR
+            panelHistorialCalculos.Controls.Clear();    // LIMPIA TODO AL CERRAR pq agrega infinitamente
 
             button25.BackColor = Color.DimGray;
             panelTodoHistorial.Visible = false;
@@ -574,7 +579,7 @@ namespace Calculadora_WF
             // si luego de ingresar un 'x', '+', '-', '/'
             // se resetee y muestre el num ingresado
 
-            if (listaMostrando != "")       // al limpiar todo con 'CE' o 'C' queda un string vacio
+            if (listaMostrando != "")       // string vacio no se puede parsear
             {
                 if (listaNumeros[0] == double.Parse(listaMostrando) && ! listaMostrando.EndsWith(",") )
                 {
