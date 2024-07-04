@@ -702,11 +702,11 @@
             Controls.Add(tableLayoutPanelMitadArriba);
             Controls.Add(tableLayoutBotones);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MaximumSize = new Size(460, 640);
             MinimumSize = new Size(360, 540);
             Name = "Form1";
             Text = "Calculadora";
-            Resize += Form1_Resize;
             tableLayoutBotones.ResumeLayout(false);
             tableLayoutPanelMitadArriba.ResumeLayout(false);
             tableLayoutPanelMitadArriba.PerformLayout();

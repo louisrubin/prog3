@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 
 namespace Calculadora_WF
 {
@@ -8,7 +9,7 @@ namespace Calculadora_WF
 
     public partial class Form1 : Form
     {
-
+        private int cantMaxDigits = 11;     // cant max digitos para que entre en el textBox (en la resolucion minima)
         private string listaMostrando = "";                 // el numero que se está ingresando
         private double[] listaNumeros = new double[2];          // 2 numeros para la operacion
         private DateTime[] listaTiempos = new DateTime[2];
@@ -115,17 +116,6 @@ namespace Calculadora_WF
             textBox1.Text = listaMostrando;
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                // Establecer el tamaño deseado (por ejemplo, 800x600)
-                //this.WindowState = FormWindowState.Normal;
-                this.Size = new Size(360, 540);
-                //this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                //                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-            }
-        }
         private void button11_Click(object sender, EventArgs e)
         {
             //      TIEMPOS   TIEMPOS   TIEMPOS
@@ -204,17 +194,22 @@ namespace Calculadora_WF
             string text_operac;
             listaNumeros[0] = 1;
             //listaNumeros[1] = double.Parse(listaMostrando);   // NO
+            int thisMaxDecimals = cantMaxDigits;    // private int
 
             double resultado = listaNumeros[0] / double.Parse(listaMostrando);
+
+            var (cantEnteros, cantDecimales) = cantidadDecimales(resultado);        // tupla var
+            thisMaxDecimals -= cantEnteros;
+
             generarStringOperac('/', out text_operac, listaMostrando);      // metodo genera string
             label_calculos.Text = text_operac;
 
             if (divisionHasError(resultado)) return;        // hubo error en la division
 
-            resultado = Math.Round(resultado, 9);       // dejando solo x decimales
+            resultado = Math.Round(resultado, thisMaxDecimals);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
 
-            listCalculos.Add(new Calculo(text_operac, resultado));      // se agrega a la lista
+            listCalculos.Add(new Calculo(text_operac, resultado, '/'));      // se agrega a la lista
 
             if (resultado == 0)
             {
@@ -236,16 +231,22 @@ namespace Calculadora_WF
             {
                 return;
             }
+            int thisMaxDecimals = cantMaxDigits;    // private int
             string text_operac = "";
 
             listaNumeros[0] = double.Parse(listaMostrando);
-            double resultado = Math.Round(Math.Pow(listaNumeros[0], 2), 9); // potenciacion, 9 decimales
+            double resultado = Math.Pow(listaNumeros[0], 2); // potenciacion, 9 decimales
+            //double resultado = Math.Round(Math.Pow(listaNumeros[0], 2), 9); // potenciacion, 9 decimales
 
+            var (cantEnteros, cantDecimales) = cantidadDecimales(resultado);        // tupla var
+            thisMaxDecimals -= cantEnteros > cantMaxDigits ? 0 : cantEnteros;       // resta, si cantEnteros es mayor no resta
+
+            resultado = Math.Round(resultado, thisMaxDecimals);
 
             listaMostrando = resultado.ToString();
             text_operac = $"({listaNumeros[0]}) ^ 2 =";
 
-            listCalculos.Add(new Calculo(text_operac, resultado));
+            listCalculos.Add(new Calculo(text_operac, resultado, 'P'));
 
             label_calculos.Text = text_operac;
             textBox1.Text = listaMostrando;
@@ -268,7 +269,7 @@ namespace Calculadora_WF
             text_operac = $"√({listaNumeros[0]}) =";
             label_calculos.Text = text_operac;
 
-            listCalculos.Add(new Calculo(text_operac, resultado));
+            listCalculos.Add(new Calculo(text_operac, resultado, 'R'));
 
             if (double.IsNaN(resultado))     // si es NaN
             {
@@ -502,6 +503,8 @@ namespace Calculadora_WF
                 listaMostrando += "0";
             }
 
+            int thisMaxDecimals = cantMaxDigits;    // asignado arriba private
+
             listaNumeros[posActual] = double.Parse(listaMostrando);  // hasta no presionar otra tecla de oper, sigue en posic=0;
             double resultado = listaNumeros[0];
 
@@ -544,11 +547,13 @@ namespace Calculadora_WF
 
                     break;
             }
+            (int cantEnteros, int cantDecimales) = cantidadDecimales(resultado);
+            thisMaxDecimals -= cantEnteros;     // resta cant enteros para luego usar en Math.Round
 
-            resultado = Math.Round(resultado, 9);       // dejando solo x decimales
+            resultado = Math.Round(resultado, thisMaxDecimals);       // dejando solo x decimales
             listaNumeros[0] = resultado;    // resultado de la oper se posiciona 1er termino
 
-            listCalculos.Add(new Calculo(text_operac, resultado));
+            listCalculos.Add(new Calculo(text_operac, resultado, caracterOpera));
 
             if (resultado == 0)
             {
@@ -576,6 +581,40 @@ namespace Calculadora_WF
                     listaMostrando = "";        // limpia el string de numeros ingresados
                 }
             }
+        }
+
+        //private void Form1_Resize(object sender, EventArgs e)
+        //{
+        //    if (this.WindowState == FormWindowState.Maximized)
+        //    {
+        //        // Establecer el tamaño deseado (por ejemplo, 800x600)
+        //        //this.WindowState = FormWindowState.Normal;
+        //        this.Size = new Size(360, 540);
+        //        //this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+        //        //                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+        //    }
+        //}
+
+
+        private (int digitosEnteros, int digitosDecimales) cantidadDecimales(double number)
+        {
+            // metodo privado que devuelve una TUPLA con 2 variables de tipo INT
+
+            // Convierte el número a una cadena usando la cultura invariante para asegurar el punto decimal
+            string numberStr = number.ToString(CultureInfo.InvariantCulture);
+
+            // Divide la cadena en partes entera y decimal
+            string[] parts = numberStr.Split('.');
+
+            // Cuenta los dígitos en la parte entera
+            int integerDigits = parts[0].Length;
+
+            // Cuenta los dígitos en la parte decimal si existe
+            int decimalDigits = (parts.Length > 1 ) 
+                ? parts[1].Length 
+                : 0;
+
+            return (integerDigits, decimalDigits);      // retorna la tupla que se establació en la firma
         }
 
         private bool divisionHasError(double resultado)
@@ -710,6 +749,7 @@ namespace Calculadora_WF
             button24.Enabled = false;
             button25.Enabled = false;
         }
+
 
     }
 }
